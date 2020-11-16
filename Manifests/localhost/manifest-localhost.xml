@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>8bc018e3-f345-40d4-8f1d-97951765d531</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>HMDA Hero</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="HMDA Hero" />
+  <Description DefaultValue="If anything needs a hero, it's HMDA"/>
+  <IconUrl DefaultValue="http://localhost:3000/assets/Button32x32.png" />
+  <HighResolutionIconUrl DefaultValue="http://localhost:3000/assets/Button80x80.png" />
+  <SupportUrl DefaultValue="https://hmda-hero-app.netlify.app/" />
+  <AppDomains>
+    <AppDomain>https://localhost:3000</AppDomain>
+    <AppDomain>https://hmda-hero-app.netlify.app/</AppDomain>
+    <AppDomain>https://www.consumerfinance.gov</AppDomain>
+    <AppDomain>https://www.ffiec.gov</AppDomain>
+    <AppDomain>https://files.consumerfinance.gov</AppDomain>
+    <AppDomain>https://s3.amazonaws.com/cfpb-hmda-publics</AppDomain>
+    <AppDomain>https://hmdahelp.consumerfinance.gov</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook" />
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="http://localhost:3000/about" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Description resid="Description" />
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <FunctionFile resid="Functions.Url" />
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="Main">
+              <Group id="LoanGroup">
+                <Label resid="LoanLabel" />
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16" />
+                  <bt:Image size="32" resid="Icon.32" />
+                  <bt:Image size="80" resid="Icon.80" />
+                </Icon>
+                <Control xsi:type="Button" id="AddLoan">
+                  <Label resid="AddLoan.Label" />
+                  <Supertip>
+                    <Title resid="AddLoan.TipTitle" />
+                    <Description resid="AddLoanSupertip.Desc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Code.16" />
+                    <bt:Image size="32" resid="Icon.Code.32" />
+                    <bt:Image size="80" resid="Icon.Code.80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>AddLoan</TaskpaneId>
+                    <SourceLocation resid="AddLoan.Url" />
+                    <Title resid="AddLoan.Title" />
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="EditLoan">
+                  <Label resid="EditLoan.Label" />
+                  <Supertip>
+                    <Title resid="EditLoan.TipTitle" />
+                    <Description resid="EditLoanSupertip.Desc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Run.16" />
+                    <bt:Image size="32" resid="Icon.Run.32" />
+                    <bt:Image size="80" resid="Icon.Run.80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>EditLoan</TaskpaneId>
+                    <SourceLocation resid="EditLoan.Url" />
+                    <Title resid="EditLoan.Title" />
+                  </Action>
+                </Control>
+              </Group>
+              <Group id="UtilitiesGroup">
+                <Label resid="UtilitiesGroupLabel" />
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16" />
+                  <bt:Image size="32" resid="Icon.32" />
+                  <bt:Image size="80" resid="Icon.80" />
+                </Icon>
+                <Control xsi:type="Button" id="Import">
+                  <Label resid="Import.Label" />
+                  <Supertip>
+                    <Title resid="Import.TipTitle" />
+                    <Description resid="Import.Desc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Tutorial.16" />
+                    <bt:Image size="32" resid="Icon.Tutorial.32" />
+                    <bt:Image size="80" resid="Icon.Tutorial.80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Import</TaskpaneId>
+                    <SourceLocation resid="Import.Url" />
+                    <Title resid="Import.Title" />
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="Export">
+                  <Label resid="Export.Label" />
+                  <Supertip>
+                    <Title resid="Export.TipTitle" />
+                    <Description resid="Export.Desc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Help.16" />
+                    <bt:Image size="32" resid="Icon.Help.32" />
+                    <bt:Image size="80" resid="Icon.Help.80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>launchHelp</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+              <Group id="ResourcesGroup">
+                <Label resid="ResourcesGroupLabel" />
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16" />
+                  <bt:Image size="32" resid="Icon.32" />
+                  <bt:Image size="80" resid="Icon.80" />
+                </Icon>
+                <Control xsi:type="Button" id="FilingResource">
+                  <Label resid="FilingResource.Label" />
+                  <Supertip>
+                    <Title resid="FilingResource.TipTitle" />
+                    <Description resid="FilingResource.Desc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.ApiDocs.16" />
+                    <bt:Image size="32" resid="Icon.ApiDocs.32" />
+                    <bt:Image size="80" resid="Icon.ApiDocs.80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>FilingResources</TaskpaneId>
+                    <SourceLocation resid="FilingResources.Url" />
+                    <Title resid="FilingResources.Title" />
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="Settings">
+                  <Label resid="Settings.Label" />
+                  <Supertip>
+                    <Title resid="Settings.TipTitle" />
+                    <Description resid="Settings.Desc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Ask.16" />
+                    <bt:Image size="32" resid="Icon.Ask.32" />
+                    <bt:Image size="80" resid="Icon.Ask.80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Settings</TaskpaneId>
+                    <SourceLocation resid="Settings.Url" />
+                    <Title resid="Settings.Title" />
+                  </Action>
+                </Control>
+              </Group>
+              <Group id="AboutGroup">
+                <Label resid="AboutGroupLabel" />
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16" />
+                  <bt:Image size="32" resid="Icon.32" />
+                  <bt:Image size="80" resid="Icon.80" />
+                </Icon>
+                <Control xsi:type="Button" id="AboutHH">
+                  <Label resid="AboutHH.Label" />
+                  <Supertip>
+                    <Title resid="AboutHH.TipTitle" />
+                    <Description resid="AboutHH.Desc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.ApiDocs.16" />
+                    <bt:Image size="32" resid="Icon.ApiDocs.32" />
+                    <bt:Image size="80" resid="Icon.ApiDocs.80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>About</TaskpaneId>
+                    <SourceLocation resid="About.Url" />
+                    <Title resid="About.Title" />
+                  </Action>
+                </Control>
+              </Group>
+              <Label resid="TabLabel"/>
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16" DefaultValue="http://localhost:3000/assets/Button16x16.png" />
+        <bt:Image id="Icon.32" DefaultValue="http://localhost:3000/assets/Button32x32.png" />
+        <bt:Image id="Icon.80" DefaultValue="http://localhost:3000/assets/Button80x80.png" />
+        <bt:Image id="Icon.Code.16" DefaultValue="http://localhost:3000/assets/Button16x16.png" />
+        <bt:Image id="Icon.Code.32" DefaultValue="http://localhost:3000/assets/Button32x32.png" />
+        <bt:Image id="Icon.Code.80" DefaultValue="http://localhost:3000/assets/Button80x80.png" />
+        <bt:Image id="Icon.Run.16" DefaultValue="http://localhost:3000/assets/Button16x16.png" />
+        <bt:Image id="Icon.Run.32" DefaultValue="http://localhost:3000/assets/Button32x32.png" />
+        <bt:Image id="Icon.Run.80" DefaultValue="http://localhost:3000/assets/Button80x80.png" />
+        <bt:Image id="Icon.CF.16" DefaultValue="http://localhost:3000/assets/Button16x16.png" />
+        <bt:Image id="Icon.CF.32" DefaultValue="http://localhost:3000/assets/Button32x32.png" />
+        <bt:Image id="Icon.CF.80" DefaultValue="http://localhost:3000/assets/Button80x80.png" />
+        <bt:Image id="Icon.Tutorial.16" DefaultValue="http://localhost:3000/assets/Button16x16.png" />
+        <bt:Image id="Icon.Tutorial.32" DefaultValue="http://localhost:3000/assets/Button32x32.png" />
+        <bt:Image id="Icon.Tutorial.80" DefaultValue="http://localhost:3000/assets/Button80x80.png" />
+        <bt:Image id="Icon.Help.16" DefaultValue="http://localhost:3000/assets/Button16x16.png" />
+        <bt:Image id="Icon.Help.32" DefaultValue="http://localhost:3000/assets/Button32x32.png" />
+        <bt:Image id="Icon.Help.80" DefaultValue="http://localhost:3000/assets/Button80x80.png" />
+        <bt:Image id="Icon.ApiDocs.16" DefaultValue="http://localhost:3000/assets/Button16x16.png" />
+        <bt:Image id="Icon.ApiDocs.32" DefaultValue="http://localhost:3000/assets/Button32x32.png" />
+        <bt:Image id="Icon.ApiDocs.80" DefaultValue="http://localhost:3000/assets/Button80x80.png" />
+        <bt:Image id="Icon.Ask.16" DefaultValue="http://localhost:3000/assets/Button16x16.png" />
+        <bt:Image id="Icon.Ask.32" DefaultValue="http://localhost:3000/assets/Button32x32.png" />
+        <bt:Image id="Icon.Ask.80" DefaultValue="http://localhost:3000/assets/Button80x80.png" />
+        <bt:Image id="Icon.Ask.16" DefaultValue="http://localhost:3000/assets/Button16x16.png" />
+        <bt:Image id="Icon.Ask.32" DefaultValue="http://localhost:3000/assets/Button32x32.png" />
+        <bt:Image id="Icon.Ask.80" DefaultValue="http://localhost:3000/assets/Button80x80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="AddLoan.Url" DefaultValue="http://localhost:3000/add-loan" />
+        <bt:Url id="EditLoan.Url" DefaultValue="http://localhost:3000/edit-search" />
+        <bt:Url id="Import.Url" DefaultValue="http://localhost:3000/import" />
+        <bt:Url id="FilingResources.Url" DefaultValue="http://localhost:3000/resources" />
+        <bt:Url id="About.Url" DefaultValue="http://localhost:3000/about" />
+        <bt:Url id="Settings.Url" DefaultValue="http://localhost:3000/settings" />
+        <bt:Url id="Functions.Url" DefaultValue="http://localhost:3000/functions.html" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="TabLabel" DefaultValue="HMDA Hero Local" />
+        <bt:String id="LoanLabel" DefaultValue="Editing" />
+        <bt:String id="UtilitiesGroupLabel" DefaultValue="Utilities"/>
+        <bt:String id="ResourcesGroupLabel" DefaultValue="Resources"/>
+        <bt:String id="AboutGroupLabel" DefaultValue="About"/>
+        <bt:String id="AddLoan.Label" DefaultValue="Add Loan"/>
+        <bt:String id="AddLoan.Title" DefaultValue="Add a Loan"/>
+        <bt:String id="AddLoan.TipTitle" DefaultValue="Add a new loan record"/>
+        <bt:String id="EditLoan.Label" DefaultValue="Edit Loan"/>
+        <bt:String id="EditLoan.Title" DefaultValue="Edit a Loan"/>
+        <bt:String id="EditLoan.TipTitle" DefaultValue="Edit an existing loan record"/>
+        <bt:String id="Import.Label" DefaultValue="Import"/>
+        <bt:String id="Import.TipTitle" DefaultValue="Import LAR records"/>
+        <bt:String id="Import.Title" DefaultValue="Import"/>
+        <bt:String id="Export.Label" DefaultValue="Export"/>
+        <bt:String id="Export.TipTitle" DefaultValue="Export pipe delimited text file"/>
+        <bt:String id="FilingResource.Label" DefaultValue="Filing Resources"/>
+        <bt:String id="FilingResource.TipTitle" DefaultValue="Current reporting year filing resources"/>
+        <bt:String id="FilingResources.Title" DefaultValue="Filing Resources"/>
+        <bt:String id="AboutHH.Label" DefaultValue="About HMDA Hero"/>
+        <bt:String id="AboutHH.TipTitle" DefaultValue="HMDA Hero About Information"/>
+        <bt:String id="About.Title" DefaultValue="About"/>
+        <bt:String id="Settings.Label" DefaultValue="Settings"/>
+        <bt:String id="Settings.TipTitle" DefaultValue="Configuration settings for HMDA Hero"/>
+        <bt:String id="Settings.Title" DefaultValue="Global Settings"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="AddLoanSupertip.Desc" DefaultValue="Easily add a new loan record"/>
+        <bt:String id="EditLoanSupertip.Desc" DefaultValue="Search for and edit an existing loan record"/>
+        <bt:String id="Import.Desc" DefaultValue="Import loan records from an existing pipe delimited file"/>
+        <bt:String id="Export.Desc" DefaultValue="Easily create a full or exempt version export in pipe delimited format"/>
+        <bt:String id="FilingResource.Desc" DefaultValue="Quick access to current year filing resources and guides"/>
+        <bt:String id="AboutHH.Desc" DefaultValue="More information about HMDA Hero"/>
+        <bt:String id="Settings.Desc" DefaultValue="Configure and save settings used by HMDA Helper"/>
+        <bt:String id="Description" DefaultValue="Extend and simplify the HMDA LAR Formatting Tool and HMDA data entry"/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

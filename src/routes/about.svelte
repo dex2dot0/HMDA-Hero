@@ -1,0 +1,54 @@
+<style>
+  .about {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  @media (min-width: 576px) {
+    .about {
+      max-width: 90%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .about {
+      max-width: 80%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .about {
+      max-width: 70%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .about {
+      max-width: 60%;
+    }
+  }
+
+  a {
+    color: #4e9668;
+  }
+</style>
+
+<svelte:head>
+  <title>About</title>
+</svelte:head>
+<div class="about container">
+  <h1>Why HMDA Hero</h1>
+
+  <p>
+    HMDA Hero is a free resource provided to assist with the arduous process of
+    compiling HMDA data. While there are a number of excellent tools available
+    on the market for HMDA compliation, they may be too costly for smaller
+    outfits, especially for companies that only file a small set of HMDA data.
+    HMDA Hero is designed with that in mind and aims to be a lightweight
+    solution that can carry some of the burden.
+  </p>
+  <a href="/features">
+    Read More About
+    <strong>Features</strong>
+  </a>
+</div>
