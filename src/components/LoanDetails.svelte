@@ -413,11 +413,13 @@
   <div class="col-sm-12 col-md-4">
     <!-- Type of Purchaser -->
     <label for="PurchaserType">Type of Purchaser</label>
+    <!-- svelte-ignore a11y-no-onchange-->
     <select
       class={$purchaserType !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
       id="PurchaserType"
       tabindex="0"
-      bind:value={$purchaserType}>
+      bind:value={$purchaserType}
+      on:change={purchaserType.change}>
       <option />
       <option value="0">0. Not applicable</option>
       <option value="1">1. Fannie Mae</option>

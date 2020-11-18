@@ -1832,10 +1832,68 @@ function incomeFn() {
 
 export const income = incomeFn();
 
+function purchaserTypeFn() {
+  let editColumn = 'BF';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const purchaserType = purchaserTypeFn();
+
+function rateSpreadFn() {
+  let editColumn = 'BG';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const rateSpread = rateSpreadFn();
 
 
-export const purchaserType = writable('')
-export const rateSpread = writable('')
+
 export const hoepa = writable('')
 export const lienStatus = writable('')
 export const applicantCreditScore = writable('')

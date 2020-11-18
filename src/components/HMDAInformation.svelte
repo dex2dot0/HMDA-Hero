@@ -71,7 +71,8 @@
         class="form-control"
         type="text"
         id="RateSpread"
-        bind:value={$rateSpread} />
+        bind:value={$rateSpread}
+        on:change={rateSpread.change} />
       {#if $rateSpread !== ''}
         <HRValidation isValid={true} />
       {:else}
