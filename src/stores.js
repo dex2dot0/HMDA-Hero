@@ -1892,11 +1892,108 @@ function rateSpreadFn() {
 
 export const rateSpread = rateSpreadFn();
 
+function hoepaFn() {
+  let editColumn = 'BH';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const hoepa = hoepaFn();
+
+function lienStatusFn() {
+  let editColumn = 'BI';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const lienStatus = lienStatusFn();
+
+function applicantCreditScoreFn() {
+  let editColumn = 'BJ';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    NAN: (e) => {
+      isNAN = e.detail;
+      if (isNAN) {
+        updateValue('7777', editColumn);
+        set('7777')
+      } else {
+        val ? updateValue(val, editColumn) : updateValue('', editColumn)
+        set(val)
+      }
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const applicantCreditScore = applicantCreditScoreFn();
+//Need more handling for above. There are checkboxes for Not a Number and for Exemption.
 
 
-export const hoepa = writable('')
-export const lienStatus = writable('')
-export const applicantCreditScore = writable('')
 export const coapplicantCreditScore = writable('')
 export const appScoreNAN = writable('')
 export const appScoreNA = writable('')

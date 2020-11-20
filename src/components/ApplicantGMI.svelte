@@ -548,6 +548,7 @@
         type="text"
         id="CreditScore1"
         bind:value={$applicantCreditScore}
+        on:change={applicantCreditScore.change}
         style="max-width: 20%;" />
 
       <label for="appScoreNAN">Not a #</label>
@@ -555,19 +556,10 @@
         type="checkbox"
         id="appScoreNAN"
         tabindex="-1"
-        checked={$appScoreNAN}
-        on:change={function(event) {
-          let cs1 = document.getElementById('CreditScore1');
-          if (event.target.checked) {
-            cs1.value = '7777';
-            applicantCreditScore.set('7777');
-            appCreditCheckBoxChecked('appScoreNAN');
-          } else {
-            cs1.value = '';
-            applicantCreditScore.set('');
-            appCreditCheckBoxUnchecked('appScoreNAN');
-          }
-        }} />
+        checked={$applicantCreditScore == '7777' ? true : false}
+        on:change={applicantCreditScore.NAN}
+      />
+      NOT SURE IF ABOVE WILL WORK!
 
       <label for="appScoreNA">NA</label>
       <input
