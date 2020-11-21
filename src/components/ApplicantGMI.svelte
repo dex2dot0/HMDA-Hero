@@ -22,49 +22,12 @@
     applicantCreditModel,
     applicantCreditModelOther,
     applicantCreditScore,
-    appScoreNAN,
-    appScoreNA,
-    appScoreExempt,
     isExempt
   } from "../stores.js";
   import { writable } from "svelte/store";
   import Modal from "../components/Modal.svelte";
   import Checkbox from "../components/Checkbox.svelte";
   import HRValidation from "../components/HRValidation.svelte";
-
-  function appCreditCheckBoxChecked(updated) {
-    switch (updated) {
-      case "appScoreNAN":
-        appScoreNA.set(false);
-        appScoreExempt.set(false);
-        appScoreNAN.set(true);
-        break;
-      case "appScoreNA":
-        appScoreNAN.set(false);
-        appScoreExempt.set(false);
-        appScoreNA.set(true);
-        break;
-      case "appScoreExempt":
-        appScoreNAN.set(false);
-        appScoreNA.set(false);
-        appScoreExempt.set(true);
-        break;
-    }
-  }
-
-  function appCreditCheckBoxUnchecked(updated) {
-    switch (updated) {
-      case "appScoreNAN":
-        appScoreNAN.set(false);
-        break;
-      case "appScoreNA":
-        appScoreNA.set(false);
-        break;
-      case "appScoreExempt":
-        appScoreExempt.set(false);
-        break;
-    }
-  }
 </script>
 
 <style>

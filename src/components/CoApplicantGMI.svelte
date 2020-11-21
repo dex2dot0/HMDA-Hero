@@ -22,9 +22,6 @@
     coapplicantAge,
     coapplicantCreditModel,
     coapplicantCreditScore,
-    coappScoreNAN,
-    coappScoreNA,
-    coappScoreExempt,
     coapplicantCreditModelOther,
     isExempt
   } from "../stores.js";

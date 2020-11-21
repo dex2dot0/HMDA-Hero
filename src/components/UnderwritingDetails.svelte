@@ -23,94 +23,12 @@
     ausResult3,
     ausResult4,
     ausResult5,
-    ausResultOther,
-    appScoreNAN,
-    appScoreNA,
-    appScoreExempt,
-    coappScoreNAN,
-    coappScoreNA,
-    coappScoreExempt
+    ausResultOther
   } from "../stores.js";
   import { writable } from "svelte/store";
   import Modal from "../components/Modal.svelte";
   import HRValidation from "../components/HRValidation.svelte";
   import NoCoAppCheckbox from "../components/NoCoAppCheckbox.svelte";
-
-  function appCreditCheckBoxChecked(updated) {
-    switch (updated) {
-      case "appScoreNAN":
-        appScoreNA.set(false);
-        appScoreExempt.set(false);
-        appScoreNAN.set(true);
-        break;
-      case "appScoreNA":
-        appScoreNAN.set(false);
-        appScoreExempt.set(false);
-        appScoreNA.set(true);
-        break;
-      case "appScoreExempt":
-        appScoreNAN.set(false);
-        appScoreNA.set(false);
-        appScoreExempt.set(true);
-        break;
-    }
-  }
-
-  function appCreditCheckBoxUnchecked(updated) {
-    switch (updated) {
-      case "appScoreNAN":
-        appScoreNAN.set(false);
-        break;
-      case "appScoreNA":
-        appScoreNA.set(false);
-        break;
-      case "appScoreExempt":
-        appScoreExempt.set(false);
-        break;
-    }
-  }
-
-  function coappCreditCheckBoxChecked(updated) {
-    switch (updated) {
-      case "coappScoreNoCoApp":
-        coappScoreNAN.set(false);
-        coappScoreNA.set(false);
-        coappScoreExempt.set(false);
-        break;
-      case "coappScoreNAN":
-        coappScoreNA.set(false);
-        coappScoreExempt.set(false);
-        coappScoreNAN.set(true);
-        $NoCoApp ? NoCoApp.changed(false) : "";
-        break;
-      case "coappScoreNA":
-        coappScoreNAN.set(false);
-        coappScoreExempt.set(false);
-        coappScoreNA.set(true);
-        $NoCoApp ? NoCoApp.changed(false) : "";
-        break;
-      case "coappScoreExempt":
-        coappScoreNAN.set(false);
-        coappScoreNA.set(false);
-        coappScoreExempt.set(true);
-        $NoCoApp ? NoCoApp.changed(false) : "";
-        break;
-    }
-  }
-
-  function coappCreditCheckBoxUnchecked(updated) {
-    switch (updated) {
-      case "coappScoreNAN":
-        coappScoreNAN.set(false);
-        break;
-      case "coappScoreNA":
-        coappScoreNA.set(false);
-        break;
-      case "coappScoreExempt":
-        coappScoreExempt.set(false);
-        break;
-    }
-  }
 </script>
 
 <style>

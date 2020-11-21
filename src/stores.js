@@ -2102,14 +2102,6 @@ function coapplicantCreditScoreFn() {
 
 export const coapplicantCreditScore = coapplicantCreditScoreFn();
 
-
-
-export const appScoreNAN = writable('')
-export const appScoreNA = writable('')
-export const appScoreExempt = writable('')
-export const coappScoreNAN = writable('')
-export const coappScoreNA = writable('')
-export const coappScoreExempt = writable('')
 export const applicantCreditModel = writable('')
 export const applicantCreditModelOther = writable('')
 export const coapplicantCreditModel = writable('')
