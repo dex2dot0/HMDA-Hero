@@ -679,13 +679,13 @@
       <div class="row">
         <div class="col">
           <!-- Credit Score of Co-App -->
-          <label for="CreditScore2">Score</label>
-
+          <label for="CreditScore2">Credit Score</label>
           <input
             class="ml-3 mr-3"
             type="text"
             disabled={$NoCoApp}
             bind:value={$coapplicantCreditScore}
+            on:change={coapplicantCreditScore.change}
             id="CreditScore2"
             style="max-width: 20%;" />
 
@@ -694,59 +694,26 @@
             type="checkbox"
             id="coappScoreNAN"
             tabindex="-1"
-            checked={$coappScoreNAN}
-            on:change={function(event) {
-              let cs2 = document.getElementById('CreditScore2');
-              if (event.target.checked) {
-                cs2.value = '7777';
-                coapplicantCreditScore.set('7777');
-                coappCreditCheckBoxChecked('coappScoreNAN');
-              } else {
-                cs2.value = '';
-                coapplicantCreditScore.set('');
-                coappCreditCheckBoxUnchecked('coappScoreNAN');
-              }
-            }} />
+            checked={$coapplicantCreditScore == '7777' ? true : false}
+            on:change={coapplicantCreditScore.NAN}/>
 
           <label for="coappScoreNA">NA</label>
           <input
             type="checkbox"
             id="coappScoreNA"
             tabindex="-1"
-            checked={$coappScoreNA}
-            on:change={function(event) {
-              let cs2 = document.getElementById('CreditScore2');
-              if (event.target.checked) {
-                cs2.value = '8888';
-                coapplicantCreditScore.set('8888');
-                coappCreditCheckBoxChecked('coappScoreNA');
-              } else {
-                cs2.value = '';
-                coapplicantCreditScore.set('');
-                coappCreditCheckBoxUnchecked('coappScoreNA');
-              }
-            }} />
+            checked={$coapplicantCreditScore == '8888' ? true : false}
+            on:change={coapplicantCreditScore.NA} />
 
           <label for="coappScoreExempt">Exempt</label>
           <input
             type="checkbox"
             id="coappScoreExempt"
             tabindex="-1"
-            checked={$coappScoreExempt}
-            on:change={function(event) {
-              let cs2 = document.getElementById('CreditScore2');
-              if (event.target.checked) {
-                cs2.value = '1111';
-                coapplicantCreditScore.set('1111');
-                coappCreditCheckBoxChecked('coappScoreExempt');
-              } else {
-                cs2.value = '';
-                coapplicantCreditScore.set('');
-                coappCreditCheckBoxUnchecked('coappScoreExempt');
-              }
-            }} />
+            checked={$coapplicantCreditScore == '1111' ? true : false}
+            on:change={coapplicantCreditScore.Exempt} />
           <div class="col-sm-12 col-md-6">
-            {#if $coapplicantCreditScore !== ''}
+            {#if Number($coapplicantCreditScore) > 0 && $coapplicantCreditScore.length < 5}
               <HRValidation isValid={true} />
             {:else}
               <HRValidation />

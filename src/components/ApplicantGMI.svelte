@@ -559,47 +559,25 @@
         checked={$applicantCreditScore == '7777' ? true : false}
         on:change={applicantCreditScore.NAN}
       />
-      NOT SURE IF ABOVE WILL WORK!
 
       <label for="appScoreNA">NA</label>
       <input
         type="checkbox"
         id="appScoreNA"
         tabindex="-1"
-        checked={$appScoreNA}
-        on:change={function(event) {
-          let cs1 = document.getElementById('CreditScore1');
-          if (event.target.checked) {
-            cs1.value = '8888';
-            applicantCreditScore.set('8888');
-            appCreditCheckBoxChecked('appScoreNA');
-          } else {
-            cs1.value = '';
-            applicantCreditScore.set('');
-            appCreditCheckBoxUnchecked('appScoreNA');
-          }
-        }} />
+        checked={$applicantCreditScore == '8888' ? true : false}
+        on:change={applicantCreditScore.NA}
+        />
 
       <label for="appScoreExempt">Exempt</label>
       <input
         type="checkbox"
         id="appScoreExempt"
         tabindex="-1"
-        checked={$appScoreExempt}
-        on:change={function(event) {
-          let cs1 = document.getElementById('CreditScore1');
-          if (event.target.checked) {
-            cs1.value = '1111';
-            applicantCreditScore.set('1111');
-            appCreditCheckBoxChecked('appScoreExempt');
-          } else {
-            cs1.value = '';
-            applicantCreditScore.set('');
-            appCreditCheckBoxUnchecked('appScoreExempt');
-          }
-        }} />
+        checked={$applicantCreditScore == '1111' ? true : false}
+        on:change={applicantCreditScore.Exempt}/>
       <div class="col-sm-12 col-md-6">
-        {#if $applicantCreditScore !== ''}
+        {#if Number($applicantCreditScore) > 0 && $applicantCreditScore.length < 5}
           <HRValidation isValid={true} />
         {:else}
           <HRValidation />

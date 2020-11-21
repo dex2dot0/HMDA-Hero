@@ -147,6 +147,7 @@ export async function loadEditDataToStore(data, editRow) {
     store.applicantCreditScore.set(data[59])
     store.applicantCreditScore.originalValue(data[59])
     store.coapplicantCreditScore.set(data[60])
+    store.coapplicantCreditScore.originalValue(data[60])
     store.applicantCreditModel.set(data[61])
     store.applicantCreditModelOther.set(data[62])
     store.coapplicantCreditModel.set(data[63])

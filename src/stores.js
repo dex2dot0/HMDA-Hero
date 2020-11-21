@@ -1956,6 +1956,9 @@ function applicantCreditScoreFn() {
   let editColumn = 'BJ';
   let val;
   let originalVal = '';
+  let isNAN = false;
+  let isNA = false;
+  let isExempt = false;
   const {
     subscribe,
     set,
@@ -1966,15 +1969,44 @@ function applicantCreditScoreFn() {
     subscribe,
     set,
     change: (e) => {
+      isNAN ? isNAN = false : ''
+      isNA ? isNA = false : ''
+      isExempt ? isExempt = false : ''
       val = e.target.value;
       set(val);
       updateValue(val, editColumn);
     },
-    NAN: (e) => {
-      isNAN = e.detail;
+    NAN: () => {
+      isNAN = !isNAN
       if (isNAN) {
         updateValue('7777', editColumn);
         set('7777')
+        isNA = false
+        isExempt = false
+      } else {
+        val ? updateValue(val, editColumn) : updateValue('', editColumn)
+        set(val)
+      }
+    },
+    NA: () => {
+      isNA = !isNA
+      if (isNA) {
+        updateValue('8888', editColumn);
+        set('8888')
+        isNAN = false
+        isExempt = false
+      } else {
+        val ? updateValue(val, editColumn) : updateValue('', editColumn)
+        set(val)
+      }
+    },
+    Exempt: () => {
+      isExempt = !isExempt
+      if (isExempt) {
+        updateValue('1111', editColumn);
+        set('1111')
+        isNAN = false
+        isNA = false
       } else {
         val ? updateValue(val, editColumn) : updateValue('', editColumn)
         set(val)
@@ -1983,6 +2015,9 @@ function applicantCreditScoreFn() {
     originalValue: (e) => {
       originalVal = e;
       val = e;
+      e == '7777' ? isNAN = true : ''
+      e == '8888' ? isNA = true : ''
+      e == '1111' ? isExempt = true : ''
     },
     resetToOriginal: () => {
       updateValue(originalVal, editColumn);
@@ -1991,10 +2026,84 @@ function applicantCreditScoreFn() {
 }
 
 export const applicantCreditScore = applicantCreditScoreFn();
-//Need more handling for above. There are checkboxes for Not a Number and for Exemption.
+
+function coapplicantCreditScoreFn() {
+  let editColumn = 'BK';
+  let val;
+  let originalVal = '';
+  let isNAN = false;
+  let isNA = false;
+  let isExempt = false;
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      isNAN ? isNAN = false : ''
+      isNA ? isNA = false : ''
+      isExempt ? isExempt = false : ''
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    NAN: () => {
+      isNAN = !isNAN
+      if (isNAN) {
+        updateValue('7777', editColumn);
+        set('7777')
+        isNA = false
+        isExempt = false
+      } else {
+        val ? updateValue(val, editColumn) : updateValue('', editColumn)
+        set(val)
+      }
+    },
+    NA: () => {
+      isNA = !isNA
+      if (isNA) {
+        updateValue('8888', editColumn);
+        set('8888')
+        isNAN = false
+        isExempt = false
+      } else {
+        val ? updateValue(val, editColumn) : updateValue('', editColumn)
+        set(val)
+      }
+    },
+    Exempt: () => {
+      isExempt = !isExempt
+      if (isExempt) {
+        updateValue('1111', editColumn);
+        set('1111')
+        isNAN = false
+        isNA = false
+      } else {
+        val ? updateValue(val, editColumn) : updateValue('', editColumn)
+        set(val)
+      }
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+      e == '7777' ? isNAN = true : ''
+      e == '8888' ? isNA = true : ''
+      e == '1111' ? isExempt = true : ''
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const coapplicantCreditScore = coapplicantCreditScoreFn();
 
 
-export const coapplicantCreditScore = writable('')
+
 export const appScoreNAN = writable('')
 export const appScoreNA = writable('')
 export const appScoreExempt = writable('')
