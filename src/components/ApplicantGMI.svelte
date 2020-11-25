@@ -553,10 +553,12 @@
       <label for="CreditModel1" style="font-size: 10px">
         Applicant Name & Version of Credit Scoring Model
       </label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$applicantCreditModel > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="CreditModel1"
-        bind:value={$applicantCreditModel}>
+        bind:value={$applicantCreditModel}
+        on:change={applicantCreditModel.change}>
         <option />
         <option value="1">1.Equifax Beacon 5.0</option>
         <option value="2">2.Experian Fair Isaac</option>
@@ -587,7 +589,8 @@
         class="form-control"
         type="text"
         id="CreditModel1Free"
-        bind:value={$applicantCreditModelOther} />
+        bind:value={$applicantCreditModelOther} 
+        on:change={applicantCreditModelOther.change}/>
       {#if $applicantCreditModel == 8}
         {#if $applicantCreditModelOther !== ''}
           <HRValidation isValid={true} />

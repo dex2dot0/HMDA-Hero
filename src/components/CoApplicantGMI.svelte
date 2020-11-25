@@ -725,11 +725,13 @@
       <label for="CreditModel2" style="font-size: 9px;">
         Co-Applicant Name & Version of Credit Scoring Model
       </label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$coapplicantCreditModel > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="CreditModel2"
         disabled={$NoCoApp}
-        bind:value={$coapplicantCreditModel}>
+        bind:value={$coapplicantCreditModel}
+        on:change={coapplicantCreditModel.change}>
         <option />
         <option value="1">1.Equifax Beacon 5.0</option>
         <option value="2">2.Experian Fair Isaac</option>
@@ -765,6 +767,7 @@
         type="text"
         id="CreditModelFree"
         bind:value={$coapplicantCreditModelOther}
+        on:change={coapplicantCreditModelOther.change}
         disabled={$NoCoApp} />
 
       {#if $coapplicantCreditModel == 8}

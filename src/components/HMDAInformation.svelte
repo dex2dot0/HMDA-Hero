@@ -86,10 +86,12 @@
     <div class="col-12 col-md-3">
       <!-- Denial 1 -->
       <label for="Denial1">Reason for Denial: 1</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$denialReason1 > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="Denial1"
-        bind:value={$denialReason1}>
+        bind:value={$denialReason1}
+        on:change={denialReason1.change}>
         <option />
         <option value="1111">1111.Exempt</option>
         <option value="1">1.Debt-to-income ratio</option>
@@ -111,7 +113,8 @@
     <div class="col-12 col-md-3">
       <!-- Denial 2 -->
       <label for="Denial2">Reason for Denial: 2</label>
-      <select class="custom-select" id="Denial2" bind:value={$denialReason2}>
+      <!-- svelte-ignore a11y-no-onchange-->
+      <select class="custom-select" id="Denial2" bind:value={$denialReason2} on:change={denialReason2.change}>
         <option />
         <option value="1">1.Debt-to-income ratio</option>
         <option value="2">2.Employment history</option>
@@ -130,7 +133,8 @@
     <div class="col-12 col-md-3">
       <!-- Denial 3 -->
       <label for="Denial3">Reason for Denial: 3</label>
-      <select class="custom-select" id="Denial3" bind:value={$denialReason3}>
+      <!-- svelte-ignore a11y-no-onchange-->
+      <select class="custom-select" id="Denial3" bind:value={$denialReason3} on:change={denialReason3.change}>
         <option />
         <option value="1">1.Debt-to-income ratio</option>
         <option value="2">2.Employment history</option>
@@ -149,7 +153,8 @@
     <div class="col-12 col-md-3">
       <!-- Denial 4 -->
       <label for="Denial4">Reason for Denial: 4</label>
-      <select class="custom-select" id="Denial4" bind:value={$denialReason4}>
+      <!-- svelte-ignore a11y-no-onchange-->
+      <select class="custom-select" id="Denial4" bind:value={$denialReason4} on:change={denialReason4.change}>
         <option />
         <option value="1">1.Debt-to-income ratio</option>
         <option value="2">2.Employment history</option>

@@ -2102,14 +2102,248 @@ function coapplicantCreditScoreFn() {
 
 export const coapplicantCreditScore = coapplicantCreditScoreFn();
 
-export const applicantCreditModel = writable('')
-export const applicantCreditModelOther = writable('')
-export const coapplicantCreditModel = writable('')
-export const coapplicantCreditModelOther = writable('')
-export const denialReason1 = writable('')
-export const denialReason2 = writable('')
-export const denialReason3 = writable('')
-export const denialReason4 = writable('')
+function applicantCreditModelFn() {
+  let editColumn = 'BL';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const applicantCreditModel = applicantCreditModelFn();
+
+function applicantCreditModelOtherFn() {
+  let editColumn = 'BM';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const applicantCreditModelOther = applicantCreditModelOtherFn();
+
+function coapplicantCreditModelFn() {
+  let editColumn = 'BN';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const coapplicantCreditModel = coapplicantCreditModelFn();
+
+function coapplicantCreditModelOtherFn() {
+  let editColumn = 'BO';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const coapplicantCreditModelOther = coapplicantCreditModelOtherFn();
+
+function denialReason1Fn() {
+  let editColumn = 'BP';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const denialReason1 = denialReason1Fn();
+
+function denialReason2Fn() {
+  let editColumn = 'BQ';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const denialReason2 = denialReason2Fn();
+
+function denialReason3Fn() {
+  let editColumn = 'BR';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const denialReason3 = denialReason3Fn();
+
+function denialReason4Fn() {
+  let editColumn = 'BS';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const denialReason4 = denialReason4Fn();
+
+
+
 export const denialReasonOther = writable('')
 
 function loanCostFn() {
