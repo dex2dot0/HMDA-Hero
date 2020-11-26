@@ -119,6 +119,7 @@
         type="text"
         id="DTI"
         bind:value={$DTI}
+        on:change={DTI.change}
         placeholder=" ex. 42.95 (or) NA (or) Exempt" />
       {#if $DTI !== ''}
         <HRValidation isValid={true} />
@@ -135,7 +136,8 @@
         type="text"
         id="CLTV"
         bind:value={$CLTV}
-        title="ex. 80.05 (or) NA(or) Exempt" />
+        on:change={CLTV.change}
+        title="ex. 80.05 (or) NA (or) Exempt" />
       {#if $CLTV !== ''}
         <HRValidation isValid={true} />
       {:else}
@@ -153,10 +155,12 @@
     <div class="col-6 col-md-3">
       <!-- AUS 1 -->
       <label for="AUS1">AUS System: 1</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$ausSystem1 ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="AUS1"
-        bind:value={$ausSystem1}>
+        bind:value={$ausSystem1}
+        on:change={ausSystem1.change}>
         <option />
         <option value="1111">1111.Exempt</option>
         <option value="1">1.Desktop Underwriter (DU)</option>
@@ -176,7 +180,8 @@
     <div class="col-6 col-md-3">
       <!-- AUS 2 -->
       <label for="AUS2">AUS System: 2</label>
-      <select class="custom-select" id="AUS2" bind:value={$ausSystem2}>
+      <!-- svelte-ignore a11y-no-onchange-->
+      <select class="custom-select" id="AUS2" bind:value={$ausSystem2} on:change={ausSystem2.change}>
         <option />
         <option value="1">1.Desktop Underwriter (DU)</option>
         <option value="2">
@@ -193,7 +198,8 @@
     <div class="col-6 col-md-3">
       <!-- AUS 3 -->
       <label for="AUS3">AUS System: 3</label>
-      <select class="custom-select" id="AUS3" bind:value={$ausSystem3}>
+      <!-- svelte-ignore a11y-no-onchange-->
+      <select class="custom-select" id="AUS3" bind:value={$ausSystem3} on:change={ausSystem3.change}>
         <option />
         <option value="1">1.Desktop Underwriter (DU)</option>
         <option value="2">
@@ -210,7 +216,8 @@
     <div class="col-6 col-md-3">
       <!-- AUS 4 -->
       <label for="AUS4">AUS System: 4</label>
-      <select class="custom-select" id="AUS4" bind:value={$ausSystem4}>
+      <!-- svelte-ignore a11y-no-onchange-->
+      <select class="custom-select" id="AUS4" bind:value={$ausSystem4} on:change={ausSystem4.change}>
         <option />
         <option value="1">1.Desktop Underwriter (DU)</option>
         <option value="2">
@@ -227,7 +234,8 @@
     <div class="col-6 col-md-3">
       <!-- AUS 5 -->
       <label for="AUS5">AUS System: 5</label>
-      <select class="custom-select" id="AUS5" bind:value={$ausSystem5}>
+      <!-- svelte-ignore a11y-no-onchange-->
+      <select class="custom-select" id="AUS5" bind:value={$ausSystem5} on:change={ausSystem5.change}>
         <option />
         <option value="1">1.Desktop Underwriter (DU)</option>
         <option value="2">
@@ -254,7 +262,8 @@
         class="form-control"
         type="text"
         id="AUSFree"
-        bind:value={$ausSystemOther} />
+        bind:value={$ausSystemOther} 
+        on:change={ausSystemOther.change}/>
       {#if $ausSystem1 == 5 || $ausSystem2 == 5 || $ausSystem3 == 5 || $ausSystem4 == 5 || $ausSystem5 == 5}
         {#if $ausSystemOther !== ''}
           <HRValidation isValid={true} />
@@ -274,10 +283,12 @@
     <div class="col-6 col-md-3">
       <!-- AUS Result 1 -->
       <label for="AUSR1">AUS Result: 1</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$ausResult1 > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="AUSR1"
-        bind:value={$ausResult1}>
+        bind:value={$ausResult1}
+        on:change={ausResult1.change}>
         <option />
         <option value="1111">1111.Exempt</option>
         <option value="1">1.Approve/Eligible</option>
@@ -311,7 +322,9 @@
     <div class="col-6 col-md-3">
       <!-- AUS Result 2 -->
       <label for="AUSR2">AUS Result: 2</label>
-      <select class="custom-select" id="AUSR2" bind:value={$ausResult2}>
+      <!-- svelte-ignore a11y-no-onchange-->
+      <select class="custom-select" id="AUSR2" bind:value={$ausResult2}
+      on:change={ausResult2.change}>
         <option />
         <option value="1">1.Approve/Eligible</option>
         <option value="2">2.Approve/Ineligible</option>
@@ -342,7 +355,9 @@
     <div class="col-6 col-md-3">
       <!-- AUS Result 3 -->
       <label for="AUSR3">AUS Result: 3</label>
-      <select class="custom-select" id="AUSR3" bind:value={$ausResult3}>
+      <!-- svelte-ignore a11y-no-onchange-->
+      <select class="custom-select" id="AUSR3" bind:value={$ausResult3}
+      on:change={ausResult3.change}>
         <option />
         <option value="1">1.Approve/Eligible</option>
         <option value="2">2.Approve/Ineligible</option>
@@ -373,7 +388,8 @@
     <div class="col-6 col-md-3">
       <!-- AUS Result 4 -->
       <label for="AUSR4">AUS Result: 4</label>
-      <select class="custom-select" id="AUSR4" bind:value={$ausResult4}>
+      <!-- svelte-ignore a11y-no-onchange-->
+      <select class="custom-select" id="AUSR4" bind:value={$ausResult4} on:change={ausResult4.change}>
         <option />
         <option value="1">1.Approve/Eligible</option>
         <option value="2">2.Approve/Ineligible</option>
@@ -404,7 +420,8 @@
     <div class="col-6 col-md-3">
       <!-- AUS Result 5 -->
       <label for="AUSR5">AUS Result: 5</label>
-      <select class="custom-select" id="AUSR5" bind:value={$ausResult5}>
+      <!-- svelte-ignore a11y-no-onchange-->
+      <select class="custom-select" id="AUSR5" bind:value={$ausResult5} on:change={ausResult5.change}>
         <option />
         <option value="1">1.Approve/Eligible</option>
         <option value="2">2.Approve/Ineligible</option>
@@ -445,7 +462,8 @@
         class="form-control"
         type="text"
         id="AUSRFree"
-        bind:value={$ausResultOther} />
+        bind:value={$ausResultOther} 
+        on:change={ausResultOther.change}/>
       {#if $ausResult1 == 16 || $ausResult2 == 16 || $ausResult3 == 16 || $ausResult4 == 16 || $ausResult5 == 16}
         {#if $ausResultOther !== ''}
           <HRValidation isValid={true} />

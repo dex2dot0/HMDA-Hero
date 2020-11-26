@@ -2342,9 +2342,35 @@ function denialReason4Fn() {
 
 export const denialReason4 = denialReason4Fn();
 
+function denialReasonOtherFn() {
+  let editColumn = 'BT';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
 
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
 
-export const denialReasonOther = writable('')
+export const denialReasonOther = denialReasonOtherFn();
 
 function loanCostFn() {
   let editColumn = 'BU';
@@ -2640,8 +2666,65 @@ function prepaymentPenaltyTermFn() {
 
 export const prepaymentPenaltyTerm = prepaymentPenaltyTermFn()
 
-export const DTI = writable('')
-export const CLTV = writable('')
+function DTIFn() {
+  let editColumn = 'CB';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const DTI = DTIFn();
+
+function CLTVFn() {
+  let editColumn = 'CC';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const CLTV = CLTVFn();
 
 function loanTermFn() {
   let editColumn = 'CD';
@@ -2726,10 +2809,126 @@ function introRatePeriodFn() {
 }
 
 export const introRatePeriod = introRatePeriodFn()
-export const balloonPayment = writable('')
-export const ioPayments = writable('')
-export const negativeAm = writable('')
-export const otherNonAm = writable('')
+
+function balloonPaymentFn() {
+  let editColumn = 'CF';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const balloonPayment = balloonPaymentFn();
+
+function ioPaymentsFn() {
+  let editColumn = 'CG';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ioPayments = ioPaymentsFn();
+
+function negativeAmFn() {
+  let editColumn = 'CH';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const negativeAm = negativeAmFn();
+
+function otherNonAmFn() {
+  let editColumn = 'CI';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const otherNonAm = otherNonAmFn();
 
 function propertyValueFn() {
   let editColumn = 'CJ';
@@ -2772,9 +2971,96 @@ function propertyValueFn() {
 }
 
 export const propertyValue = propertyValueFn()
-export const manufacturedHomeType = writable('')
-export const manufacturedPropertyInterest = writable('')
-export const totalUnits = writable('')
+
+function manufacturedHomeTypeFn() {
+  let editColumn = 'CK';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const manufacturedHomeType = manufacturedHomeTypeFn();
+
+function manufacturedPropertyInterestFn() {
+  let editColumn = 'CL';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const manufacturedPropertyInterest = manufacturedPropertyInterestFn();
+
+function totalUnitsFn() {
+  let editColumn = 'CM';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const totalUnits = totalUnitsFn();
 
 function multifamilyUnitsFn() {
   let editColumn = 'CN';
@@ -2817,8 +3103,66 @@ function multifamilyUnitsFn() {
 }
 
 export const multifamilyUnits = multifamilyUnitsFn()
-export const submissionOfApplication = writable('')
-export const intiallyPayable = writable('')
+
+function submissionOfApplicationFn() {
+  let editColumn = 'CO';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const submissionOfApplication = submissionOfApplicationFn();
+
+function initiallyPayableFn() {
+  let editColumn = 'CP';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const initiallyPayable = initiallyPayableFn();
 
 function NMLSRFn() {
   let editColumn = 'CQ';
@@ -2861,18 +3205,453 @@ function NMLSRFn() {
 }
 
 export const NMLSR = NMLSRFn()
-export const ausSystem1 = writable('')
-export const ausSystem2 = writable('')
-export const ausSystem3 = writable('')
-export const ausSystem4 = writable('')
-export const ausSystem5 = writable('')
-export const ausSystemOther = writable('')
-export const ausResult1 = writable('')
-export const ausResult2 = writable('')
-export const ausResult3 = writable('')
-export const ausResult4 = writable('')
-export const ausResult5 = writable('')
-export const ausResultOther = writable('')
-export const reverseMortgage = writable('')
-export const openEndLOC = writable('')
-export const businessorCommercial = writable('')
+
+function ausSystem1Fn() {
+  let editColumn = 'CR';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ausSystem1 = ausSystem1Fn();
+
+function ausSystem2Fn() {
+  let editColumn = 'CS';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ausSystem2 = ausSystem2Fn();
+
+function ausSystem3Fn() {
+  let editColumn = 'CT';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ausSystem3 = ausSystem3Fn();
+
+function ausSystem4Fn() {
+  let editColumn = 'CU';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ausSystem4 = ausSystem4Fn();
+
+function ausSystem5Fn() {
+  let editColumn = 'CV';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ausSystem5 = ausSystem5Fn();
+
+function ausSystemOtherFn() {
+  let editColumn = 'CW';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ausSystemOther = ausSystemOtherFn();
+
+function ausResult1Fn() {
+  let editColumn = 'CX';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ausResult1 = ausResult1Fn();
+
+function ausResult2Fn() {
+  let editColumn = 'CY';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ausResult2 = ausResult2Fn();
+
+function ausResult3Fn() {
+  let editColumn = 'CZ';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ausResult3 = ausResult3Fn();
+
+function ausResult4Fn() {
+  let editColumn = 'DA';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ausResult4 = ausResult4Fn();
+
+function ausResult5Fn() {
+  let editColumn = 'DB';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ausResult5 = ausResult5Fn();
+
+function ausResultOtherFn() {
+  let editColumn = 'DC';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const ausResultOther = ausResultOtherFn();
+
+function reverseMortgageFn() {
+  let editColumn = 'DD';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const reverseMortgage = reverseMortgageFn();
+
+function openEndLOCFn() {
+  let editColumn = 'DE';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const openEndLOC = openEndLOCFn();
+
+function businessOrCommercialFn() {
+  let editColumn = 'DF';
+  let val;
+  let originalVal = '';
+  const {
+    subscribe,
+    set,
+    update
+  } = writable('');
+
+  return {
+    subscribe,
+    set,
+    change: (e) => {
+      val = e.target.value;
+      set(val);
+      updateValue(val, editColumn);
+    },
+    originalValue: (e) => {
+      originalVal = e;
+      val = e;
+    },
+    resetToOriginal: () => {
+      updateValue(originalVal, editColumn);
+    }
+  }
+}
+
+export const businessOrCommercial = businessOrCommercialFn();

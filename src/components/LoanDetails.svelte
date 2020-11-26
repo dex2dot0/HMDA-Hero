@@ -30,7 +30,7 @@
     NMLSR,
     reverseMortgage,
     openEndLOC,
-    businessorCommercial
+    businessOrCommercial
   } from "../stores.js";
   import { writable } from "svelte/store";
   import Modal from "../components/Modal.svelte";
@@ -701,11 +701,13 @@
     <div class="col-sm-6 col-md-3">
       <!-- Balloon Payment -->
       <label for="Balloon">Balloon Payment</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$balloonPayment !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="Balloon"
         tabindex="0"
-        bind:value={$balloonPayment}>
+        bind:value={$balloonPayment}
+        on:change={balloonPayment.change}>
         <option />
         <option value="1">1.Balloon payment</option>
         <option value="2">2.No balloon payment</option>
@@ -716,11 +718,13 @@
     <div class="col-sm-6 col-md-3">
       <!-- IO Payments -->
       <label for="IO">Interest-Only Payments</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$ioPayments !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="IO"
         tabindex="0"
-        bind:value={$ioPayments}>
+        bind:value={$ioPayments}
+        on:change={ioPayments.change}>
         <option />
         <option value="1">1.Interest-only payments</option>
         <option value="2">2.No interest-only payments</option>
@@ -731,11 +735,13 @@
     <div class="col-sm-6 col-md-3">
       <!-- Negative Amortization -->
       <label for="NegAm">Negative Amortization</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$negativeAm !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="NegAm"
         tabindex="0"
-        bind:value={$negativeAm}>
+        bind:value={$negativeAm}
+        on:change={negativeAm.change}>
         <option />
         <option value="1">1.Negative Amortization</option>
         <option value="2">2.No negative amorization</option>
@@ -746,11 +752,13 @@
     <div class="col-sm-6 col-md-3">
       <!-- Other Non-amortizing Features -->
       <label for="OtherAm">Other Non-amortizing Features</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$otherNonAm !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="OtherAm"
         tabindex="0"
-        bind:value={$otherNonAm}>
+        bind:value={$otherNonAm}
+        on:change={otherNonAm.change}>
         <option />
         <option value="1">1.Other no-fully amortizing features</option>
         <option value="2">2.No other non-fully amortizing features</option>
@@ -787,11 +795,13 @@
     <div class="col-sm-6 col-md-3">
       <!-- HECM -->
       <label for="HECM">Reverse Mortgage</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$reverseMortgage !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="HECM"
         tabindex="0"
-        bind:value={$reverseMortgage}>
+        bind:value={$reverseMortgage}
+        on:change={reverseMortgage.change}>
         <option />
         <option value="1">1.Reverse mortgage</option>
         <option value="2">2.Not a reverse mortgage</option>
@@ -802,11 +812,13 @@
     <div class="col-sm-6 col-md-3">
       <!-- HELOC -->
       <label for="HELOC">Open-End LOC</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$openEndLOC !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="HELOC"
         tabindex="0"
-        bind:value={$openEndLOC}>
+        bind:value={$openEndLOC}
+        on:change={openEndLOC.change}>
         <option />
         <option value="1">1.Open-end line of credit</option>
         <option value="2">2.Not an open-end line of credit</option>
@@ -817,11 +829,13 @@
     <div class="col-sm-6 col-md-3">
       <!-- BizPurpose -->
       <label for="BizPurpose">Business/Commercial Purpose</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
-        class={$businessorCommercial !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
+        class={$businessOrCommercial !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="BizPurpose"
         tabindex="0"
-        bind:value={$businessorCommercial}>
+        bind:value={$businessOrCommercial}
+        on:change={businessOrCommercial.change}>
         <option />
         <option value="1">
           1.Primarily for a business or commercial purpose

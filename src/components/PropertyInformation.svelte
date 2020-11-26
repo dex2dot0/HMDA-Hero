@@ -155,7 +155,8 @@
       type="text"
       id="Units"
       placeholder="ex. 5"
-      bind:value={$totalUnits} />
+      bind:value={$totalUnits} 
+      on:change={totalUnits.change}/>
     {#if $totalUnits > 0}
       <HRValidation isValid={true} />
     {:else}
@@ -239,10 +240,12 @@
     <div class="col-sm-6 col-md-3">
       <!-- Manufactured Home Property Type -->
       <label for="MFPropertyType">Manufactured Home Property Type</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$manufacturedHomeType > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="MFPropertyType"
-        bind:value={$manufacturedHomeType}>
+        bind:value={$manufacturedHomeType}
+        on:change={manufacturedHomeType.change}>
         <option />
         <option value="1">1.Manufactured home and land</option>
         <option value="2">2.Manufactured home and not land</option>
@@ -255,10 +258,12 @@
     <div class="col-sm-6 col-md-3">
       <!-- Manufactured Home Land Type -->
       <label for="MFLandType">Manufactured Home Land Type</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$manufacturedPropertyInterest > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="MFLandType"
-        bind:value={$manufacturedPropertyInterest}>
+        bind:value={$manufacturedPropertyInterest}
+        on:change={manufacturedPropertyInterest.change}>
         <option />
         <option value="1">1.Direct ownership</option>
         <option value="2">2.Indirect ownership</option>

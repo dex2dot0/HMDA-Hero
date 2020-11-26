@@ -2,7 +2,7 @@
   import {
     isExempt,
     submissionOfApplication,
-    intiallyPayable,
+    initiallyPayable,
     rateSpread,
     denialReason1,
     denialReason2,
@@ -30,10 +30,12 @@
     <div class="col-12 col-md-4">
       <!-- Submission of Application -->
       <label for="submissionOfApplication">Submission of Application</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
         class={$submissionOfApplication > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="submissionOfApplication"
         bind:value={$submissionOfApplication}
+        on:change={submissionOfApplication.change}
         required>
         <option />
         <option value="1">1.Submitted directly to your institution</option>
@@ -47,10 +49,12 @@
     <div class="col-12 col-md-4">
       <!-- Initially Payable -->
       <label for="InitPay">Initially Payable to Your Institution</label>
+      <!-- svelte-ignore a11y-no-onchange-->
       <select
-        class={$intiallyPayable > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
+        class={$initiallyPayable > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
         id="InitPay"
-        bind:value={$intiallyPayable}>
+        bind:value={$initiallyPayable}
+        on:change={initiallyPayable.change}>
         <option />
         <option value="1">1.Initially payable to your institution</option>
         <option value="2">2.Not initially payable to your institution</option>
@@ -186,7 +190,8 @@
         class="form-control"
         type="text"
         id="DenialFree"
-        bind:value={$denialReasonOther} />
+        bind:value={$denialReasonOther} 
+        on:change={denialReasonOther.change}/>
       {#if $denialReason1 == 9 || $denialReason2 == 9 || $denialReason3 == 9 || $denialReason4 == 9}
         {#if $denialReasonOther !== ''}
           <HRValidation isValid={true} />
