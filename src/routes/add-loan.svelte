@@ -188,7 +188,6 @@
           on:click={() => console.log('cancelled changes')}>
           CANCEL
         </button>
-        <button class="btn btn-sm saveBtn" type="button">SAVE</button>
       </form>
     </div>
   </nav>
