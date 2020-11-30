@@ -8,7 +8,6 @@
   import { action, LEI } from "../stores.js";
   import Checkbox from "../components/Checkbox.svelte";
   import { getLEI } from "../Excel Scripts/getLEI.js";
-  import { saveDataToExcel } from "../Scripts/saveDataToExcel.js";
 
   let activeOpt = "Loan";
   //Running media queries to determine what to display. If screen is larger, show everything.
@@ -92,12 +91,6 @@
     min-height: 50px;
   }
 
-  .saveBtn {
-    background-color: #4e9668;
-    color: #fff;
-    margin-left: 10px;
-    margin-right: 20px;
-  }
   .cancelBtn {
     border-color: #4e9668;
     color: #fff;
@@ -175,7 +168,6 @@
               <option value="HMDA">HMDA Information</option>
             </select>
           </div>
-
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -185,7 +177,6 @@
           on:click={() => console.log('cancelled changes')}>
           CANCEL
         </button>
-        <button class="btn btn-sm saveBtn" type="button">SAVE</button>
       </form>
     </div>
   </nav>

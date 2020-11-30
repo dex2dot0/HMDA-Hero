@@ -95,12 +95,6 @@
     min-height: 50px;
   }
 
-  .saveBtn {
-    background-color: #4e9668;
-    color: #fff;
-    margin-left: 10px;
-    margin-right: 20px;
-  }
   .cancelBtn {
     border-color: #4e9668;
     color: #fff;
