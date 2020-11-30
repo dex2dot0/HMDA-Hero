@@ -142,7 +142,7 @@
 
 <form class="shadow-sm mb-5 bg-white rounded">
   <AddLoan />
-  <nav class="navbar navbar-expand-lg navbar-dark align-items-center">
+  <nav class="navbar navbar-expand-lg navbar-dark align-items-center pb-1">
     <div class="navbar-brand">
       <h3 class="pr-3 pl-3">NEW LOAN RECORD</h3>
     </div>
