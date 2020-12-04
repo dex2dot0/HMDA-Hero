@@ -105,7 +105,7 @@ export async function loadEditDataToStore(data, editRow) {
     store.coapplicantRace1.set(data[38])
     store.coapplicantRace1.originalValue(data[38])
     store.coapplicantRace2.set(data[39])
-    store.coapplicantRace2.set(data[39])
+    store.coapplicantRace2.originalValue(data[39])
     store.coapplicantRace3.set(data[40])
     store.coapplicantRace3.originalValue(data[40])
     store.coapplicantRace4.set(data[41])

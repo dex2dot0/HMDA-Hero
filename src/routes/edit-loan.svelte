@@ -8,6 +8,7 @@
   import { action, LEI } from "../stores.js";
   import Checkbox from "../components/Checkbox.svelte";
   import { getLEI } from "../Excel Scripts/getLEI.js";
+  import { cancelChanges } from "../Scripts/cancelChanges.js";
 
   let activeOpt = "Loan";
   //Running media queries to determine what to display. If screen is larger, show everything.
@@ -174,7 +175,7 @@
         <button
           class="btn btn-sm cancelBtn"
           type="button"
-          on:click={() => console.log('cancelled changes')}>
+          on:click={cancelChanges}>
           CANCEL
         </button>
       </form>

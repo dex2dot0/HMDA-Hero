@@ -135,7 +135,7 @@ function appDateFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue((`${Originalval.slice(0, 4)}${Originalval.slice(5, 7)}${Originalval.slice(8)}`), editColumn)
+    resetToOriginal: () => updateValue((`${originalVal.slice(0, 4)}${originalVal.slice(5, 7)}${originalVal.slice(8)}`), editColumn)
   }
 }
 
@@ -162,9 +162,12 @@ function loanTypeFn() {
     originalValue: (e) => {
       originalVal = e;
       val = e;
+      console.log(`loan type original val set to ${originalVal}`)
     },
     resetToOriginal: () => {
+      console.log(`reset to original called for loan type, resetting to ${originalVal}`)
       updateValue(originalVal, editColumn);
+      //set(originalVal)
     }
   }
 }
@@ -376,7 +379,7 @@ function actionTakenDateFn() {
       val = e;
     },
     resetToOriginal: () => {
-      let dt = val.replace('-', '')
+      let dt = originalVal.replace('-', '')
       let dtFormatted = dt.replace('-', '')
       updateValue(dtFormatted, editColumn);
     }
@@ -421,7 +424,7 @@ function streetAddressFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -463,7 +466,7 @@ function cityFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -505,7 +508,7 @@ function stateCodeFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -547,7 +550,7 @@ function zipCodeFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -589,7 +592,7 @@ function countyCodeFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -631,7 +634,7 @@ function censusTractFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -1753,7 +1756,7 @@ function applicantAgeFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -1796,7 +1799,7 @@ function coapplicantAgeFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -2408,7 +2411,7 @@ function loanCostFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -2450,7 +2453,7 @@ function pointsFeesFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -2492,7 +2495,7 @@ function originationChargesFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -2534,7 +2537,7 @@ function discountPointsFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -2576,7 +2579,7 @@ function lenderCreditsFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -2618,7 +2621,7 @@ function interestRateFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -2660,7 +2663,7 @@ function prepaymentPenaltyTermFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -2762,7 +2765,7 @@ function loanTermFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -2804,7 +2807,7 @@ function introRatePeriodFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -2966,7 +2969,7 @@ function propertyValueFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -3098,7 +3101,7 @@ function multifamilyUnitsFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
@@ -3200,7 +3203,7 @@ function NMLSRFn() {
       originalVal = e;
       val = e;
     },
-    resetToOriginal: () => updateValue(Originalval, editColumn)
+    resetToOriginal: () => updateValue(originalVal, editColumn)
   }
 }
 
