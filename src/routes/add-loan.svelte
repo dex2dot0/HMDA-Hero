@@ -10,12 +10,13 @@
   import { getLEI } from "../Excel Scripts/getLEI.js";
   import { onMount } from "svelte";
   import { getEndRow } from "../Excel Scripts/getEndRow.js";
-  import { cancelChanges } from "../Scripts/cancelChanges.js";
+  import { cancelAddLoanChanges } from "../Scripts/cancelAddLoanChanges.js";
 
   let activeOpt = "Loan";
   //Running media queries to determine what to display. If screen is larger, show everything.
   //If screen is smaller, only show one section at a time with a menu.
   action.set("add");
+  let newRow;
 
   //Attempt to retrieve LEI
   (async () => {
@@ -27,8 +28,9 @@
           try {
             let leiFromExcel = await getLEI();
             let leiArray = leiFromExcel[0];
-            let newRow = await getEndRow();
-            editRow.set(Number(newRow) + 1);
+            newRow = await getEndRow();
+            newRow = Number(newRow) + 1
+            editRow.set(newRow);
             LEI.change(leiArray[0]);
             LEI.originalValue(leiArray[0]);
           } catch (error) {
@@ -39,6 +41,14 @@
       });
     }
   })();
+
+  async function cancelChanges() {
+    NEED a popup confirmation to delete changes
+    await cancelAddLoanChanges(newRow)
+    .then(async () => {
+      console.log('Need to close out the window here')
+    })
+  }
 </script>
 
 <style>
@@ -180,7 +190,7 @@
         <button
           class="btn btn-sm cancelBtn"
           type="button"
-          on:click={cancelChanges()}>
+          on:click={cancelChanges}>
           CANCEL
         </button>
       </form>
