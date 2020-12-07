@@ -5,6 +5,7 @@
   import BorrowerInformation from "../components/BorrowerInformation.svelte";
   import UnderwritingDetails from "../components/UnderwritingDetails.svelte";
   import HMDAInformation from "../components/HMDAInformation.svelte";
+  import CancelDialog from "../components/CancelDialog.svelte";
   import { action, LEI, editRow } from "../stores.js";
   import Checkbox from "../components/Checkbox.svelte";
   import { getLEI } from "../Excel Scripts/getLEI.js";
@@ -43,11 +44,12 @@
   })();
 
   async function cancelChanges() {
-    NEED a popup confirmation to delete changes
-    await cancelAddLoanChanges(newRow)
-    .then(async () => {
-      console.log('Need to close out the window here')
-    })
+    if(confirm('Are you sure you want to cancel the changes made to this loan?') == true) {
+      await cancelAddLoanChanges(newRow)
+      .then(async () => {
+        console.log('Need to close out the window here')
+      })
+    }
   }
 </script>
 
@@ -187,6 +189,10 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
+        <CancelDialog
+      idName="CancelChangesModal"
+      modalTitle="Cancel Confiration"
+      modalBody="<p>Are you sure you want to cancel your changes?</p>" />
         <button
           class="btn btn-sm cancelBtn"
           type="button"
