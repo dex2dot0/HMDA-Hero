@@ -11,7 +11,6 @@
   import { getLEI } from "../Excel Scripts/getLEI.js";
   import { onMount } from "svelte";
   import { getEndRow } from "../Excel Scripts/getEndRow.js";
-  import { cancelAddLoanChanges } from "../Scripts/cancelAddLoanChanges.js";
 
   let activeOpt = "Loan";
   //Running media queries to determine what to display. If screen is larger, show everything.
@@ -22,7 +21,7 @@
   //Attempt to retrieve LEI
   (async () => {
     if (process.browser) {
-      await Office.onReady().then(async function() {
+      await Office.onReady().then(async function () {
         //Attempt to pull LEI from Excel File
         if ($LEI == "") {
           console.log("attempting to set LEI from Excel file");
@@ -30,7 +29,7 @@
             let leiFromExcel = await getLEI();
             let leiArray = leiFromExcel[0];
             newRow = await getEndRow();
-            newRow = Number(newRow) + 1
+            newRow = Number(newRow) + 1;
             editRow.set(newRow);
             LEI.change(leiArray[0]);
             LEI.originalValue(leiArray[0]);
@@ -42,15 +41,6 @@
       });
     }
   })();
-
-  async function cancelChanges() {
-    if(confirm('Are you sure you want to cancel the changes made to this loan?') == true) {
-      await cancelAddLoanChanges(newRow)
-      .then(async () => {
-        console.log('Need to close out the window here')
-      })
-    }
-  }
 </script>
 
 <style>
@@ -106,12 +96,6 @@
     padding-right: 10px;
     background-color: #323130;
     min-height: 50px;
-  }
-
-  .cancelBtn {
-    border-color: #4e9668;
-    color: #fff;
-    margin-left: 10px;
   }
 
   h3 {
@@ -185,20 +169,13 @@
               <option value="HMDA">HMDA Information</option>
             </select>
           </div>
-
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <CancelDialog
-      idName="CancelChangesModal"
-      modalTitle="Cancel Confiration"
-      modalBody="<p>Are you sure you want to cancel your changes?</p>" />
-        <button
-          class="btn btn-sm cancelBtn"
-          type="button"
-          on:click={cancelChanges}>
-          CANCEL
-        </button>
+          idName="CancelChangesModal"
+          modalTitle="Cancel Confiration"
+          modalBody="<p>Are you sure you want to cancel your changes?</p>" />
       </form>
     </div>
   </nav>
@@ -247,5 +224,4 @@
       </div>
     </div>
   {/if}
-
 </form>

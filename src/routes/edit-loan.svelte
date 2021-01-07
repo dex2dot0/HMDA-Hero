@@ -5,10 +5,10 @@
   import BorrowerInformation from "../components/BorrowerInformation.svelte";
   import UnderwritingDetails from "../components/UnderwritingDetails.svelte";
   import HMDAInformation from "../components/HMDAInformation.svelte";
-  import { action, LEI } from "../stores.js";
+  import { action, LEI} from "../stores.js";
   import Checkbox from "../components/Checkbox.svelte";
   import { getLEI } from "../Excel Scripts/getLEI.js";
-  import { cancelChanges } from "../Scripts/cancelChanges.js";
+  import CancelDialog from "../components/CancelDialog.svelte";
 
   let activeOpt = "Loan";
   //Running media queries to determine what to display. If screen is larger, show everything.
@@ -18,7 +18,7 @@
   //Attempt to retrieve LEI
   (async () => {
     if (process.browser) {
-      await Office.onReady().then(async function() {
+      await Office.onReady().then(async function () {
         //Attempt to pull LEI from Excel File
         if ($LEI == "") {
           console.log("attempting to set LEI from Excel file");
@@ -90,12 +90,6 @@
     padding-right: 10px;
     background-color: #323130;
     min-height: 50px;
-  }
-
-  .cancelBtn {
-    border-color: #4e9668;
-    color: #fff;
-    margin-left: 10px;
   }
 
   h3 {
@@ -172,12 +166,10 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <button
-          class="btn btn-sm cancelBtn"
-          type="button"
-          on:click={cancelChanges}>
-          CANCEL
-        </button>
+        <CancelDialog
+        idName="CancelChangesModal"
+        modalTitle="Cancel Confiration"
+        modalBody="<p>Are you sure you want to cancel your changes?</p>" />
       </form>
     </div>
   </nav>
@@ -226,5 +218,4 @@
       </div>
     </div>
   {/if}
-
 </form>
