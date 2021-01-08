@@ -47,13 +47,6 @@ function LEIFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
-		},
 	};
 }
 
