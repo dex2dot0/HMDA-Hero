@@ -66,13 +66,6 @@ function ULIFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
-		},
 	};
 }
 
@@ -108,15 +101,6 @@ function appDateFn() {
 				set(val);
 			}
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () =>
-			updateValue(
-				`${originalVal.slice(0, 4)}${originalVal.slice(5, 7)}${originalVal.slice(8)}`,
-				editColumn
-			),
 	};
 }
 
@@ -136,12 +120,6 @@ function loanTypeFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-			console.log(`loan type original val set to ${originalVal}`);
-		},
-		resetToOriginal: () => updateValue(originalVal, editColumn),
 	};
 }
 
@@ -160,13 +138,6 @@ function loanPurposeFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -187,13 +158,6 @@ function preapprovalFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
-		},
 	};
 }
 
@@ -212,13 +176,6 @@ function constructionMethodFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -239,13 +196,6 @@ function occupancyTypeFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
-		},
 	};
 }
 
@@ -264,13 +214,6 @@ function loanAmountFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -291,13 +234,6 @@ function actionTakenFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
-		},
 	};
 }
 
@@ -316,15 +252,6 @@ function actionTakenDateFn() {
 			val = e.target.value;
 			set(val);
 			let dt = val.replace('-', '');
-			let dtFormatted = dt.replace('-', '');
-			updateValue(dtFormatted, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			let dt = originalVal.replace('-', '');
 			let dtFormatted = dt.replace('-', '');
 			updateValue(dtFormatted, editColumn);
 		},
@@ -361,11 +288,6 @@ function streetAddressFn() {
 				set(val);
 			}
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => updateValue(originalVal, editColumn),
 	};
 }
 
@@ -399,11 +321,6 @@ function cityFn() {
 				set(val);
 			}
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => updateValue(originalVal, editColumn),
 	};
 }
 
