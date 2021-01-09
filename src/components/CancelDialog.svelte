@@ -4,7 +4,6 @@
   export let idName;
   export let modalTitle;
   export let modalBody;
-  export let isDisabled = true;
 </script>
 
 <style>

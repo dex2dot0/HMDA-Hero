@@ -63,14 +63,17 @@
         let records = [];
 
         for (let record = 0; record < uliArray.length; record++) {
-          records.push({
-            loanNumber: loanNumbers[record],
-            ULI: uliArray[record],
-            address: addressArray[record],
-            loanType: loanType[record],
-            actionTaken: actionType[record],
-            actionTakenDate: actionDates[record]
-          });
+          if(uliArray[record] !== [""]) {
+            console.log(uliArray[record])
+            records.push({
+              loanNumber: loanNumbers[record],
+              ULI: uliArray[record],
+              address: addressArray[record],
+              loanType: loanType[record],
+              actionTaken: actionType[record],
+              actionTakenDate: actionDates[record]
+            });
+          }
         }
 
         //Store all to results
