@@ -14,7 +14,6 @@ export async function loadEditDataToStore(data, editRow) {
 		}
 		store.LoanNumber.set(lnNumber);
 		store.ULI.set(data[0]);
-		store.ULI.originalValue(data[0]);
 		let appDate = data[1];
 		let appDateFormatted;
 		if (data[1] !== 'NA') {

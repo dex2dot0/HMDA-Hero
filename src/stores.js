@@ -21,7 +21,7 @@ editRow.subscribe((value) => {
 
 //Automation helper
 function NoCoAppUpdate() {
-	const { subscribe, update } = writable(false);
+	const { subscribe } = writable(false);
 
 	return {
 		subscribe,
@@ -36,8 +36,7 @@ export const LoanNumber = writable('');
 function LEIFn() {
 	let editColumn = 'B';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -55,8 +54,7 @@ export const LEI = LEIFn();
 function ULIFn() {
 	let editColumn = 'C';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -74,9 +72,8 @@ export const ULI = ULIFn();
 function appDateFn() {
 	let editColumn = 'D';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -109,8 +106,7 @@ export const appDate = appDateFn();
 function loanTypeFn() {
 	let editColumn = 'E';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -128,8 +124,7 @@ export const loanType = loanTypeFn();
 function loanPurposeFn() {
 	let editColumn = 'F';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -147,8 +142,7 @@ export const loanPurpose = loanPurposeFn();
 function preapprovalFn() {
 	let editColumn = 'G';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -166,8 +160,7 @@ export const preapproval = preapprovalFn();
 function constructionMethodFn() {
 	let editColumn = 'H';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -185,8 +178,7 @@ export const constructionMethod = constructionMethodFn();
 function occupancyTypeFn() {
 	let editColumn = 'I';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -204,8 +196,7 @@ export const occupancyType = occupancyTypeFn();
 function loanAmountFn() {
 	let editColumn = 'J';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -223,8 +214,7 @@ export const loanAmount = loanAmountFn();
 function actionTakenFn() {
 	let editColumn = 'K';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -242,8 +232,7 @@ export const actionTaken = actionTakenFn();
 function actionTakenDateFn() {
 	let editColumn = 'L';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -263,9 +252,8 @@ export const actionTakenDate = actionTakenDateFn();
 function streetAddressFn() {
 	let editColumn = 'M';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -296,9 +284,8 @@ export const streetAddress = streetAddressFn();
 function cityFn() {
 	let editColumn = 'N';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -329,9 +316,8 @@ export const city = cityFn();
 function stateCodeFn() {
 	let editColumn = 'O';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -354,11 +340,6 @@ function stateCodeFn() {
 				set(val);
 			}
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => updateValue(originalVal, editColumn),
 	};
 }
 
@@ -367,9 +348,8 @@ export const stateCode = stateCodeFn();
 function zipCodeFn() {
 	let editColumn = 'P';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -392,11 +372,6 @@ function zipCodeFn() {
 				set(val);
 			}
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => updateValue(originalVal, editColumn),
 	};
 }
 
@@ -405,9 +380,8 @@ export const zipCode = zipCodeFn();
 function countyCodeFn() {
 	let editColumn = 'Q';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -430,11 +404,6 @@ function countyCodeFn() {
 				set(val);
 			}
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => updateValue(originalVal, editColumn),
 	};
 }
 
@@ -443,9 +412,8 @@ export const countyCode = countyCodeFn();
 function censusTractFn() {
 	let editColumn = 'R';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -468,11 +436,6 @@ function censusTractFn() {
 				set(val);
 			}
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => updateValue(originalVal, editColumn),
 	};
 }
 
@@ -481,8 +444,7 @@ export const censusTract = censusTractFn();
 function applicantEth1Fn() {
 	let editColumn = 'S';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -491,13 +453,6 @@ function applicantEth1Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -507,8 +462,7 @@ export const applicantEth1 = applicantEth1Fn();
 function applicantEth2Fn() {
 	let editColumn = 'T';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -517,13 +471,6 @@ function applicantEth2Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -533,8 +480,7 @@ export const applicantEth2 = applicantEth2Fn();
 function applicantEth3Fn() {
 	let editColumn = 'U';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -543,13 +489,6 @@ function applicantEth3Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -559,8 +498,7 @@ export const applicantEth3 = applicantEth3Fn();
 function applicantEth4Fn() {
 	let editColumn = 'V';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -569,13 +507,6 @@ function applicantEth4Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -585,8 +516,7 @@ export const applicantEth4 = applicantEth4Fn();
 function applicantEth5Fn() {
 	let editColumn = 'W';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -595,13 +525,6 @@ function applicantEth5Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -611,8 +534,7 @@ export const applicantEth5 = applicantEth5Fn();
 function applicantEthOtherFn() {
 	let editColumn = 'X';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -621,13 +543,6 @@ function applicantEthOtherFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -637,8 +552,7 @@ export const applicantEthOther = applicantEthOtherFn();
 function coapplicantEth1Fn() {
 	let editColumn = 'Y';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -647,13 +561,6 @@ function coapplicantEth1Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -663,8 +570,7 @@ export const coapplicantEth1 = coapplicantEth1Fn();
 function coapplicantEth2Fn() {
 	let editColumn = 'Z';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -673,13 +579,6 @@ function coapplicantEth2Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -689,8 +588,7 @@ export const coapplicantEth2 = coapplicantEth2Fn();
 function coapplicantEth3Fn() {
 	let editColumn = 'AA';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -699,13 +597,6 @@ function coapplicantEth3Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -715,8 +606,7 @@ export const coapplicantEth3 = coapplicantEth3Fn();
 function coapplicantEth4Fn() {
 	let editColumn = 'AB';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -725,13 +615,6 @@ function coapplicantEth4Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -741,8 +624,7 @@ export const coapplicantEth4 = coapplicantEth4Fn();
 function coapplicantEth5Fn() {
 	let editColumn = 'AC';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -751,13 +633,6 @@ function coapplicantEth5Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -767,8 +642,7 @@ export const coapplicantEth5 = coapplicantEth5Fn();
 function coapplicantEthOtherFn() {
 	let editColumn = 'AD';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -777,13 +651,6 @@ function coapplicantEthOtherFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -793,8 +660,7 @@ export const coapplicantEthOther = coapplicantEthOtherFn();
 function applicantEthBasisFn() {
 	let editColumn = 'AE';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -803,13 +669,6 @@ function applicantEthBasisFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -819,8 +678,7 @@ export const applicantEthBasis = applicantEthBasisFn();
 function coapplicantEthBasisFn() {
 	let editColumn = 'AF';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -829,13 +687,6 @@ function coapplicantEthBasisFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -845,8 +696,7 @@ export const coapplicantEthBasis = coapplicantEthBasisFn();
 function applicantRace1Fn() {
 	let editColumn = 'AG';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -855,13 +705,6 @@ function applicantRace1Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -871,8 +714,7 @@ export const applicantRace1 = applicantRace1Fn();
 function applicantRace2Fn() {
 	let editColumn = 'AH';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -881,13 +723,6 @@ function applicantRace2Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -897,8 +732,7 @@ export const applicantRace2 = applicantRace2Fn();
 function applicantRace3Fn() {
 	let editColumn = 'AI';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -907,13 +741,6 @@ function applicantRace3Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -923,8 +750,7 @@ export const applicantRace3 = applicantRace3Fn();
 function applicantRace4Fn() {
 	let editColumn = 'AJ';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -933,13 +759,6 @@ function applicantRace4Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -949,8 +768,7 @@ export const applicantRace4 = applicantRace4Fn();
 function applicantRace5Fn() {
 	let editColumn = 'AK';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -959,13 +777,6 @@ function applicantRace5Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -975,8 +786,7 @@ export const applicantRace5 = applicantRace5Fn();
 function applicantRaceOther1Fn() {
 	let editColumn = 'AL';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -985,13 +795,6 @@ function applicantRaceOther1Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1001,8 +804,7 @@ export const applicantRaceOther1 = applicantRaceOther1Fn();
 function applicantRaceOther2Fn() {
 	let editColumn = 'AM';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1011,13 +813,6 @@ function applicantRaceOther2Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1027,8 +822,7 @@ export const applicantRaceOther2 = applicantRaceOther2Fn();
 function applicantRaceOther3Fn() {
 	let editColumn = 'AN';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1037,13 +831,6 @@ function applicantRaceOther3Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1053,8 +840,7 @@ export const applicantRaceOther3 = applicantRaceOther3Fn();
 function coapplicantRace1Fn() {
 	let editColumn = 'AO';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1063,13 +849,6 @@ function coapplicantRace1Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1079,8 +858,7 @@ export const coapplicantRace1 = coapplicantRace1Fn();
 function coapplicantRace2Fn() {
 	let editColumn = 'AP';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1089,13 +867,6 @@ function coapplicantRace2Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1105,8 +876,7 @@ export const coapplicantRace2 = coapplicantRace2Fn();
 function coapplicantRace3Fn() {
 	let editColumn = 'AQ';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1115,13 +885,6 @@ function coapplicantRace3Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1131,8 +894,7 @@ export const coapplicantRace3 = coapplicantRace3Fn();
 function coapplicantRace4Fn() {
 	let editColumn = 'AR';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1141,13 +903,6 @@ function coapplicantRace4Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1157,8 +912,7 @@ export const coapplicantRace4 = coapplicantRace4Fn();
 function coapplicantRace5Fn() {
 	let editColumn = 'AS';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1167,13 +921,6 @@ function coapplicantRace5Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1183,8 +930,7 @@ export const coapplicantRace5 = coapplicantRace5Fn();
 function coapplicantRaceOther1Fn() {
 	let editColumn = 'AT';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1193,13 +939,6 @@ function coapplicantRaceOther1Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1209,8 +948,7 @@ export const coapplicantRaceOther1 = coapplicantRaceOther1Fn();
 function coapplicantRaceOther2Fn() {
 	let editColumn = 'AU';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1219,13 +957,6 @@ function coapplicantRaceOther2Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1235,8 +966,7 @@ export const coapplicantRaceOther2 = coapplicantRaceOther2Fn();
 function coapplicantRaceOther3Fn() {
 	let editColumn = 'AV';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1245,13 +975,6 @@ function coapplicantRaceOther3Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1261,8 +984,7 @@ export const coapplicantRaceOther3 = coapplicantRaceOther3Fn();
 function applicantRaceBasisFn() {
 	let editColumn = 'AW';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1271,13 +993,6 @@ function applicantRaceBasisFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1287,8 +1002,7 @@ export const applicantRaceBasis = applicantRaceBasisFn();
 function coapplicantRaceBasisFn() {
 	let editColumn = 'AX';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1297,13 +1011,6 @@ function coapplicantRaceBasisFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1313,8 +1020,7 @@ export const coapplicantRaceBasis = coapplicantRaceBasisFn();
 function applicantSexFn() {
 	let editColumn = 'AY';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1323,13 +1029,6 @@ function applicantSexFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1339,8 +1038,7 @@ export const applicantSex = applicantSexFn();
 function coapplicantSexFn() {
 	let editColumn = 'AZ';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1349,13 +1047,6 @@ function coapplicantSexFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1365,8 +1056,7 @@ export const coapplicantSex = coapplicantSexFn();
 function applicantSexBasisFn() {
 	let editColumn = 'BA';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1375,13 +1065,6 @@ function applicantSexBasisFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1391,8 +1074,7 @@ export const applicantSexBasis = applicantSexBasisFn();
 function coapplicantSexBasisFn() {
 	let editColumn = 'BB';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1402,13 +1084,6 @@ function coapplicantSexBasisFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
-		},
 	};
 }
 
@@ -1417,9 +1092,8 @@ export const coapplicantSexBasis = coapplicantSexBasisFn();
 function applicantAgeFn() {
 	let editColumn = 'BC';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -1455,9 +1129,8 @@ export const applicantAge = applicantAgeFn();
 function coapplicantAgeFn() {
 	let editColumn = 'BD';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -1493,8 +1166,7 @@ export const coapplicantAge = coapplicantAgeFn();
 function incomeFn() {
 	let editColumn = 'BE';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1503,13 +1175,6 @@ function incomeFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1519,8 +1184,7 @@ export const income = incomeFn();
 function purchaserTypeFn() {
 	let editColumn = 'BF';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1529,13 +1193,6 @@ function purchaserTypeFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1545,8 +1202,7 @@ export const purchaserType = purchaserTypeFn();
 function rateSpreadFn() {
 	let editColumn = 'BG';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1555,13 +1211,6 @@ function rateSpreadFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1571,8 +1220,7 @@ export const rateSpread = rateSpreadFn();
 function hoepaFn() {
 	let editColumn = 'BH';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1581,13 +1229,6 @@ function hoepaFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1597,8 +1238,7 @@ export const hoepa = hoepaFn();
 function lienStatusFn() {
 	let editColumn = 'BI';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1608,13 +1248,6 @@ function lienStatusFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
-		},
 	};
 }
 
@@ -1623,11 +1256,10 @@ export const lienStatus = lienStatusFn();
 function applicantCreditScoreFn() {
 	let editColumn = 'BJ';
 	let val;
-	let originalVal = '';
 	let isNAN = false;
 	let isNA = false;
 	let isExempt = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1694,11 +1326,10 @@ export const applicantCreditScore = applicantCreditScoreFn();
 function coapplicantCreditScoreFn() {
 	let editColumn = 'BK';
 	let val;
-	let originalVal = '';
 	let isNAN = false;
 	let isNA = false;
 	let isExempt = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1765,8 +1396,7 @@ export const coapplicantCreditScore = coapplicantCreditScoreFn();
 function applicantCreditModelFn() {
 	let editColumn = 'BL';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1775,13 +1405,6 @@ function applicantCreditModelFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1791,8 +1414,7 @@ export const applicantCreditModel = applicantCreditModelFn();
 function applicantCreditModelOtherFn() {
 	let editColumn = 'BM';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1801,13 +1423,6 @@ function applicantCreditModelOtherFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1817,8 +1432,7 @@ export const applicantCreditModelOther = applicantCreditModelOtherFn();
 function coapplicantCreditModelFn() {
 	let editColumn = 'BN';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1827,13 +1441,6 @@ function coapplicantCreditModelFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1843,8 +1450,7 @@ export const coapplicantCreditModel = coapplicantCreditModelFn();
 function coapplicantCreditModelOtherFn() {
 	let editColumn = 'BO';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1853,13 +1459,6 @@ function coapplicantCreditModelOtherFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1869,8 +1468,7 @@ export const coapplicantCreditModelOther = coapplicantCreditModelOtherFn();
 function denialReason1Fn() {
 	let editColumn = 'BP';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1879,13 +1477,6 @@ function denialReason1Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1895,8 +1486,7 @@ export const denialReason1 = denialReason1Fn();
 function denialReason2Fn() {
 	let editColumn = 'BQ';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1905,13 +1495,6 @@ function denialReason2Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1921,8 +1504,7 @@ export const denialReason2 = denialReason2Fn();
 function denialReason3Fn() {
 	let editColumn = 'BR';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1931,13 +1513,6 @@ function denialReason3Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1947,8 +1522,7 @@ export const denialReason3 = denialReason3Fn();
 function denialReason4Fn() {
 	let editColumn = 'BS';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1957,13 +1531,6 @@ function denialReason4Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -1973,8 +1540,7 @@ export const denialReason4 = denialReason4Fn();
 function denialReasonOtherFn() {
 	let editColumn = 'BT';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -1984,13 +1550,6 @@ function denialReasonOtherFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
-		},
 	};
 }
 
@@ -1999,9 +1558,8 @@ export const denialReasonOther = denialReasonOtherFn();
 function loanCostFn() {
 	let editColumn = 'BU';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -2037,9 +1595,8 @@ export const loanCosts = loanCostFn();
 function pointsFeesFn() {
 	let editColumn = 'BV';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -2075,9 +1632,8 @@ export const pointsFees = pointsFeesFn();
 function originationChargesFn() {
 	let editColumn = 'BW';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -2113,9 +1669,8 @@ export const originationCharges = originationChargesFn();
 function discountPointsFn() {
 	let editColumn = 'BX';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -2151,9 +1706,8 @@ export const discountPoints = discountPointsFn();
 function lenderCreditsFn() {
 	let editColumn = 'BY';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -2189,9 +1743,8 @@ export const lenderCredits = lenderCreditsFn();
 function interestRateFn() {
 	let editColumn = 'BZ';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -2227,9 +1780,8 @@ export const interestRate = interestRateFn();
 function prepaymentPenaltyTermFn() {
 	let editColumn = 'CA';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -2265,8 +1817,7 @@ export const prepaymentPenaltyTerm = prepaymentPenaltyTermFn();
 function DTIFn() {
 	let editColumn = 'CB';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2275,13 +1826,6 @@ function DTIFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2291,8 +1835,7 @@ export const DTI = DTIFn();
 function CLTVFn() {
 	let editColumn = 'CC';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2302,13 +1845,6 @@ function CLTVFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
-		},
 	};
 }
 
@@ -2317,9 +1853,8 @@ export const CLTV = CLTVFn();
 function loanTermFn() {
 	let editColumn = 'CD';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -2355,9 +1890,8 @@ export const loanTerm = loanTermFn();
 function introRatePeriodFn() {
 	let editColumn = 'CE';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -2393,8 +1927,7 @@ export const introRatePeriod = introRatePeriodFn();
 function balloonPaymentFn() {
 	let editColumn = 'CF';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2403,13 +1936,6 @@ function balloonPaymentFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2419,8 +1945,7 @@ export const balloonPayment = balloonPaymentFn();
 function ioPaymentsFn() {
 	let editColumn = 'CG';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2429,13 +1954,6 @@ function ioPaymentsFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2445,8 +1963,7 @@ export const ioPayments = ioPaymentsFn();
 function negativeAmFn() {
 	let editColumn = 'CH';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2455,13 +1972,6 @@ function negativeAmFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2471,8 +1981,7 @@ export const negativeAm = negativeAmFn();
 function otherNonAmFn() {
 	let editColumn = 'CI';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2482,13 +1991,6 @@ function otherNonAmFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
-		},
 	};
 }
 
@@ -2497,9 +1999,8 @@ export const otherNonAm = otherNonAmFn();
 function propertyValueFn() {
 	let editColumn = 'CJ';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -2535,8 +2036,7 @@ export const propertyValue = propertyValueFn();
 function manufacturedHomeTypeFn() {
 	let editColumn = 'CK';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2545,13 +2045,6 @@ function manufacturedHomeTypeFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2561,8 +2054,7 @@ export const manufacturedHomeType = manufacturedHomeTypeFn();
 function manufacturedPropertyInterestFn() {
 	let editColumn = 'CL';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2571,13 +2063,6 @@ function manufacturedPropertyInterestFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2587,8 +2072,7 @@ export const manufacturedPropertyInterest = manufacturedPropertyInterestFn();
 function totalUnitsFn() {
 	let editColumn = 'CM';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2598,13 +2082,6 @@ function totalUnitsFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
-		},
 	};
 }
 
@@ -2613,9 +2090,8 @@ export const totalUnits = totalUnitsFn();
 function multifamilyUnitsFn() {
 	let editColumn = 'CN';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -2651,8 +2127,7 @@ export const multifamilyUnits = multifamilyUnitsFn();
 function submissionOfApplicationFn() {
 	let editColumn = 'CO';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2661,13 +2136,6 @@ function submissionOfApplicationFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2677,8 +2145,7 @@ export const submissionOfApplication = submissionOfApplicationFn();
 function initiallyPayableFn() {
 	let editColumn = 'CP';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2688,13 +2155,6 @@ function initiallyPayableFn() {
 			set(val);
 			updateValue(val, editColumn);
 		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
-		},
 	};
 }
 
@@ -2703,9 +2163,8 @@ export const initiallyPayable = initiallyPayableFn();
 function NMLSRFn() {
 	let editColumn = 'CQ';
 	let val;
-	let originalVal = '';
 	let isNA = false;
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	//We need to be able to
 	return {
@@ -2741,8 +2200,7 @@ export const NMLSR = NMLSRFn();
 function ausSystem1Fn() {
 	let editColumn = 'CR';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2751,13 +2209,6 @@ function ausSystem1Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2767,8 +2218,7 @@ export const ausSystem1 = ausSystem1Fn();
 function ausSystem2Fn() {
 	let editColumn = 'CS';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2777,13 +2227,6 @@ function ausSystem2Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2793,8 +2236,7 @@ export const ausSystem2 = ausSystem2Fn();
 function ausSystem3Fn() {
 	let editColumn = 'CT';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2803,13 +2245,6 @@ function ausSystem3Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2819,8 +2254,7 @@ export const ausSystem3 = ausSystem3Fn();
 function ausSystem4Fn() {
 	let editColumn = 'CU';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2829,13 +2263,6 @@ function ausSystem4Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2845,8 +2272,7 @@ export const ausSystem4 = ausSystem4Fn();
 function ausSystem5Fn() {
 	let editColumn = 'CV';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2855,13 +2281,6 @@ function ausSystem5Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2871,8 +2290,7 @@ export const ausSystem5 = ausSystem5Fn();
 function ausSystemOtherFn() {
 	let editColumn = 'CW';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2881,13 +2299,6 @@ function ausSystemOtherFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2897,8 +2308,7 @@ export const ausSystemOther = ausSystemOtherFn();
 function ausResult1Fn() {
 	let editColumn = 'CX';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2907,13 +2317,6 @@ function ausResult1Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2923,8 +2326,7 @@ export const ausResult1 = ausResult1Fn();
 function ausResult2Fn() {
 	let editColumn = 'CY';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2933,13 +2335,6 @@ function ausResult2Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2949,8 +2344,7 @@ export const ausResult2 = ausResult2Fn();
 function ausResult3Fn() {
 	let editColumn = 'CZ';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2959,13 +2353,6 @@ function ausResult3Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -2975,8 +2362,7 @@ export const ausResult3 = ausResult3Fn();
 function ausResult4Fn() {
 	let editColumn = 'DA';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -2985,13 +2371,6 @@ function ausResult4Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -3001,8 +2380,7 @@ export const ausResult4 = ausResult4Fn();
 function ausResult5Fn() {
 	let editColumn = 'DB';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -3011,13 +2389,6 @@ function ausResult5Fn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -3027,8 +2398,7 @@ export const ausResult5 = ausResult5Fn();
 function ausResultOtherFn() {
 	let editColumn = 'DC';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -3037,13 +2407,6 @@ function ausResultOtherFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -3053,8 +2416,7 @@ export const ausResultOther = ausResultOtherFn();
 function reverseMortgageFn() {
 	let editColumn = 'DD';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -3063,13 +2425,6 @@ function reverseMortgageFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -3079,8 +2434,7 @@ export const reverseMortgage = reverseMortgageFn();
 function openEndLOCFn() {
 	let editColumn = 'DE';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -3089,13 +2443,6 @@ function openEndLOCFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
@@ -3105,8 +2452,7 @@ export const openEndLOC = openEndLOCFn();
 function businessOrCommercialFn() {
 	let editColumn = 'DF';
 	let val;
-	let originalVal = '';
-	const { subscribe, set, update } = writable('');
+	const { subscribe, set } = writable('');
 
 	return {
 		subscribe,
@@ -3115,13 +2461,6 @@ function businessOrCommercialFn() {
 			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
-		},
-		originalValue: (e) => {
-			originalVal = e;
-			val = e;
-		},
-		resetToOriginal: () => {
-			updateValue(originalVal, editColumn);
 		},
 	};
 }
