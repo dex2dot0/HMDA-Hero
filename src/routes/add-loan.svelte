@@ -6,11 +6,10 @@
   import UnderwritingDetails from "../components/UnderwritingDetails.svelte";
   import HMDAInformation from "../components/HMDAInformation.svelte";
   import CancelDialog from "../components/CancelDialog.svelte";
-  import { action, LEI, editRow } from "../stores.js";
-  import Checkbox from "../components/Checkbox.svelte";
+  import { action, LEI, editRow, isDirty } from "../stores.js";
   import { getLEI } from "../Excel Scripts/getLEI.js";
-  import { onMount } from "svelte";
   import { getEndRow } from "../Excel Scripts/getEndRow.js";
+  import { cancelAddLoanChanges } from "../Scripts/cancelAddLoanChanges.js";
 
   let activeOpt = "Loan";
   //Running media queries to determine what to display. If screen is larger, show everything.
@@ -32,7 +31,6 @@
             newRow = Number(newRow) + 1;
             editRow.set(newRow);
             LEI.change(leiArray[0]);
-            LEI.originalValue(leiArray[0]);
           } catch (error) {
             console.log("Error attempting to set LEI from Excel file");
             console.log(error);
@@ -41,6 +39,12 @@
       });
     }
   })();
+
+  async function pageDestroy () {
+    if(!$isDirty) {
+      cancelAddLoanChanges($editRow);
+    }
+  }
 </script>
 
 <style>
@@ -130,6 +134,8 @@
 <svelte:head>
   <title>Loan Editor</title>
 </svelte:head>
+
+<svelte:window on:unload={pageDestroy}/>
 
 <form class="shadow-sm mb-5 bg-white rounded">
   <AddLoan />

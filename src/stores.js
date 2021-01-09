@@ -5,9 +5,11 @@ async function updateValue(value, column) {
 	if (process.browser && editRowVal !== '') {
 		console.log(`Updating cell ${column}${editRowVal} with value ${value}`);
 		updateCell(value, `${column}${editRowVal}`);
+		column !== 'B' ? isDirty.set(true) : '';
 	}
 }
 
+export const isDirty = writable(false);
 export const action = writable('add');
 export const visible = writable(false);
 export const isExempt = writable(false);

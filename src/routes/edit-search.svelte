@@ -1,10 +1,9 @@
 <script>
   import { goto } from "@sapper/app";
   import { LEI } from "../stores.js";
-  import mediaStore from "../mediaStore.js";
   import Media from "../components/Media.svelte";
   import Modal from "../components/Modal.svelte";
-  import { writable, get } from "svelte/store";
+  import { get } from "svelte/store";
   import { getEndRow } from "../Excel Scripts/getEndRow.js";
   import { getULIColumn } from "../Excel Scripts/getULIColumn.js";
   import { getAddressColumn } from "../Excel Scripts/getAddressColumn.js";
@@ -12,8 +11,6 @@
   import { getActionTakenColumn } from "../Excel Scripts/getActionTakenColumn.js";
   import { getActionTakenDateColumn } from "../Excel Scripts/getActionTakenDateColumn.js";
   import { getRowByULI } from "../Excel Scripts/getRowByULI.js";
-  import { getULIAddress } from "../Excel Scripts/getULIAddress.js";
-  import { getDataByRow } from "../Excel Scripts/getDataByRow.js";
   import { loadEditDataToStore } from "../Scripts/loadEditDataToStore.js";
   import { getLEI } from "../Excel Scripts/getLEI.js";
   import { getRowNumberByULI } from "../Excel Scripts/getRowNumberByULI.js";
@@ -22,7 +19,6 @@
   let searchTerm;
   let results = getData();
   let data;
-  let endRow;
   let width = 800;
   let showLoanNumbers = false;
 
@@ -51,7 +47,6 @@
       try {
         let endRow = await getEndRow();
         //Get all column data in async
-        let loanNumberArray = [];
         let uliArray = await getULIColumn(endRow);
         let addressArray = await getAddressColumn(endRow);
         let loanTypeArray = await getLoanTypeColumn(endRow);
@@ -325,6 +320,7 @@
       <form class="form-inline">
         <div class="form-group">
           <label for="searchCategory">Search By</label>
+          <!-- svelte-ignore a11y-no-onchange-->
           <select
             class="form-control"
             id="searchCategory"
@@ -338,6 +334,7 @@
           </select>
         </div>
         {#if selected === 'loanType'}
+        <!-- svelte-ignore a11y-no-onchange-->
           <select
             class="form-control"
             id="searchCategory"
@@ -357,6 +354,7 @@
             </option>
           </select>
         {:else if selected === 'actionTaken'}
+        <!-- svelte-ignore a11y-no-onchange-->
           <select
             class="form-control"
             id="searchCategory"
