@@ -9,6 +9,8 @@
   import Checkbox from "../components/Checkbox.svelte";
   import { getLEI } from "../Excel Scripts/getLEI.js";
   import CancelDialog from "../components/CancelDialog.svelte";
+  import { setSetting } from "../Excel Scripts/setSetting.js";
+  import { getSetting } from "../Excel Scripts/getSetting.js";
 
   let activeOpt = "Loan";
   //Running media queries to determine what to display. If screen is larger, show everything.
@@ -19,18 +21,19 @@
   (async () => {
     if (process.browser) {
       await Office.onReady().then(async function () {
-        //Attempt to pull LEI from Excel File
-        if ($LEI == "") {
+        //Attempt to pull LEI from Excel Settings
+        let leiSetting = await getSetting('LEI');
+        if ($LEI == "" && !leiSetting) {
           console.log("attempting to set LEI from Excel file");
           try {
-            let leiFromExcel = await getLEI();
-            let leiArray = leiFromExcel[0];
-            LEI.change(leiArray[0]);
-            LEI.originalValue(leiArray[0]);
-          } catch (error) {
-            console.log("Error attempting to set LEI from Excel file");
-            console.log(error);
-          }
+              let leiFromExcel = await getLEI();
+              let leiArray = leiFromExcel[0];
+              LEI.change(leiArray[0]);
+              setSetting('LEI', leiArray[0]);
+            } catch (error) {
+              console.log("Error attempting to set LEI from Excel file");
+              console.log(error);
+            }
         }
       });
     }

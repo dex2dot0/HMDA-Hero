@@ -37,6 +37,7 @@
   import Checkbox from "../components/Checkbox.svelte";
   import HRValidation from "../components/HRValidation.svelte";
   import { getLEI } from "../Excel Scripts/getLEI.js";
+  import { setSetting } from "../Excel Scripts/setSetting.js";
 
   async function generateULI() {
     if (process.browser) {
@@ -87,7 +88,8 @@
       console.log("Attempting to get LEI from Excel file.");
       let leiFromExcel = await getLEI();
       let leiArray = leiFromExcel[0];
-      LEI.set(leiArray[0]);
+      LEI.change(leiArray[0]);
+      setSetting('LEI', leiArray[0]);
     }
   }
 
