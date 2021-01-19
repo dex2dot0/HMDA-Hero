@@ -32,12 +32,24 @@
     openEndLOC,
     businessOrCommercial
   } from "../stores.js";
-  import { writable } from "svelte/store";
   import Modal from "../components/Modal.svelte";
   import Checkbox from "../components/Checkbox.svelte";
   import HRValidation from "../components/HRValidation.svelte";
   import { getLEI } from "../Excel Scripts/getLEI.js";
   import { setSetting } from "../Excel Scripts/setSetting.js";
+  import { getSetting } from "../Excel Scripts/getSetting.js";
+
+  (async () => {
+    if (process.browser) {
+      await Office.onReady().then(async function () {
+        //Attempt to pull Exemption from Excel Settings
+        let exemptSetting = await getSetting('EXEMPT');
+        if (exemptSetting) {
+          isExempt.set(exemptSetting);
+        }
+      });
+    }
+  })();
 
   async function generateULI() {
     if (process.browser) {

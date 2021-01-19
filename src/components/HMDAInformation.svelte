@@ -12,6 +12,19 @@
   } from "../stores.js";
   import Modal from "../components/Modal.svelte";
   import HRValidation from "../components/HRValidation.svelte";
+  import { getSetting } from "../Excel Scripts/getSetting.js";
+
+  (async () => {
+    if (process.browser) {
+      await Office.onReady().then(async function () {
+        //Attempt to pull Exemption from Excel Settings
+        let exemptSetting = await getSetting('EXEMPT');
+        if (exemptSetting) {
+          isExempt.set(exemptSetting);
+        }
+      });
+    }
+  })();
 </script>
 
 <style>
