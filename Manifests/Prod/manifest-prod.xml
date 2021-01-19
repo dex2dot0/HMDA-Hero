@@ -112,8 +112,10 @@
                     <bt:Image size="32" resid="Icon.Help.32" />
                     <bt:Image size="80" resid="Icon.Help.80" />
                   </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>launchHelp</FunctionName>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Export</TaskpaneId>
+                    <SourceLocation resid="Export.Url" />
+                    <Title resid="Export.Title" />
                   </Action>
                 </Control>
               </Group>
@@ -224,6 +226,7 @@
         <bt:Url id="AddLoan.Url" DefaultValue="https://hmda-hero-app.netlify.app/add-loan" />
         <bt:Url id="EditLoan.Url" DefaultValue="https://hmda-hero-app.netlify.app/edit-search" />
         <bt:Url id="Import.Url" DefaultValue="https://hmda-hero-app.netlify.app/import" />
+        <bt:Url id="Export.Url" DefaultValue="http://localhost:3000/export" />
         <bt:Url id="FilingResources.Url" DefaultValue="https://hmda-hero-app.netlify.app/resources" />
         <bt:Url id="About.Url" DefaultValue="https://hmda-hero-app.netlify.app/about" />
         <bt:Url id="Settings.Url" DefaultValue="https://hmda-hero-app.netlify.app/settings" />
@@ -245,6 +248,7 @@
         <bt:String id="Import.TipTitle" DefaultValue="Import LAR records"/>
         <bt:String id="Import.Title" DefaultValue="Import"/>
         <bt:String id="Export.Label" DefaultValue="Export"/>
+        <bt:String id="Export.Title" DefaultValue="Export"/>
         <bt:String id="Export.TipTitle" DefaultValue="Export pipe delimited text file"/>
         <bt:String id="FilingResource.Label" DefaultValue="Filing Resources"/>
         <bt:String id="FilingResource.TipTitle" DefaultValue="Current reporting year filing resources"/>
