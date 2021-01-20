@@ -1,5 +1,4 @@
 <script>
-  import EditLoan from "../components/EditLoan.svelte";
   import LoanDetails from "../components/LoanDetails.svelte";
   import PropertyInformation from "../components/PropertyInformation.svelte";
   import BorrowerInformation from "../components/BorrowerInformation.svelte";
@@ -129,7 +128,6 @@
 </svelte:head>
 
 <form class="shadow-sm mb-5 bg-white rounded">
-  <EditLoan />
   <nav class="navbar navbar-expand-lg navbar-dark align-items-center">
     <div class="navbar-brand">
       <h3 class="pr-3 pl-3">EDIT LOAN RECORD</h3>

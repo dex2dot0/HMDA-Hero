@@ -1,5 +1,4 @@
 <script>
-  import AddLoan from "../components/AddLoan.svelte";
   import LoanDetails from "../components/LoanDetails.svelte";
   import PropertyInformation from "../components/PropertyInformation.svelte";
   import BorrowerInformation from "../components/BorrowerInformation.svelte";
@@ -152,7 +151,6 @@
 <svelte:window on:unload={pageDestroy}/>
 
 <form class="shadow-sm mb-5 bg-white rounded">
-  <AddLoan />
   <nav class="navbar navbar-expand-lg navbar-dark align-items-center pb-1">
     <div class="navbar-brand">
       <h3 class="pr-3 pl-3">NEW LOAN RECORD</h3>
