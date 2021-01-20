@@ -1,10 +1,10 @@
 <script>
   import Checkbox from "../components/Checkbox.svelte";
+  import Modal from "../components/Modal.svelte";
   import { getLEI } from "../Excel Scripts/getLEI.js";
   import { setSetting } from "../Excel Scripts/setSetting.js";
   import { getSetting } from "../Excel Scripts/getSetting.js";
-
-
+  
   let lei;
   let exempt = false;
   //Attempt to load settings
@@ -66,7 +66,12 @@
 <div class="container">
   <div class="form-row d-flex align-items-end">
     <div class="col-10">
-      <h6>Apply S2155 Exemption</h6>
+      <h6>Apply S2155 Exemption<Modal
+        idName="exemptionModal"
+        modalTitle="S2155 Exemption"
+        tabindex="-1"
+        modalBody="<p>Applying the S2155 exemption in your settings controls which fields you will see when adding or editing loans. 
+          If you would like to see all fields regardless of exemption, do not apply this setting.</p>" /></h6>
     </div>
     <div class="col d-flex align-self-start">
       <Checkbox value={exempt} on:notify={updateExempt} text=""/>

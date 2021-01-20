@@ -29,9 +29,6 @@
   import HRValidation from "../components/HRValidation.svelte";
   import { getSetting } from "../Excel Scripts/getSetting.js";
 
-  //If exemption is applied, showExempt will provide a way to see all fields regardless of whether exempt or not
-  let showExempt = false;
-
   (async () => {
     if (process.browser) {
       await Office.onReady().then(async function () {
@@ -513,7 +510,7 @@
   </div>
 </div>
 
-{#if !$isExempt && showExempt}
+{#if !$isExempt}
   <h6 style="color: #217346; font-style: italic; margin-top: 1rem;">
     Credit - Applicant
   </h6>
