@@ -1,5 +1,62 @@
 <script>
     import Modal from "../components/Modal.svelte";
+    import getOrgPipeData from "../Scripts/getOrgPipeData";
+    import getPipeData from "../Scripts/getPipeData.js";
+
+    let outputType = 'defaultFormat';
+    async function radioChange(e) {
+      console.log(`Exporting as ${e.target.id}`);
+      outputType = e.target.id;
+    }
+
+    async function runExport() {
+      let orgData = await getOrgPipeData();//get org data from Excel
+      let exempt = outputType == 'exemptFormat' ? true : false;
+      let loanData = await getPipeData(exempt);
+      let pipeData = `1|${orgData}${loanData}`
+      download(pipeData,'lar.txt', 'text/plain')
+
+      async function download(strData, strFileName, strMimeType) {
+      //solution from https://stackoverflow.com/questions/21012580/is-it-possible-to-write-data-to-file-using-only-javascript
+      let D = document,
+        A = arguments,
+        a = D.createElement("a"),
+        d = A[0],
+        n = A[1],
+        t = A[2] || "text/plain";
+
+        //build download link:
+        a.href = "data:" + strMimeType + "charset=utf-8," + escape(strData);
+
+        if (window.MSBlobBuilder) { // IE10
+            var bb = new MSBlobBuilder();
+            bb.append(strData);
+            return navigator.msSaveBlob(bb, strFileName);
+        } /* end if(window.MSBlobBuilder) */
+
+        if ('download' in a) { //FF20, CH19
+            a.setAttribute("download", n);
+            a.innerHTML = "downloading...";
+            D.body.appendChild(a);
+            setTimeout(function() {
+                var e = D.createEvent("MouseEvents");
+                e.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                a.dispatchEvent(e);
+                D.body.removeChild(a);
+            }, 66);
+        return true;
+      }; /* end if('download' in a) */
+
+      //do iframe dataURL download: (older W3)
+      let f = D.createElement("iframe");
+      D.body.appendChild(f);
+      f.src = "data:" + (A[2] ? A[2] : "application/octet-stream") + (window.btoa ? ";base64" : "") + "," + (window.btoa ? window.btoa : escape)(strData);
+      setTimeout(function() {
+          D.body.removeChild(f);
+      }, 333);
+      return true;
+      }
+    }
   </script>
   
   <style>
@@ -56,34 +113,29 @@
       </div>
       <div class="card">
         <div class="card-body">
-          <h5 class="mr-2" style="text-align:left;">
-            Pipe-delimited
-            <Modal
-              idName="pipeDelimited"
+          <div class="custom-control custom-radio">
+            <input type="radio" on:click={radioChange} id="defaultFormat" name="customRadio" class="custom-control-input" checked>
+            <label class="custom-control-label" for="defaultFormat">Standard CFPB Export<Modal
+              idName="defaultFormat"
               modalTitle="CFPB Pipe-delimited Formatted Text File"
               tabindex="-1"
-              modalBody="<p>Hello World!</p>" />
-          </h5>
-          <div class="input-group align-items-end">
-            <div class="custom-file">
-              <input
-                type="file"
-                class="custom-file-input"
-                id="pipe"
-                on:change=""
-                accept="text/plain" />
-              <label
-                class="custom-file-label"
-                for="pipe"
-                style="text-align:left;">
-                Choose file
-              </label>
-            </div>
+              modalBody="<p>The standard CFPB formatted file.</p>" /></label>
           </div>
-          <p
-            style="text-align:left;font-size:11px;background-color:#fff;padding:10px;"
-            id="pipeError" />
-        </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" on:click={radioChange} id="exemptFormat" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="exemptFormat">S2155 Exempt Export<Modal
+              idName="exemptFormat"
+              modalTitle="S2155 Exempt Pipe-delimited Formatted Text File"
+              tabindex="-1"
+              modalBody="<p>The same standard CFPB formatted file except exemptions are output for fields where an exemption is allowed.</p>
+              <p>You should only use this option if your organization qualifies for the exemptions.</p>" /></label>
+          </div>
+          <button
+          type="button"
+          class="btn btn-sm btn-outline-secondary ml-2"
+          on:click={runExport}>
+          Download Export File
+        </button>
       </div>
     </form>
   </div>

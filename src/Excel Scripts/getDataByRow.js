@@ -1,27 +1,20 @@
-export async function getDataByRow(row) {
-  async function run() {
-    Excel.run(async (c) => {
-      console.log(`row is ${row}`)
-      let sheet = c.workbook.worksheets.getItem("Data");
-      let rowRange = sheet.getRange(`C${row}:DF${row}`);
-      rowRange.load("text");
+export async function getDataByRow(row, endColumn) {
+	let end = endColumn || 'DF';
+	return new Promise(async (resolve, reject) => {
+		try {
+			Excel.run(async (c) => {
+				console.log(`row is ${row}`);
+				let sheet = c.workbook.worksheets.getItem('Data');
+				let rowRange = sheet.getRange(`B${row}:${end}${row}`);
+				rowRange.load('text');
 
-      return c.sync().then(async function () {
-        console.log(rowRange.text);
-        resolve(rowRange.text);
-      });
-    });
-  }
-
-  /** Default helper for invoking an action and handling errors. */
-  async function tryCatch(callback) {
-    try {
-      await callback();
-    } catch (error) {
-      // Note: In a production add-in, you'd want to notify the user through your add-in's UI.
-      console.error(error);
-    }
-  }
-
-  tryCatch(run);
+				c.sync().then(async function () {
+					console.log(rowRange.text);
+					resolve(rowRange.text);
+				});
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	});
 }
