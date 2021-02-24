@@ -38,7 +38,15 @@
 </svelte:head>
 <div class="about container">
   <h1>Why HMDA Hero</h1>
-
+  <h5>Fast  <i class="material-icons" style="font-size: 1.1rem; width: 1rem;">
+    offline_bolt
+  </i> Light-weight  <i class="material-icons" style="font-size: 1.1rem; width: 1rem;">
+    cloud_queue
+  </i> Powerful <i class="material-icons" style="font-size: 1.1rem; width: 1rem;">
+    battery_charging_full
+  </i> And Free <i class="material-icons" style="font-size: 1.1rem; width: 1rem;">
+    favorite
+  </i></h5>
   <p>
     HMDA Hero is a free resource provided to assist with the arduous process of
     compiling HMDA data. While there are a number of excellent tools available

@@ -31,13 +31,12 @@
     reverseMortgage,
     openEndLOC,
     businessOrCommercial
-  } from "../stores.js";
-  import Modal from "../components/Modal.svelte";
-  import Checkbox from "../components/Checkbox.svelte";
-  import HRValidation from "../components/HRValidation.svelte";
-  import { getLEI } from "../Excel Scripts/getLEI.js";
-  import { setSetting } from "../Excel Scripts/setSetting.js";
-  import { getSetting } from "../Excel Scripts/getSetting.js";
+  } from "./../../stores.js";
+  import Modal from "../Modal.svelte";
+  import Checkbox from "../Checkbox.svelte";
+  import HRValidation from "../HRValidation.svelte";
+  import { getLEI } from "../../Excel Scripts/getLEI.js";
+  import { setSetting } from "../../Excel Scripts/setSetting.js";
 
   (async () => {
     if (process.browser) {

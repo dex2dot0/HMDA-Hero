@@ -24,12 +24,12 @@
     coapplicantCreditScore,
     coapplicantCreditModelOther,
     isExempt
-  } from "../stores.js";
-  import Modal from "../components/Modal.svelte";
-  import Checkbox from "../components/Checkbox.svelte";
-  import HRValidation from "../components/HRValidation.svelte";
-  import NoCoAppCheckbox from "../components/NoCoAppCheckbox.svelte";
-  import { getSetting } from "../Excel Scripts/getSetting.js";
+  } from "./../../stores.js";
+  import Modal from "../Modal.svelte";
+  import Checkbox from "../Checkbox.svelte";
+  import HRValidation from "../HRValidation.svelte";
+  import { getSetting } from "../../Excel Scripts/getSetting.js";
+  import NoCoAppCheckbox from "../NoCoAppCheckbox.svelte";
 
   (async () => {
     if (process.browser) {

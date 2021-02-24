@@ -9,10 +9,10 @@
     denialReason3,
     denialReason4,
     denialReasonOther
-  } from "../stores.js";
-  import Modal from "../components/Modal.svelte";
-  import HRValidation from "../components/HRValidation.svelte";
-  import { getSetting } from "../Excel Scripts/getSetting.js";
+  } from "./../../stores.js";
+  import Modal from "../Modal.svelte";
+  import HRValidation from "../HRValidation.svelte";
+  import { setSetting } from "../../Excel Scripts/setSetting.js";
 
   (async () => {
     if (process.browser) {

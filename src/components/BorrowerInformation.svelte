@@ -1,6 +1,6 @@
 <script>
-  import ApplicantGMI from "../components/ApplicantGMI.svelte";
-  import CoApplicantGMI from "../components/CoApplicantGMI.svelte";
+  import ApplicantGMI from "../components/Applicant GMI/ApplicantGMI.svelte";
+  import CoApplicantGMI from "../components/CoApplicant GMI/CoApplicantGMI.svelte";
   let show = "app";
 </script>
 

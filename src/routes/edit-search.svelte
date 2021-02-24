@@ -419,7 +419,7 @@
         </form>
       {:else}
         <form class="shadow-sm p-1 mb-5 bg-white rounded">
-          double click a result to edit the loan
+          Click the <strong>Edit Loan</strong> button on a result below to open the loan for editing
           <Media query={'(min-width: ' + width + 'px)'} let:matches>
             {#if matches}
               <div class="table-responsive">

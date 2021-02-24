@@ -1,9 +1,9 @@
 <script>
-  import LoanDetails from "../components/LoanDetails.svelte";
-  import PropertyInformation from "../components/PropertyInformation.svelte";
+  import LoanDetails from "../components/Loan Details/LoanDetails.svelte";
+  import PropertyInformation from "../components/Property Information/PropertyInformation.svelte";
   import BorrowerInformation from "../components/BorrowerInformation.svelte";
-  import UnderwritingDetails from "../components/UnderwritingDetails.svelte";
-  import HMDAInformation from "../components/HMDAInformation.svelte";
+  import UnderwritingDetails from "../components/Underwriting Details/UnderwritingDetails.svelte";
+  import HMDAInformation from "../components/HMDA Information/HMDAInformation.svelte";
   import CancelDialog from "../components/CancelDialog.svelte";
   import { action, LEI, editRow, isDirty } from "../stores.js";
   import { getLEI } from "../Excel Scripts/getLEI.js";

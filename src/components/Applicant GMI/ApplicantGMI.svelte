@@ -1,14 +1,5 @@
 <script>
   import {
-    applicantEthBasis,
-    applicantRaceBasis,
-    applicantSexBasis,
-    applicantEth1,
-    applicantEth2,
-    applicantEth3,
-    applicantEth4,
-    applicantEth5,
-    applicantEthOther,
     applicantRace1,
     applicantRace2,
     applicantRace3,
@@ -23,11 +14,21 @@
     applicantCreditModelOther,
     applicantCreditScore,
     isExempt
-  } from "../stores.js";
-  import Modal from "../components/Modal.svelte";
-  import Checkbox from "../components/Checkbox.svelte";
-  import HRValidation from "../components/HRValidation.svelte";
-  import { getSetting } from "../Excel Scripts/getSetting.js";
+  } from "./../../stores.js";
+  import Modal from "../Modal.svelte";
+  import Checkbox from "../Checkbox.svelte";
+  import HRValidation from "../HRValidation.svelte";
+  import { getSetting } from "../../Excel Scripts/getSetting.js";
+
+  import EthBasis from "./EthBasis.svelte";
+  import RaceBasis from "./RaceBasis.svelte";
+  import SexBasis from "./SexBasis.svelte";
+  import Eth1 from "./Eth1.svelte";
+  import Eth2 from "./Eth2.svelte";
+  import Eth3 from "./Eth3.svelte";
+  import Eth4 from "./Eth4.svelte";
+  import Eth5 from "./Eth5.svelte";
+  import EthFree from "./EthFree.svelte";
 
   (async () => {
     if (process.browser) {
@@ -59,64 +60,13 @@
 </h6>
 <div class="row">
   <div class="col-sm-12 col-md-4">
-    <!-- Borrower Ethnicity Collection Basis -->
-    <label for="EthBasis">Ethnicity</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$applicantEthBasis > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="EthBasis"
-      bind:value={$applicantEthBasis}
-      on:change={applicantEthBasis.change}>
-      <option />
-      <option value="1">
-        1. Collected on the basis of visual observation or surname
-      </option>
-      <option value="2">
-        2. Not collected on the basis of visual observation or surname
-      </option>
-      <option value="3">3. Not applicable</option>
-    </select>
-    <!--****************** -->
+    <EthBasis/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- Borrower Race Collection Basis -->
-    <label for="RaceBasis">Race</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$applicantRaceBasis > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="RaceBasis"
-      bind:value={$applicantRaceBasis}
-      on:change={applicantRaceBasis.change}>
-      <option />
-      <option value="1">
-        1. Collected on the basis of visual observation or surname
-      </option>
-      <option value="2">
-        2. Not collected on the basis of visual observation or surname
-      </option>
-      <option value="3">3. Not applicable</option>
-    </select>
-    <!--****************** -->
+    <RaceBasis/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- Sex Collection Basis -->
-    <label for="SexBasis">Sex</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$applicantSexBasis > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="SexBasis"
-      bind:value={$applicantSexBasis}
-      on:change={applicantSexBasis.change}>
-      <option />
-      <option value="1">
-        1. Collected on the basis of visual observation or surname
-      </option>
-      <option value="2">
-        2. Not collected on the basis of visual observation or surname
-      </option>
-      <option value="3">3. Not applicable</option>
-    </select>
-    <!--****************** -->
+    <SexBasis/>
   </div>
 </div>
 
@@ -125,123 +75,22 @@
 </h6>
 <div class="row">
   <div class="col-sm-12 col-md-4">
-    <!-- Ethnicity 1 -->
-    <label for="Eth1">Ethnicity 1</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$applicantEth1 ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="Eth1"
-      bind:value={$applicantEth1}
-      on:change={applicantEth1.change}>
-      <option />
-      <option value="1">1. Hispanic or Latino</option>
-      <option value="11">11. Mexican</option>
-      <option value="12">12. Puerto Rican</option>
-      <option value="13">13. Cuban</option>
-      <option value="14">14. Other Hispanic or Latino</option>
-      <option value="2">2. Not Hispanic or Latino</option>
-      <option value="3">
-        3. Information not provided by applicant in mail, internet, or telephone
-        application
-      </option>
-      <option value="4">4. Not applicable</option>
-    </select>
-    <!--****************** -->
+    <Eth1/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- Ethnicity 2 -->
-    <label for="Eth2">Ethnicity 2</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class="custom-select"
-      id="Eth2"
-      bind:value={$applicantEth2}
-      on:change={applicantEth2.change}>
-      <option selected value="">Blank, If none are applicable</option>
-      <option value="1">1. Hispanic or Latino</option>
-      <option value="11">11. Mexican</option>
-      <option value="12">12. Puerto Rican</option>
-      <option value="13">13. Cuban</option>
-      <option value="14">14. Other Hispanic or Latino</option>
-      <option value="2">2. Not Hispanic or Latino</option>
-    </select>
-    <!--****************** -->
+    <Eth2/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- Ethnicity 3 -->
-    <label for="Eth3">Ethnicity 3</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class="custom-select"
-      id="Eth3"
-      bind:value={$applicantEth3}
-      on:change={applicantEth3.change}>
-      <option selected value="">Blank, If none are applicable</option>
-      <option value="1">1. Hispanic or Latino</option>
-      <option value="11">11. Mexican</option>
-      <option value="12">12. Puerto Rican</option>
-      <option value="13">13. Cuban</option>
-      <option value="14">14. Other Hispanic or Latino</option>
-      <option value="2">2. Not Hispanic or Latino</option>
-    </select>
-    <!--****************** -->
+    <Eth3/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- Ethnicity 4 -->
-    <label for="Eth4">Ethnicity 4</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class="custom-select"
-      id="Eth4"
-      bind:value={$applicantEth4}
-      on:change={applicantEth4.change}>
-      <option selected value="">Blank, If none are applicable</option>
-      <option value="1">1. Hispanic or Latino</option>
-      <option value="11">11. Mexican</option>
-      <option value="12">12. Puerto Rican</option>
-      <option value="13">13. Cuban</option>
-      <option value="14">14. Other Hispanic or Latino</option>
-      <option value="2">2. Not Hispanic or Latino</option>
-    </select>
-    <!--****************** -->
+    <Eth4/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- Ethnicity 5 -->
-    <label for="Eth5">Ethnicity 5</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class="custom-select"
-      id="Eth5"
-      bind:value={$applicantEth5}
-      on:change={applicantEth5.change}>
-      <option selected value="">Blank, If none are applicable</option>
-      <option value="1">1. Hispanic or Latino</option>
-      <option value="11">11. Mexican</option>
-      <option value="12">12. Puerto Rican</option>
-      <option value="13">13. Cuban</option>
-      <option value="14">14. Other Hispanic or Latino</option>
-      <option value="2">2. Not Hispanic or Latino</option>
-    </select>
-    <!--****************** -->
+    <Eth5/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- Ethnicity Free Form -->
-    <label for="EthFree" style="font-size: 9px;">
-      Free Form for Other Hispanic or Latino
-    </label>
-    <Modal
-      idName="AppEthFreeModal"
-      modalTitle="Ethnicity: Free Form for Other Hispanic or Latino"
-      modalBody="<p> Specify in text the Applicant or borrower's Other Hispanic
-      or Latino ethnicity(ies) provided by the Applicant or Borrower. </p>
-      <p>Otherwise, leave this data field blank</p>" />
-    <input
-      class="form-control"
-      type="text"
-      id="EthFree"
-      bind:value={$applicantEthOther}
-      on:change={applicantEthOther.change} />
-    <!--****************** -->
+    <EthFree/>
   </div>
 </div>
 

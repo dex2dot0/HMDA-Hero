@@ -17,10 +17,10 @@
     ausResult4,
     ausResult5,
     ausResultOther
-  } from "../stores.js";
-  import Modal from "../components/Modal.svelte";
-  import HRValidation from "../components/HRValidation.svelte";
-  import { getSetting } from "../Excel Scripts/getSetting.js";
+  } from "./../../stores.js";
+  import Modal from "../Modal.svelte";
+  import HRValidation from "../HRValidation.svelte";
+  import { getSetting } from "../../Excel Scripts/getSetting.js";
 
   (async () => {
     if (process.browser) {
