@@ -81,6 +81,7 @@
   }
 </style>
 
+<!-- svelte-ignore a11y-label-has-associated-control-->
 <label class="container">
   {text}
   {#if value}
