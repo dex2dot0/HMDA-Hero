@@ -1,14 +1,5 @@
 <script>
   import {
-    NoCoApp,
-    coapplicantEthBasis,
-    coapplicantRaceBasis,
-    coapplicantSexBasis,
-    coapplicantEth1,
-    coapplicantEth2,
-    coapplicantEth3,
-    coapplicantEth4,
-    coapplicantEth5,
     coapplicantEthOther,
     coapplicantRace1,
     coapplicantRace2,
@@ -29,7 +20,16 @@
   import Checkbox from "../Checkbox.svelte";
   import HRValidation from "../HRValidation.svelte";
   import { getSetting } from "../../Excel Scripts/getSetting.js";
-  import NoCoAppCheckbox from "../NoCoAppCheckbox.svelte";
+
+  import NoCoApp from "./NoCoApp.svelte";
+  import EthBasis from "./EthBasis.svelte";
+  import RaceBasis from "./RaceBasis.svelte";
+  import SexBasis from "./SexBasis.svelte";
+  import Eth1 from "./Eth1.svelte";
+  import Eth2 from "./Eth2.svelte";
+  import Eth3 from "./Eth3.svelte";
+  import Eth4 from "./Eth4.svelte";
+  import Eth5 from "./Eth5.svelte";
 
   (async () => {
     if (process.browser) {
@@ -42,54 +42,6 @@
       });
     }
   })();
-
-  function coAppChanged() {
-    if ($NoCoApp) {
-      coapplicantEthBasis.set("4");
-      coapplicantRaceBasis.set("4");
-      coapplicantSexBasis.set("4");
-      coapplicantEth1.set("5");
-      coapplicantEth2.set("");
-      coapplicantEth3.set("");
-      coapplicantEth4.set("");
-      coapplicantEth5.set("");
-      coapplicantEthOther.set("");
-      coapplicantRace1.set("8");
-      coapplicantRace2.set("");
-      coapplicantRace3.set("");
-      coapplicantRace4.set("");
-      coapplicantRace5.set("");
-      coapplicantRaceOther1.set("");
-      coapplicantRaceOther2.set("");
-      coapplicantRaceOther3.set("");
-      coapplicantSex.set("5");
-      coapplicantAge.set("9999");
-      coapplicantCreditModel.set("10");
-      coapplicantCreditScore.set("9999");
-    } else {
-      coapplicantEthBasis.set("");
-      coapplicantRaceBasis.set("");
-      coapplicantSexBasis.set("");
-      coapplicantEth1.set("");
-      coapplicantEth2.set("");
-      coapplicantEth3.set("");
-      coapplicantEth4.set("");
-      coapplicantEth5.set("");
-      coapplicantEthOther.set("");
-      coapplicantRace1.set("");
-      coapplicantRace2.set("");
-      coapplicantRace3.set("");
-      coapplicantRace4.set("");
-      coapplicantRace5.set("");
-      coapplicantRaceOther1.set("");
-      coapplicantRaceOther2.set("");
-      coapplicantRaceOther3.set("");
-      coapplicantSex.set("");
-      coapplicantAge.set("");
-      coapplicantCreditModel.set("");
-      coapplicantCreditScore.set("");
-    }
-  }
 
   function coappCreditCheckBoxChecked(updated) {
     switch (updated) {
@@ -157,102 +109,19 @@
 
 <div class="row baseline">
   <div class="col">
-    <!-- No Co-Applicant Checkbox -->
-    <label for="noCoApp" class="mr-2 mb-1" style="font-size: 14px;">
-      No Co-Applicant
-    </label>
-    <NoCoAppCheckbox
-      value={$NoCoApp}
-      on:notify={NoCoApp.changed}
-      on:notify={coAppChanged}
-      on:notify={coapplicantAge.NA}
-      text="" />
-    <Modal
-      idName="NoCoAppModal"
-      modalTitle="No Co-Applicant"
-      modalBody="<p>Checking this box will automatically set fields relative to
-      the co-applicant as not applicable or the applicable code.</p>" />
+    <NoCoApp/>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-12 col-md-4">
-    <!-- CoApp Ethnicity Collection Basis -->
-    <label for="EthBasis">Ethnicity</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$coapplicantEthBasis > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="EthBasis"
-      bind:value={$coapplicantEthBasis}
-      on:change={coapplicantEthBasis.change}
-      disabled={$NoCoApp}>
-      <option />
-      <option value="1">
-        1. Collected on the basis of visual observation or surname
-      </option>
-      <option value="2">
-        2. Not collected on the basis of visual observation or surname
-      </option>
-      <option value="3">3. Not applicable</option>
-      {#if $NoCoApp}
-        <option value="4" selected>4. No co-applicant</option>
-      {:else}
-        <option value="4">4. No co-applicant</option>
-      {/if}
-    </select>
-    <!--****************** -->
+    <EthBasis/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- Co-Borrower Race Collection Basis -->
-    <label for="CoRaceBasis">Race</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$coapplicantRaceBasis > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="CoRaceBasis"
-      bind:value={$coapplicantRaceBasis}
-      on:change={coapplicantRaceBasis.change}
-      disabled={$NoCoApp}>
-      <option />
-      <option value="1">
-        1. Collected on the basis of visual observation or surname
-      </option>
-      <option value="2">
-        2. Not collected on the basis of visual observation or surname
-      </option>
-      <option value="3">3. Not applicable</option>
-      {#if $NoCoApp}
-        <option value="4" selected>4. No co-applicant</option>
-      {:else}
-        <option value="4">4. No co-applicant</option>
-      {/if}
-    </select>
-    <!--****************** -->
+    <RaceBasis/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- Co-Borrower Sex Collection Basis -->
-    <label for="CoSexBasis">Sex</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$coapplicantSexBasis > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="CoSexBasis"
-      bind:value={$coapplicantSexBasis}
-      on:change={coapplicantSexBasis.change}
-      disabled={$NoCoApp}>
-      <option />
-      <option value="1">
-        1. Collected on the basis of visual observation or surname
-      </option>
-      <option value="2">
-        2. Not collected on the basis of visual observation or surname
-      </option>
-      <option value="3">3. Not applicable</option>
-      {#if $NoCoApp}
-        <option value="4" selected>4. No co-applicant</option>
-      {:else}
-        <option value="4">4. No co-applicant</option>
-      {/if}
-    </select>
-    <!--****************** -->
+    <SexBasis/>
   </div>
 </div>
 
@@ -261,114 +130,19 @@
 </h6>
 <div class="row">
   <div class="col-sm-12 col-md-4">
-    <label for="CoEth1">Ethnicity 1</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$coapplicantEth1 > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="CoEth1"
-      bind:value={$coapplicantEth1}
-      on:change={coapplicantEth1.change}
-      disabled={$NoCoApp}>
-      <option />
-      <option value="1">1. Hispanic or Latino</option>
-      <option value="11">11. Mexican</option>
-      <option value="12">12. Puerto Rican</option>
-      <option value="13">13. Cuban</option>
-      <option value="14">14. Other Hispanic or Latino</option>
-      <option value="2">2. Not Hispanic or Latino</option>
-      <option value="3">
-        3. Information not provided by applicant in mail, internet, or telephone
-        application
-      </option>
-      <option value="4">4. Not applicable</option>
-      {#if $NoCoApp}
-        <option value="5" selected>5. No co-applicant</option>
-      {:else}
-        <option value="5">5. No co-applicant</option>
-      {/if}
-    </select>
-
-    <!--****************** -->
+    <Eth1/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- CoApp Ethnicity 2 -->
-    <label for="CoEth2">Ethnicity 2</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class="custom-select"
-      id="CoEth2"
-      bind:value={$coapplicantEth2}
-      on:change={coapplicantEth2.change}
-      disabled={$NoCoApp}>
-      <option selected value="">Blank, If none are applicable</option>
-      <option value="1">1. Hispanic or Latino</option>
-      <option value="11">11. Mexican</option>
-      <option value="12">12. Puerto Rican</option>
-      <option value="13">13. Cuban</option>
-      <option value="14">14. Other Hispanic or Latino</option>
-      <option value="2">2. Not Hispanic or Latino</option>
-    </select>
-    <!--****************** -->
+    <Eth2/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- CoApp Ethnicity 3 -->
-    <label for="CoEth3">Ethnicity 3</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class="custom-select"
-      id="CoEth3"
-      bind:value={$coapplicantEth3}
-      on:change={coapplicantEth3.change}
-      disabled={$NoCoApp}>
-      <option selected value="">Blank, If none are applicable</option>
-      <option value="1">1. Hispanic or Latino</option>
-      <option value="11">11. Mexican</option>
-      <option value="12">12. Puerto Rican</option>
-      <option value="13">13. Cuban</option>
-      <option value="14">14. Other Hispanic or Latino</option>
-      <option value="2">2. Not Hispanic or Latino</option>
-    </select>
-    <!--****************** -->
+    <Eth3/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- CoApp Ethnicity 4 -->
-    <label for="CoEth4">Ethnicity 4</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class="custom-select"
-      id="CoEth4"
-      bind:value={$coapplicantEth4}
-      on:change={coapplicantEth4.change}
-      disabled={$NoCoApp}>
-      <option selected value="">Blank, If none are applicable</option>
-      <option value="1">1. Hispanic or Latino</option>
-      <option value="11">11. Mexican</option>
-      <option value="12">12. Puerto Rican</option>
-      <option value="13">13. Cuban</option>
-      <option value="14">14. Other Hispanic or Latino</option>
-      <option value="2">2. Not Hispanic or Latino</option>
-    </select>
-    <!--****************** -->
+    <Eth4/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- CoApp Ethnicity 5 -->
-    <label for="CoEth5">Ethnicity 5</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class="custom-select"
-      id="CoEth5"
-      bind:value={$coapplicantEth5}
-      on:change={coapplicantEth5.change}
-      disabled={$NoCoApp}>
-      <option selected value="">Blank, If none are applicable</option>
-      <option value="1">1. Hispanic or Latino</option>
-      <option value="11">11. Mexican</option>
-      <option value="12">12. Puerto Rican</option>
-      <option value="13">13. Cuban</option>
-      <option value="14">14. Other Hispanic or Latino</option>
-      <option value="2">2. Not Hispanic or Latino</option>
-    </select>
-    <!--****************** -->
+    <Eth5/>
   </div>
   <div class="col-sm-12 col-md-4">
     <!-- CoApp Ethnicity Free Form -->
