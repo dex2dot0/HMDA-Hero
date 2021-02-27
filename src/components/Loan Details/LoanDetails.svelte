@@ -39,6 +39,19 @@
   import { getSetting } from "../../Excel Scripts/getSetting.js";
   import { setSetting } from "../../Excel Scripts/setSetting.js";
 
+  import LoanAmount from "./LoanAmount.svelte";
+  import ApplicationDate from "./ApplicationDate.svelte";
+  import ActionTakenDate from "./ActionTakenDate.svelte";
+  import ActionTaken from "./ActionTaken.svelte";
+  import LoanType from "./LoanType.svelte";
+  import LoanPurpose from "./LoanPurpose.svelte";
+  import OccupancyType from "./OccupancyType.svelte"
+  import LienStatus from "./LienStatus.svelte";
+  import PurchaserType from "./PurchaserType.svelte";
+  import Preapproval from "./Preapproval.svelte";
+  import TotalCosts from "./TotalCosts.svelte";
+  import TotalPntsFees from "./TotalPntsFees.svelte";
+
   (async () => {
     if (process.browser) {
       await Office.onReady().then(async function () {
@@ -257,276 +270,46 @@
 
 <div class="row">
   <div class="col-sm-12 col-md-4">
-    <!-- Loan Amount -->
-    <label for="LoanAmount">Loan Amount</label>
-    <Modal
-      idName="LoanAmountModal"
-      modalTitle="Loan Amount"
-      modalBody="<p>Example:</p> <p>110500 (or)</p> <p>110500.00</p>" />
-    <input
-      class="form-control"
-      type="number"
-      id="LoanAmount"
-      tabindex="0"
-      bind:value={$loanAmount}
-      on:change={loanAmount.change} />
-    {#if $loanAmount > 0}
-      <HRValidation isValid={true} />
-    {:else}
-      <HRValidation isValid={false} />
-    {/if}
-    <!--****************** -->
+    <LoanAmount/>
   </div>
-
   <div class="col-sm-12 col-md-4">
-    <!-- Application Date -->
-    <!-- NA allowed on Purchased Loans-->
-    <label for="AppDate">Application Date or</label>
-    {#if $appDate !== 'NA'}
-      <Checkbox value={false} on:notify={appDate.NA} />
-    {:else}
-      <Checkbox value={true} on:notify={appDate.NA} />
-    {/if}
-
-    <input
-      class="form-control"
-      type="date"
-      id="AppDate"
-      tabindex="0"
-      bind:value={$appDate}
-      on:change={appDate.change} />
-    {#if $appDate !== ''}
-      <HRValidation isValid={true} />
-    {:else}
-      <HRValidation isValid={false} />
-    {/if}
-    <!--****************** -->
+    <ApplicationDate/>
   </div>
-
   <div class="col-sm-12 col-md-4">
-    <!-- Action Taken Date -->
-    <label for="ActionDate">Action Date</label>
-    <input
-      class="form-control"
-      type="date"
-      id="ActionDate"
-      tabindex="0"
-      bind:value={$actionTakenDate}
-      on:change={actionTakenDate.change} />
-    {#if $actionTakenDate !== ''}
-      <HRValidation isValid={true} />
-    {:else}
-      <HRValidation isValid={false} />
-    {/if}
-    <!--****************** -->
+    <ActionTakenDate/>
   </div>
 </div>
-
 <div class="row">
   <div class="col-sm-12 col-md-6">
-    <!-- Action Taken -->
-    <label for="ActionTaken">Action Taken</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$actionTaken !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="ActionTaken"
-      tabindex="0"
-      bind:value={$actionTaken}
-      on:change={actionTaken.change}>
-      <option />
-      <option value="1">1. Loan origination</option>
-      <option value="2">2. Application approved but not accepted</option>
-      <option value="3">3. Application denied</option>
-      <option value="4">4. App withdrawn by applicant</option>
-      <option value="5">5. File closed for incompleteness</option>
-      <option value="6">6. Purchased loan</option>
-      <option value="7">7. Preapproval request denied</option>
-      <option value="8">
-        8. Preapproval request approved but not accepted
-      </option>
-    </select>
-    <!--****************** -->
-  </div>
-
-  <div class="col-sm-12 col-md-6">
-    <!-- Loan Type -->
-    <label for="LoanType">Loan Type</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$loanType !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="LoanType"
-      tabindex="0"
-      bind:value={$loanType}
-      on:change={loanType.change}>
-      <option />
-      <option value="1">
-        1. Conventional (not insured or guaranteed by FHA, VA, RHS, or FSA
-      </option>
-      <option value="2">2. Federal Housing Adminitration insured (FHA)</option>
-      <option value="3">3. Veterans Affairs guaranteed (VA)</option>
-      <option value="4">
-        4. USDA Rural Housing Service or Farm Service Agency guaranteed (RHS or
-        FSA)
-      </option>
-    </select>
-
-    <!--****************** -->
+   <ActionTaken/>
   </div>
   <div class="col-sm-12 col-md-6">
-    <!-- Loan Purpose -->
-    <label for="LoanPurpose">Loan Purpose</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$loanPurpose !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="LoanPurpose"
-      tabindex="0"
-      bind:value={$loanPurpose}
-      on:change={loanPurpose.change}>
-      <option />
-      <option value="1">1. Home purchase</option>
-      <option value="2">2. Home improvement</option>
-      <option value="31">31. Refinancing</option>
-      <option value="32">32. Cash-out refinancing</option>
-      <option value="4">4. Other purpose</option>
-      <option value="NA">5. NA</option>
-    </select>
-
-    <!--****************** -->
+    <LoanType/>
   </div>
   <div class="col-sm-12 col-md-6">
-    <!-- Occupancy Type -->
-    <label for="OccupancyType">Occupancy Type</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$occupancyType ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="OccupancyType"
-      tabindex="0"
-      bind:value={$occupancyType}
-      on:change={occupancyType.change}>
-      <option />
-      <option value="1">1. Principal residence</option>
-      <option value="2">2. Second residence</option>
-      <option value="3">3. Investment property</option>
-    </select>
-    <!--****************** -->
+    <LoanPurpose/>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <OccupancyType/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- Lien Status -->
-    <label for="LienStatus">Lien Status</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$lienStatus !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="LienStatus"
-      tabindex="0"
-      bind:value={$lienStatus}
-      on:change={lienStatus.change}>
-      <option />
-      <option value="1">1. Secured by a first lien</option>
-      <option value="2">2. Secured by a subordinate lien</option>
-    </select>
-    <!--****************** -->
+    <LienStatus/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- Type of Purchaser -->
-    <label for="PurchaserType">Type of Purchaser</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$purchaserType !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="PurchaserType"
-      tabindex="0"
-      bind:value={$purchaserType}
-      on:change={purchaserType.change}>
-      <option />
-      <option value="0">0. Not applicable</option>
-      <option value="1">1. Fannie Mae</option>
-      <option value="2">2. Ginnie Mae</option>
-      <option value="3">3. Freddie Mac</option>
-      <option value="4">4. Farmer Mac</option>
-      <option value="5">5. Private Securitizer</option>
-      <option value="6">
-        6. Commercial bank, savings bank, or savings association
-      </option>
-      <option value="71">
-        71. Credit union, mortgage company, or finance company
-      </option>
-      <option value="72">72. Life insurance company</option>
-      <option value="8">8. Affiliate institution</option>
-      <option value="9">9. Other type of purchaser</option>
-    </select>
-    <!--****************** -->
+    <PurchaserType/>
   </div>
   <div class="col-sm-12 col-md-4">
-    <!-- Preapproval -->
-    <label for="Preapproval">Preapproval</label>
-    <!-- svelte-ignore a11y-no-onchange-->
-    <select
-      class={$preapproval !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-      id="Preapproval"
-      tabindex="0"
-      bind:value={$preapproval}
-      on:change={preapproval.change}>
-      <option />
-      <option value="1">1. Preapproval requested</option>
-      <option value="2">2. Preapproval not requested</option>
-    </select>
-    <!--****************** -->
+    <Preapproval/>
   </div>
 </div>
 
 {#if !$isExempt}
   <div class="row">
     <div class="col-sm-6 col-md-3">
-      <!-- Total Loan Costs -->
-      <label for="TotalCosts">Total Loan Costs or</label>
-      {#if $loanCosts !== 'NA'}
-        <Checkbox value={false} on:notify={loanCosts.NA} />
-      {:else}
-        <Checkbox value={true} on:notify={loanCosts.NA} />
-      {/if}
-      <Modal
-        idName="LoanCostsModal"
-        modalTitle="Loan Costs"
-        modalBody="<p>Example:</p> <p>2399.04 (or) NA</p> <p>(or) Exempt</p>" />
-      <input
-        class="form-control"
-        type="text"
-        id="TotalCosts"
-        tabindex="0"
-        bind:value={$loanCosts}
-        on:change={loanCosts.changed} />
-      {#if $loanCosts > 0 || $loanCosts == 'NA'}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation isValid={false} />
-      {/if}
-
-      <!--****************** -->
+      <TotalCosts/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- Total Points & Fees -->
-      <label for="TotalPntsFees">Total Points and Fees or</label>
-      {#if $pointsFees !== 'NA'}
-        <Checkbox value={false} on:notify={pointsFees.NA} />
-      {:else}
-        <Checkbox value={true} on:notify={pointsFees.NA} />
-      {/if}
-      <Modal
-        idName="PointsModal"
-        modalTitle="Total Points & Fees"
-        modalBody="<p>Example:</p> <p>2399.04 (or) NA</p> <p>(or) Exempt</p>" />
-      <input
-        class="form-control"
-        type="text"
-        id="TotalPntsFees"
-        tabindex="0"
-        bind:value={$pointsFees}
-        on:change={pointsFees.changed} />
-      {#if $pointsFees > 0 || $pointsFees == 'NA'}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation isValid={false} />
-      {/if}
-      <!--****************** -->
+     <TotalPntsFees/>
     </div>
     <div class="col-sm-6 col-md-3">
       <!-- Origination Charges -->
