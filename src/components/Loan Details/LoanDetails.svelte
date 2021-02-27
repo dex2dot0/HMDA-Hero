@@ -36,6 +36,7 @@
   import Checkbox from "../Checkbox.svelte";
   import HRValidation from "../HRValidation.svelte";
   import { getLEI } from "../../Excel Scripts/getLEI.js";
+  import { getSetting } from "../../Excel Scripts/getSetting.js";
   import { setSetting } from "../../Excel Scripts/setSetting.js";
 
   (async () => {

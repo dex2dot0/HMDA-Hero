@@ -1,7 +1,27 @@
 <script>
     import {
       NoCoApp,
-      coapplicantAge
+      coapplicantAge,
+      coapplicantEthBasis,
+      coapplicantRaceBasis,
+      coapplicantSexBasis,
+      coapplicantEth1,
+      coapplicantEth2,
+      coapplicantEth3,
+      coapplicantEth4,
+      coapplicantEth5,
+      coapplicantEthOther,
+      coapplicantRace1,
+      coapplicantRace2,
+      coapplicantRace3,
+      coapplicantRace4,
+      coapplicantRace5,
+      coapplicantRaceOther1,
+      coapplicantRaceOther2,
+      coapplicantRaceOther3,
+      coapplicantSex,
+      coapplicantCreditModel,
+      coapplicantCreditScore
     } from "./../../stores.js";
 
     import NoCoAppCheckbox from "../NoCoAppCheckbox.svelte";
@@ -56,7 +76,6 @@
   }
 </script>
 
-<!-- No Co-Applicant Checkbox -->
 <label for="noCoApp" class="mr-2 mb-1" style="font-size: 14px;">
     No Co-Applicant
   </label>

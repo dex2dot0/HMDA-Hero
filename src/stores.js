@@ -1,4 +1,4 @@
-import { writable, get } from 'svelte/store';
+import { writable } from 'svelte/store';
 import { updateCell } from './Excel Scripts/updateCell.js';
 
 async function updateValue(value, column) {
@@ -23,11 +23,15 @@ editRow.subscribe((value) => {
 
 //Automation helper
 function NoCoAppUpdate() {
-	const { subscribe } = writable(false);
+	const { subscribe, set } = writable(false);
+	let val = false;
 
 	return {
 		subscribe,
-		changed: () => update((n) => !n),
+		changed: () => {
+			val = !val;
+			set(val);
+		},
 	};
 }
 
