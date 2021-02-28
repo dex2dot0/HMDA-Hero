@@ -4,36 +4,8 @@
     LEI,
     ULI,
     LoanNumber,
-    loanAmount,
-    loanType,
-    appDate,
-    actionTakenDate,
-    actionTaken,
-    loanPurpose,
-    occupancyType,
-    lienStatus,
-    purchaserType,
-    preapproval,
-    loanCosts,
-    pointsFees,
-    originationCharges,
-    discountPoints,
-    lenderCredits,
-    interestRate,
-    prepaymentPenaltyTerm,
-    loanTerm,
-    introRatePeriod,
-    balloonPayment,
-    ioPayments,
-    negativeAm,
-    otherNonAm,
-    NMLSR,
-    reverseMortgage,
-    openEndLOC,
-    businessOrCommercial
   } from "./../../stores.js";
   import Modal from "../Modal.svelte";
-  import Checkbox from "../Checkbox.svelte";
   import HRValidation from "../HRValidation.svelte";
   import { getLEI } from "../../Excel Scripts/getLEI.js";
   import { getSetting } from "../../Excel Scripts/getSetting.js";
@@ -51,6 +23,21 @@
   import Preapproval from "./Preapproval.svelte";
   import TotalCosts from "./TotalCosts.svelte";
   import TotalPntsFees from "./TotalPntsFees.svelte";
+  import OriginationCharges from "./OriginationCharges.svelte";
+  import DiscountPoints from "./DiscountPoints.svelte";
+  import LenderCredits from "./LenderCredits.svelte";
+  import InterestRate from "./InterestRate.svelte";
+  import PrepayTerm from "./PrepayTerm.svelte";
+  import LoanTerm from "./LoanTerm.svelte";
+  import IntroRatePeriod from "./IntroRatePeriod.svelte";
+  import BalloonPayment from "./BalloonPayment.svelte";
+  import IOPayments from "./IOPayments.svelte";
+  import NegativeAmortization from "./NegativeAmortization.svelte";
+  import OtherNonAmortization from "./OtherNonAmortization.svelte";
+  import NMLSR from "./NMLSR.svelte";
+  import HECM from "./HECM.svelte";
+  import HELOC from "./HELOC.svelte";
+  import BusinessPurpose from "./BusinessPurpose.svelte";
 
   (async () => {
     if (process.browser) {
@@ -312,337 +299,49 @@
      <TotalPntsFees/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- Origination Charges -->
-      <label for="OrigCharges">Origination Charges or</label>
-      {#if $originationCharges !== 'NA'}
-        <Checkbox value={false} on:notify={originationCharges.NA} />
-      {:else}
-        <Checkbox value={true} on:notify={originationCharges.NA} />
-      {/if}
-      <Modal
-        idName="OrigChargesModal"
-        modalTitle="Origination Charges"
-        modalBody="<p>Example:</p> <p>2399.04 (or) NA</p> <p>(or) Exempt</p>" />
-      <input
-        class="form-control"
-        type="text"
-        id="OrigCharges"
-        tabindex="0"
-        bind:value={$originationCharges}
-        on:change={originationCharges.changed} />
-      {#if $originationCharges > 0 || $originationCharges === 'NA'}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation isValid={false} />
-      {/if}
-      <!--****************** -->
+      <OriginationCharges/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- Discount Points -->
-      <label for="DiscountPoints">Discount Points or</label>
-      {#if $discountPoints !== 'NA'}
-        <Checkbox value={false} on:notify={discountPoints.NA} />
-      {:else}
-        <Checkbox value={true} on:notify={discountPoints.NA} />
-      {/if}
-      <Modal
-        idName="DiscountPointsModal"
-        modalTitle="Discount Points"
-        modalBody="<p>Example:</p> <p>2399.04 (or) NA</p> <p>(or) Exempt</p>
-        <p>If no points were paid, leave this data field blank</p>" />
-      <input
-        class="form-control"
-        type="text"
-        id="DiscountPoints"
-        tabindex="0"
-        bind:value={$discountPoints}
-        on:change={discountPoints.changed} />
-      {#if $discountPoints > 0 || $discountPoints == 'NA'}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation isValid={false} />
-      {/if}
-      <!--****************** -->
+      <DiscountPoints/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- Lender Credits -->
-      <label for="LenderCredits">Lender Credits or</label>
-      {#if $lenderCredits !== 'NA'}
-        <Checkbox value={false} on:notify={lenderCredits.NA} />
-      {:else}
-        <Checkbox value={true} on:notify={lenderCredits.NA} />
-      {/if}
-      <Modal
-        idName="LenderCreditsModal"
-        modalTitle="Lender Credits"
-        modalBody="<p>Example:</p> <p>2399.04 (or) NA</p> <p>(or) Exempt</p> <p>
-        If no lender credits were provided, leave this data field blank </p>" />
-      <input
-        class="form-control"
-        type="text"
-        id="LenderCredits"
-        tabindex="0"
-        bind:value={$lenderCredits}
-        on:change={lenderCredits.changed} />
-      {#if $lenderCredits > 0 || $lenderCredits == 'NA'}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation isValid={false} />
-      {/if}
-      <!--****************** -->
+      <LenderCredits/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- Interest Rate -->
-      <label for="InterestRate">Interest Rate or</label>
-      {#if $interestRate !== 'NA'}
-        <Checkbox value={false} on:notify={interestRate.NA} />
-      {:else}
-        <Checkbox value={true} on:notify={interestRate.NA} />
-      {/if}
-      <Modal
-        idName="InterestRateModal"
-        modalTitle="Interest Rate"
-        modalBody="<p>Example:</p> <p>4.125 (or) NA</p> <p>(or) Exempt</p>" />
-      <input
-        class="form-control"
-        type="text"
-        id="InterestRate"
-        tabindex="0"
-        bind:value={$interestRate}
-        on:change={interestRate.changed} />
-      {#if $interestRate > 0 || $interestRate == 'NA'}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation isValid={false} />
-      {/if}
-      <!--****************** -->
+      <InterestRate/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- Prepayment Penalty Term -->
-      <label for="PrepayTerm">Prepay Penalty Term or</label>
-      {#if $prepaymentPenaltyTerm !== 'NA'}
-        <Checkbox value={false} on:notify={prepaymentPenaltyTerm.NA} />
-      {:else}
-        <Checkbox value={true} on:notify={prepaymentPenaltyTerm.NA} />
-      {/if}
-      <Modal
-        idName="PrepayTermModal"
-        modalTitle="Prepayment Penalty Term"
-        modalBody="<p>Example:</p> <p>24 (or) NA</p> <p>(or) Exempt</p>" />
-      <input
-        class="form-control"
-        type="text"
-        id="PrepayTerm"
-        tabindex="0"
-        bind:value={$prepaymentPenaltyTerm}
-        on:change={prepaymentPenaltyTerm.changed} />
-      {#if $prepaymentPenaltyTerm > 0 || $prepaymentPenaltyTerm == 'NA'}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation isValid={false} />
-      {/if}
-      <!--****************** -->
+      <PrepayTerm/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- Loan Term -->
-      <label for="LoanTerm">Loan Term or</label>
-      {#if $loanTerm !== 'NA'}
-        <Checkbox value={false} on:notify={loanTerm.NA} />
-      {:else}
-        <Checkbox value={true} on:notify={loanTerm.NA} />
-      {/if}
-      <Modal
-        idName="LoanTermModal"
-        modalTitle="Loan Term"
-        modalBody="<p>Example:</p> <p>360 (or) NA</p> <p>(or) Exempt</p>" />
-      <input
-        class="form-control"
-        type="text"
-        id="LoanTerm"
-        tabindex="0"
-        bind:value={$loanTerm}
-        on:change={loanTerm.changed} />
-      {#if $loanTerm > 0 || $loanTerm == 'NA'}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation isValid={false} />
-      {/if}
-      <!--****************** -->
+      <LoanTerm/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- Intro Rate Period -->
-      <label for="IntroRatePeriod">Intro Rate Period or</label>
-      {#if $introRatePeriod !== 'NA'}
-        <Checkbox value={false} on:notify={introRatePeriod.NA} />
-      {:else}
-        <Checkbox value={true} on:notify={introRatePeriod.NA} />
-      {/if}
-      <Modal
-        idName="IntroRateModal"
-        modalTitle="Introductory Rate Period"
-        modalBody="<p>Example:</p> <p>24 (or) NA</p> <p>(or) Exempt</p>" />
-      <input
-        class="form-control"
-        type="text"
-        id="IntroRatePeriod"
-        tabindex="0"
-        bind:value={$introRatePeriod}
-        on:change={introRatePeriod.changed} />
-      {#if $introRatePeriod > 0 || $introRatePeriod == 'NA'}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation isValid={false} />
-      {/if}
-      <!--****************** -->
+      <IntroRatePeriod/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- Balloon Payment -->
-      <label for="Balloon">Balloon Payment</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select
-        class={$balloonPayment !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-        id="Balloon"
-        tabindex="0"
-        bind:value={$balloonPayment}
-        on:change={balloonPayment.change}>
-        <option />
-        <option value="1">1.Balloon payment</option>
-        <option value="2">2.No balloon payment</option>
-        <option value="1111">1111.Exempt</option>
-      </select>
-      <!--****************** -->
+      <BalloonPayment/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- IO Payments -->
-      <label for="IO">Interest-Only Payments</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select
-        class={$ioPayments !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-        id="IO"
-        tabindex="0"
-        bind:value={$ioPayments}
-        on:change={ioPayments.change}>
-        <option />
-        <option value="1">1.Interest-only payments</option>
-        <option value="2">2.No interest-only payments</option>
-        <option value="1111">1111.Exempt</option>
-      </select>
-      <!--****************** -->
+      <IOPayments/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- Negative Amortization -->
-      <label for="NegAm">Negative Amortization</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select
-        class={$negativeAm !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-        id="NegAm"
-        tabindex="0"
-        bind:value={$negativeAm}
-        on:change={negativeAm.change}>
-        <option />
-        <option value="1">1.Negative Amortization</option>
-        <option value="2">2.No negative amorization</option>
-        <option value="1111">1111.Exempt</option>
-      </select>
-      <!--****************** -->
+      <NegativeAmortization/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- Other Non-amortizing Features -->
-      <label for="OtherAm">Other Non-amortizing Features</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select
-        class={$otherNonAm !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-        id="OtherAm"
-        tabindex="0"
-        bind:value={$otherNonAm}
-        on:change={otherNonAm.change}>
-        <option />
-        <option value="1">1.Other no-fully amortizing features</option>
-        <option value="2">2.No other non-fully amortizing features</option>
-        <option value="1111">1111.Exempt</option>
-      </select>
-      <!--****************** -->
+      <OtherNonAmortization/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- NMLSR -->
-      <label for="NMLSR">MLO NMLSR Identifier or</label>
-      {#if $NMLSR !== 'NA'}
-        <Checkbox value={false} on:notify={NMLSR.NA} />
-      {:else}
-        <Checkbox value={true} on:notify={NMLSR.NA} />
-      {/if}
-      <Modal
-        idName="NMLSRModal"
-        modalTitle="MLO NMLSR Identifier"
-        modalBody="<p>Example:</p> <p>123450 (or) NA (or)</p> <p>Exempt</p>" />
-      <input
-        class="form-control"
-        type="text"
-        id="NMLSR"
-        tabindex="0"
-        bind:value={$NMLSR}
-        on:change={NMLSR.changed} />
-      {#if $NMLSR > 0 || $NMLSR == 'NA'}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation isValid={false} />
-      {/if}
-      <!--****************** -->
+      <NMLSR/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- HECM -->
-      <label for="HECM">Reverse Mortgage</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select
-        class={$reverseMortgage !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-        id="HECM"
-        tabindex="0"
-        bind:value={$reverseMortgage}
-        on:change={reverseMortgage.change}>
-        <option />
-        <option value="1">1.Reverse mortgage</option>
-        <option value="2">2.Not a reverse mortgage</option>
-        <option value="1111">1111.Exempt</option>
-      </select>
-      <!--****************** -->
+      <HECM/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- HELOC -->
-      <label for="HELOC">Open-End LOC</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select
-        class={$openEndLOC !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-        id="HELOC"
-        tabindex="0"
-        bind:value={$openEndLOC}
-        on:change={openEndLOC.change}>
-        <option />
-        <option value="1">1.Open-end line of credit</option>
-        <option value="2">2.Not an open-end line of credit</option>
-        <option value="1111">1111.Exempt</option>
-      </select>
-      <!--****************** -->
+      <HELOC/>
     </div>
     <div class="col-sm-6 col-md-3">
-      <!-- BizPurpose -->
-      <label for="BizPurpose">Business/Commercial Purpose</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select
-        class={$businessOrCommercial !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
-        id="BizPurpose"
-        tabindex="0"
-        bind:value={$businessOrCommercial}
-        on:change={businessOrCommercial.change}>
-        <option />
-        <option value="1">
-          1.Primarily for a business or commercial purpose
-        </option>
-        <option value="2">
-          2.Not primarily for a business or commercial purpose
-        </option>
-        <option value="1111">1111.Exempt</option>
-      </select>
-      <!--****************** -->
+      <BusinessPurpose/>
     </div>
   </div>
 {/if}
