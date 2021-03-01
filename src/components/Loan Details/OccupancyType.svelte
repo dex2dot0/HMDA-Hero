@@ -1,7 +1,7 @@
 <script>
     import {
         occupancyType
-    } from "./../../stores.js";s
+    } from "./../../stores.js";
 </script>
 
 <label for="OccupancyType">Occupancy Type</label>

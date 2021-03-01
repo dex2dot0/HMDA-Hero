@@ -1,7 +1,7 @@
 <script>
     import {
         loanType
-    } from "./../../stores.js";s
+    } from "./../../stores.js";
 </script>
 
 <label for="LoanType">Loan Type</label>

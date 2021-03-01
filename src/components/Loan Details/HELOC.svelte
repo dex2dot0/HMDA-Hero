@@ -1,7 +1,7 @@
 <script>
     import {
         openEndLOC
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 </script>
 
 <label for="HELOC">Open-End LOC</label>

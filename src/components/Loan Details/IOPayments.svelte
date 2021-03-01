@@ -1,7 +1,7 @@
 <script>
     import {
         ioPayments
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 </script>
 
 <label for="IO">Interest-Only Payments</label>

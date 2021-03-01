@@ -1,7 +1,7 @@
 <script>
     import {
         lienStatus
-    } from "./../../stores.js";s
+    } from "./../../stores.js";
 </script>
 
 <label for="LienStatus">Lien Status</label>

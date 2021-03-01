@@ -1,7 +1,7 @@
 <script>
     import {
         appDate
-    } from "./../../stores.js";s
+    } from "./../../stores.js";
 
     import Checkbox from "../Checkbox.svelte";
     import HRValidation from "../HRValidation.svelte";

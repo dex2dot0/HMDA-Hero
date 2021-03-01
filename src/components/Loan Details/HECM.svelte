@@ -1,7 +1,7 @@
 <script>
     import {
         reverseMortgage
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 </script>
 
 <label for="HECM">Reverse Mortgage</label>

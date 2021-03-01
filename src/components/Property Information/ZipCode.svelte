@@ -1,7 +1,7 @@
 <script>
     import {
         zipCode
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 
     import Checkbox from "../Checkbox.svelte";
     import HRValidation from "../HRValidation.svelte";

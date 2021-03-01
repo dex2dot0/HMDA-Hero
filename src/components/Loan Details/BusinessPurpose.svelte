@@ -1,7 +1,7 @@
 <script>
     import {
         businessOrCommercial
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 </script>
 
 <label for="BizPurpose">Business/Commercial Purpose</label>

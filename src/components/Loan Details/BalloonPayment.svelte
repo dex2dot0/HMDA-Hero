@@ -1,7 +1,7 @@
 <script>
     import {
         balloonPayment
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 </script>
 
 <label for="Balloon">Balloon Payment</label>

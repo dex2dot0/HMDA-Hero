@@ -1,7 +1,7 @@
 <script>
     import {
         loanCosts
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 
     import Checkbox from "../Checkbox.svelte";
     import Modal from "../Modal.svelte";

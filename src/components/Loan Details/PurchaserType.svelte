@@ -1,7 +1,7 @@
 <script>
     import {
         purchaserType
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 </script>
 
 <label for="PurchaserType">Type of Purchaser</label>

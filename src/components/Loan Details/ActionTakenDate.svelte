@@ -1,7 +1,7 @@
 <script>
     import {
         actionTakenDate
-    } from "./../../stores.js";s
+    } from "./../../stores.js";
 
     import HRValidation from "../HRValidation.svelte";
 </script>

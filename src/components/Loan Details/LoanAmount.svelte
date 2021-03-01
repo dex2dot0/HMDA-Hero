@@ -1,7 +1,7 @@
 <script>
     import {
         loanAmount
-    } from "./../../stores.js";s
+    } from "./../../stores.js";
 
     import Modal from "../Modal.svelte";
     import HRValidation from "../HRValidation.svelte";

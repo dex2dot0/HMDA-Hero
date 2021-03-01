@@ -1,7 +1,7 @@
 <script>
     import {
         preapproval
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 </script>
 
 <label for="Preapproval">Preapproval</label>

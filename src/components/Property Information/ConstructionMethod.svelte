@@ -1,7 +1,7 @@
 <script>
     import {
         constructionMethod
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 </script>
 
 <label for="ConstructionMethod">Construction Method</label>

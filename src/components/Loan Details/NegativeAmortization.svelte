@@ -1,7 +1,7 @@
 <script>
     import {
         negativeAm
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 </script>
 
 <label for="NegAm">Negative Amortization</label>

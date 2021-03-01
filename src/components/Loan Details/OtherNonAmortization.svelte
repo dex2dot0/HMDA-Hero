@@ -1,7 +1,7 @@
 <script>
     import {
         otherNonAm
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 </script>
 
 <label for="OtherAm">Other Non-amortizing Features</label>

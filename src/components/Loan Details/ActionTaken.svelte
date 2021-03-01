@@ -1,7 +1,7 @@
 <script>
     import {
         actionTaken
-    } from "./../../stores.js";s
+    } from "./../../stores.js";
 </script>
 
  <label for="ActionTaken">Action Taken</label>

@@ -1,7 +1,7 @@
 <script>
     import {
         totalUnits
-    } from "./../../../../stores.js";
+    } from "./../../stores.js";
 
     import HRValidation from "../HRValidation.svelte";
 </script>
