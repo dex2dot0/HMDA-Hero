@@ -1,10 +1,6 @@
 <script>
   import {
     isExempt,
-    income,
-    hoepa,
-    DTI,
-    CLTV,
     ausSystem1,
     ausSystem2,
     ausSystem3,
@@ -21,6 +17,11 @@
   import Modal from "../Modal.svelte";
   import HRValidation from "../HRValidation.svelte";
   import { getSetting } from "../../Excel Scripts/getSetting.js";
+
+  import Income from "./Income.svelte";
+  import HOEPA from "./HOEPA.svelte";
+  import DTI from "./DTI.svelte";
+  import CLTV from "./CLTV.svelte";
 
   (async () => {
     if (process.browser) {
@@ -45,37 +46,10 @@
 {#if $isExempt}
   <div class="row">
     <div class="col-sm-12 col-md-6">
-      <!-- Income -->
-      <label for="Income">Income</label>
-      <input
-        class="form-control"
-        type="text"
-        id="Income"
-        bind:value={$income}
-        on:change={income.change}
-        placeholder="ex. 36 (or) NA" />
-      {#if $income !== ''}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation />
-      {/if}
-      <!--****************** -->
+      <Income/>
     </div>
     <div class="col-sm-12 col-md-6">
-      <!-- HOEPA Status -->
-      <label for="HOEPA">HOEPA Status</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select
-        class={$hoepa > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
-        id="HOEPA"
-        bind:value={$hoepa}
-        on:change={hoepa.change}>
-        <option />
-        <option value="1">1. High-cost mortgage</option>
-        <option value="2">2. Not a high-cost mortgage</option>
-        <option value="3">3. Not applicable</option>
-      </select>
-      <!--****************** -->
+      <HOEPA/>
     </div>
   </div>
 {/if}
@@ -83,71 +57,16 @@
 {#if !$isExempt}
   <div class="row">
     <div class="col-6 col-md-3">
-      <!-- Income -->
-      <label for="Income">Income</label>
-      <input
-        class="form-control"
-        type="text"
-        id="Income"
-        bind:value={$income}
-        on:change={income.change}
-        placeholder="ex. 36 (or) NA" />
-      {#if $income !== ''}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation />
-      {/if}
-      <!--****************** -->
+      <Income/>>
     </div>
     <div class="col-6 col-md-3">
-      <!-- HOEPA Status -->
-      <label for="HOEPA">HOEPA Status</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select
-        class={$hoepa > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
-        id="HOEPA"
-        bind:value={$hoepa}
-        on:change={hoepa.change}>
-        <option />
-        <option value="1">1. High-cost mortgage</option>
-        <option value="2">2. Not a high-cost mortgage</option>
-        <option value="3">3. Not applicable</option>
-      </select>
-      <!--****************** -->
+      <HOEPA/>>
     </div>
     <div class="col-6 col-md-3">
-      <!-- DTI -->
-      <label for="DTI">Debt-to-Income Ratio</label>
-      <input
-        class="form-control"
-        type="text"
-        id="DTI"
-        bind:value={$DTI}
-        on:change={DTI.change}
-        placeholder=" ex. 42.95 (or) NA (or) Exempt" />
-      {#if $DTI !== ''}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation />
-      {/if}
-      <!--****************** -->
+      <DTI/>
     </div>
     <div class="col-6 col-md-3">
-      <!-- CLTV -->
-      <label for="CLTV">CLTV Ratio</label>
-      <input
-        class="form-control"
-        type="text"
-        id="CLTV"
-        bind:value={$CLTV}
-        on:change={CLTV.change}
-        title="ex. 80.05 (or) NA (or) Exempt" />
-      {#if $CLTV !== ''}
-        <HRValidation isValid={true} />
-      {:else}
-        <HRValidation />
-      {/if}
-      <!--****************** -->
+      <CLTV/>
     </div>
   </div>
   <div class="row">
