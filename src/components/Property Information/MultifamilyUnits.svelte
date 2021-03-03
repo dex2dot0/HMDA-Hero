@@ -1,6 +1,6 @@
 <script>
     import {
-        manufacturedPropertyInterest
+      multifamilyUnits
     } from "./../../stores.js";
 
     import Checkbox from "../Checkbox.svelte";
