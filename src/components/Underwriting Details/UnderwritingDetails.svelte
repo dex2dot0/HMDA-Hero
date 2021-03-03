@@ -1,18 +1,6 @@
 <script>
   import {
     isExempt,
-    ausSystem1,
-    ausSystem2,
-    ausSystem3,
-    ausSystem4,
-    ausSystem5,
-    ausSystemOther,
-    ausResult1,
-    ausResult2,
-    ausResult3,
-    ausResult4,
-    ausResult5,
-    ausResultOther
   } from "./../../stores.js";
   import Modal from "../Modal.svelte";
   import HRValidation from "../HRValidation.svelte";
@@ -22,6 +10,18 @@
   import HOEPA from "./HOEPA.svelte";
   import DTI from "./DTI.svelte";
   import CLTV from "./CLTV.svelte";
+  import AUSSystem1 from "./AUSSystem1.svelte";
+  import AUSSystem2 from "./AUSSystem2.svelte";
+  import AUSSystem3 from "./AUSSystem3.svelte";
+  import AUSSystem4 from "./AUSSystem4.svelte";
+  import AUSSystem5 from "./AUSSystem5.svelte";
+  import AUSSystemFree from "./AUSSystemFree.svelte";
+  import AUSResult1 from "./AUSResult1.svelte";
+  import AUSResult2 from "./AUSResult2.svelte";
+  import AUSResult3 from "./AUSResult3.svelte";
+  import AUSResult4 from "./AUSResult4.svelte";
+  import AUSResult5 from "./AUSResult5.svelte";
+  import AUSResultFree from "./AUSResultFree.svelte";
 
   (async () => {
     if (process.browser) {
@@ -35,13 +35,6 @@
     }
   })();
 </script>
-
-<style>
-  label {
-    font-weight: bold;
-    font-size: 11px;
-  }
-</style>
 
 {#if $isExempt}
   <div class="row">
@@ -76,125 +69,22 @@
       </h6>
     </div>
     <div class="col-6 col-md-3">
-      <!-- AUS 1 -->
-      <label for="AUS1">AUS System: 1</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select
-        class={$ausSystem1 ? 'custom-select is-valid' : 'custom-select is-invalid'}
-        id="AUS1"
-        bind:value={$ausSystem1}
-        on:change={ausSystem1.change}>
-        <option />
-        <option value="1111">1111.Exempt</option>
-        <option value="1">1.Desktop Underwriter (DU)</option>
-        <option value="2">
-          2.Loan Prospector (LP) or Loan Product Advisor
-        </option>
-        <option value="3">
-          3.Technology Open to Approved Lenders (TOTAL) Scorecard
-        </option>
-        <option value="4">4.Guaranteed Underwriting System (GUS)</option>
-        <option value="5">5.Other</option>
-        <option value="6">6.Not applicable</option>
-      </select>
-
-      <!--****************** -->
+      <AUSSystem1/>
     </div>
     <div class="col-6 col-md-3">
-      <!-- AUS 2 -->
-      <label for="AUS2">AUS System: 2</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select class="custom-select" id="AUS2" bind:value={$ausSystem2} on:change={ausSystem2.change}>
-        <option />
-        <option value="1">1.Desktop Underwriter (DU)</option>
-        <option value="2">
-          2.Loan Prospector (LP) or Loan Product Advisor
-        </option>
-        <option value="3">
-          3.Technology Open to Approved Lenders (TOTAL) Scorecard
-        </option>
-        <option value="4">4.Guaranteed Underwriting System (GUS)</option>
-        <option value="5">5.Other</option>
-      </select>
-      <!--****************** -->
+      <AUSSystem2/>
     </div>
     <div class="col-6 col-md-3">
-      <!-- AUS 3 -->
-      <label for="AUS3">AUS System: 3</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select class="custom-select" id="AUS3" bind:value={$ausSystem3} on:change={ausSystem3.change}>
-        <option />
-        <option value="1">1.Desktop Underwriter (DU)</option>
-        <option value="2">
-          2.Loan Prospector (LP) or Loan Product Advisor
-        </option>
-        <option value="3">
-          3.Technology Open to Approved Lenders (TOTAL) Scorecard
-        </option>
-        <option value="4">4.Guaranteed Underwriting System (GUS)</option>
-        <option value="5">5.Other</option>
-      </select>
-      <!--****************** -->
+      <AUSSystem3/>
     </div>
     <div class="col-6 col-md-3">
-      <!-- AUS 4 -->
-      <label for="AUS4">AUS System: 4</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select class="custom-select" id="AUS4" bind:value={$ausSystem4} on:change={ausSystem4.change}>
-        <option />
-        <option value="1">1.Desktop Underwriter (DU)</option>
-        <option value="2">
-          2.Loan Prospector (LP) or Loan Product Advisor
-        </option>
-        <option value="3">
-          3.Technology Open to Approved Lenders (TOTAL) Scorecard
-        </option>
-        <option value="4">4.Guaranteed Underwriting System (GUS)</option>
-        <option value="5">5.Other</option>
-      </select>
-      <!--****************** -->
+      <AUSSystem4/>
     </div>
     <div class="col-6 col-md-3">
-      <!-- AUS 5 -->
-      <label for="AUS5">AUS System: 5</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select class="custom-select" id="AUS5" bind:value={$ausSystem5} on:change={ausSystem5.change}>
-        <option />
-        <option value="1">1.Desktop Underwriter (DU)</option>
-        <option value="2">
-          2.Loan Prospector (LP) or Loan Product Advisor
-        </option>
-        <option value="3">
-          3.Technology Open to Approved Lenders (TOTAL) Scorecard
-        </option>
-        <option value="4">4.Guaranteed Underwriting System (GUS)</option>
-        <option value="5">5.Other</option>
-      </select>
-      <!--****************** -->
+      <AUSSystem5/>
     </div>
     <div class="col-sm-12 col-md-9">
-      <!-- AUS Free Form -->
-      <label for="AUSFree">AUS System Free Form Text</label>
-      <Modal
-        idName="AUSSystemModal"
-        modalTitle="AUS System Free Form Text"
-        modalBody="<p> Specify in text the Other Automated Underwriting
-        System(s) if 5 is entered. </p> <p>Otherwise, leave this data field
-        blank</p>" />
-      <input
-        class="form-control"
-        type="text"
-        id="AUSFree"
-        bind:value={$ausSystemOther} 
-        on:change={ausSystemOther.change}/>
-      {#if $ausSystem1 == 5 || $ausSystem2 == 5 || $ausSystem3 == 5 || $ausSystem4 == 5 || $ausSystem5 == 5}
-        {#if $ausSystemOther !== ''}
-          <HRValidation isValid={true} />
-        {:else}
-          <HRValidation />
-        {/if}
-      {/if}
-      <!--****************** -->
+      <AUSSystemFree/>
     </div>
   </div>
   <div class="row">
@@ -204,197 +94,22 @@
       </h6>
     </div>
     <div class="col-6 col-md-3">
-      <!-- AUS Result 1 -->
-      <label for="AUSR1">AUS Result: 1</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select
-        class={$ausResult1 > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
-        id="AUSR1"
-        bind:value={$ausResult1}
-        on:change={ausResult1.change}>
-        <option />
-        <option value="1111">1111.Exempt</option>
-        <option value="1">1.Approve/Eligible</option>
-        <option value="2">2.Approve/Ineligible</option>
-        <option value="3">3.Refer/Eligible</option>
-        <option value="4">4.Refer/Ineligible</option>
-        <option value="5">5.Refer with Caution</option>
-        <option value="6">6.Out of Scope</option>
-        <option value="7">7.Error</option>
-        <option value="8">8.Accept</option>
-        <option value="9">9.Caution</option>
-        <option value="10">10.Ineligible</option>
-        <option value="11">11.Incomplete</option>
-        <option value="12">12.Invalid</option>
-        <option value="13">13.Refer</option>
-        <option value="14">14.Eligible</option>
-        <option value="15">15.Unable to Determine</option>
-        <option value="16">16.Other</option>
-        <option value="17">17.Not applicable</option>
-        <option value="18">18.Accept/Eligible</option>
-        <option value="19">19.Accept/Ineligible</option>
-        <option value="20">20.Accept/Unable to Determine</option>
-        <option value="21">21.Refer with Caution/Eligible</option>
-        <option value="22">22.Refer with Caution/Ineligible</option>
-        <option value="23">23.Refer/Unable to Determine</option>
-        <option value="24">24.Refer with Caution/Unable to Determine</option>
-      </select>
-
-      <!--****************** -->
+      <AUSResult1/>
     </div>
     <div class="col-6 col-md-3">
-      <!-- AUS Result 2 -->
-      <label for="AUSR2">AUS Result: 2</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select class="custom-select" id="AUSR2" bind:value={$ausResult2}
-      on:change={ausResult2.change}>
-        <option />
-        <option value="1">1.Approve/Eligible</option>
-        <option value="2">2.Approve/Ineligible</option>
-        <option value="3">3.Refer/Eligible</option>
-        <option value="4">4.Refer/Ineligible</option>
-        <option value="5">5.Refer with Caution</option>
-        <option value="6">6.Out of Scope</option>
-        <option value="7">7.Error</option>
-        <option value="8">8.Accept</option>
-        <option value="9">9.Caution</option>
-        <option value="10">10.Ineligible</option>
-        <option value="11">11.Incomplete</option>
-        <option value="12">12.Invalid</option>
-        <option value="13">13.Refer</option>
-        <option value="14">14.Eligible</option>
-        <option value="15">15.Unable to Determine</option>
-        <option value="16">16.Other</option>
-        <option value="18">18.Accept/Eligible</option>
-        <option value="19">19.Accept/Ineligible</option>
-        <option value="20">20.Accept/Unable to Determine</option>
-        <option value="21">21.Refer with Caution/Eligible</option>
-        <option value="22">22.Refer with Caution/Ineligible</option>
-        <option value="23">23.Refer/Unable to Determine</option>
-        <option value="24">24.Refer with Caution/Unable to Determine</option>
-      </select>
-      <!--****************** -->
+      <AUSResult2/>
     </div>
     <div class="col-6 col-md-3">
-      <!-- AUS Result 3 -->
-      <label for="AUSR3">AUS Result: 3</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select class="custom-select" id="AUSR3" bind:value={$ausResult3}
-      on:change={ausResult3.change}>
-        <option />
-        <option value="1">1.Approve/Eligible</option>
-        <option value="2">2.Approve/Ineligible</option>
-        <option value="3">3.Refer/Eligible</option>
-        <option value="4">4.Refer/Ineligible</option>
-        <option value="5">5.Refer with Caution</option>
-        <option value="6">6.Out of Scope</option>
-        <option value="7">7.Error</option>
-        <option value="8">8.Accept</option>
-        <option value="9">9.Caution</option>
-        <option value="10">10.Ineligible</option>
-        <option value="11">11.Incomplete</option>
-        <option value="12">12.Invalid</option>
-        <option value="13">13.Refer</option>
-        <option value="14">14.Eligible</option>
-        <option value="15">15.Unable to Determine</option>
-        <option value="16">16.Other</option>
-        <option value="18">18.Accept/Eligible</option>
-        <option value="19">19.Accept/Ineligible</option>
-        <option value="20">20.Accept/Unable to Determine</option>
-        <option value="21">21.Refer with Caution/Eligible</option>
-        <option value="22">22.Refer with Caution/Ineligible</option>
-        <option value="23">23.Refer/Unable to Determine</option>
-        <option value="24">24.Refer with Caution/Unable to Determine</option>
-      </select>
-      <!--****************** -->
+      <AUSResult3/>
     </div>
     <div class="col-6 col-md-3">
-      <!-- AUS Result 4 -->
-      <label for="AUSR4">AUS Result: 4</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select class="custom-select" id="AUSR4" bind:value={$ausResult4} on:change={ausResult4.change}>
-        <option />
-        <option value="1">1.Approve/Eligible</option>
-        <option value="2">2.Approve/Ineligible</option>
-        <option value="3">3.Refer/Eligible</option>
-        <option value="4">4.Refer/Ineligible</option>
-        <option value="5">5.Refer with Caution</option>
-        <option value="6">6.Out of Scope</option>
-        <option value="7">7.Error</option>
-        <option value="8">8.Accept</option>
-        <option value="9">9.Caution</option>
-        <option value="10">10.Ineligible</option>
-        <option value="11">11.Incomplete</option>
-        <option value="12">12.Invalid</option>
-        <option value="13">13.Refer</option>
-        <option value="14">14.Eligible</option>
-        <option value="15">15.Unable to Determine</option>
-        <option value="16">16.Other</option>
-        <option value="18">18.Accept/Eligible</option>
-        <option value="19">19.Accept/Ineligible</option>
-        <option value="20">20.Accept/Unable to Determine</option>
-        <option value="21">21.Refer with Caution/Eligible</option>
-        <option value="22">22.Refer with Caution/Ineligible</option>
-        <option value="23">23.Refer/Unable to Determine</option>
-        <option value="24">24.Refer with Caution/Unable to Determine</option>
-      </select>
-      <!--****************** -->
+      <AUSResult4/>
     </div>
     <div class="col-6 col-md-3">
-      <!-- AUS Result 5 -->
-      <label for="AUSR5">AUS Result: 5</label>
-      <!-- svelte-ignore a11y-no-onchange-->
-      <select class="custom-select" id="AUSR5" bind:value={$ausResult5} on:change={ausResult5.change}>
-        <option />
-        <option value="1">1.Approve/Eligible</option>
-        <option value="2">2.Approve/Ineligible</option>
-        <option value="3">3.Refer/Eligible</option>
-        <option value="4">4.Refer/Ineligible</option>
-        <option value="5">5.Refer with Caution</option>
-        <option value="6">6.Out of Scope</option>
-        <option value="7">7.Error</option>
-        <option value="8">8.Accept</option>
-        <option value="9">9.Caution</option>
-        <option value="10">10.Ineligible</option>
-        <option value="11">11.Incomplete</option>
-        <option value="12">12.Invalid</option>
-        <option value="13">13.Refer</option>
-        <option value="14">14.Eligible</option>
-        <option value="15">15.Unable to Determine</option>
-        <option value="16">16.Other</option>
-        <option value="18">18.Accept/Eligible</option>
-        <option value="19">19.Accept/Ineligible</option>
-        <option value="20">20.Accept/Unable to Determine</option>
-        <option value="21">21.Refer with Caution/Eligible</option>
-        <option value="22">22.Refer with Caution/Ineligible</option>
-        <option value="23">23.Refer/Unable to Determine</option>
-        <option value="24">24.Refer with Caution/Unable to Determine</option>
-      </select>
-      <!--****************** -->
+      <AUSResult5/>
     </div>
     <div class="col-sm-12 col-md-9">
-      <!-- AUS Result Free Form -->
-      <label for="AUSRFree">AUS Result Free Form Text</label>
-      <Modal
-        idName="AUSResultModal"
-        modalTitle="AUS Result Free Form Text"
-        modalBody="<p> Specify in text the Other Automated Underwriting System
-        Result(s) if 16 is entered. </p> <p>Otherwise, leave this data field
-        blank</p>" />
-      <input
-        class="form-control"
-        type="text"
-        id="AUSRFree"
-        bind:value={$ausResultOther} 
-        on:change={ausResultOther.change}/>
-      {#if $ausResult1 == 16 || $ausResult2 == 16 || $ausResult3 == 16 || $ausResult4 == 16 || $ausResult5 == 16}
-        {#if $ausResultOther !== ''}
-          <HRValidation isValid={true} />
-        {:else}
-          <HRValidation />
-        {/if}
-      {/if}
-      <!--****************** -->
+      <AUSResultFree/>
     </div>
   </div>
 {/if}
