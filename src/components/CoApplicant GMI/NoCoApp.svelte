@@ -27,51 +27,58 @@
     import NoCoAppCheckbox from "../NoCoAppCheckbox.svelte";
     import Modal from "../Modal.svelte";
 
-    function coAppChanged() {
+    async function coAppChanged() {
     if ($NoCoApp) {
-      coapplicantEthBasis.set("4");
-      coapplicantRaceBasis.set("4");
-      coapplicantSexBasis.set("4");
-      coapplicantEth1.set("5");
-      coapplicantEth2.set("");
-      coapplicantEth3.set("");
-      coapplicantEth4.set("");
-      coapplicantEth5.set("");
-      coapplicantEthOther.set("");
-      coapplicantRace1.set("8");
-      coapplicantRace2.set("");
-      coapplicantRace3.set("");
-      coapplicantRace4.set("");
-      coapplicantRace5.set("");
-      coapplicantRaceOther1.set("");
-      coapplicantRaceOther2.set("");
-      coapplicantRaceOther3.set("");
-      coapplicantSex.set("5");
-      coapplicantAge.set("9999");
-      coapplicantCreditModel.set("10");
-      coapplicantCreditScore.set("9999");
+      coapplicantEthBasis.change(await formatChange("4")); 
+      coapplicantRaceBasis.change(await formatChange("4"));
+      coapplicantSexBasis.change(await formatChange("4"));
+      coapplicantEth1.change(await formatChange("5"));
+      coapplicantEth2.change(await formatChange(""));
+      coapplicantEth3.change(await formatChange(""));
+      coapplicantEth4.change(await formatChange(""));
+      coapplicantEth5.change(await formatChange(""));
+      coapplicantEthOther.change(await formatChange(""));
+      coapplicantRace1.change(await formatChange("8"));
+      coapplicantRace2.change(await formatChange(""));
+      coapplicantRace3.change(await formatChange(""));
+      coapplicantRace4.change(await formatChange(""));
+      coapplicantRace5.change(await formatChange(""));
+      coapplicantRaceOther1.change(await formatChange(""));
+      coapplicantRaceOther2.change(await formatChange(""));
+      coapplicantRaceOther3.change(await formatChange(""));
+      coapplicantSex.change(await formatChange("5"));
+      coapplicantAge.changed(await formatChange("9999"));
+      coapplicantCreditModel.change(await formatChange("10"));
+      coapplicantCreditScore.change(await formatChange("9999"));
     } else {
-      coapplicantEthBasis.set("");
-      coapplicantRaceBasis.set("");
-      coapplicantSexBasis.set("");
-      coapplicantEth1.set("");
-      coapplicantEth2.set("");
-      coapplicantEth3.set("");
-      coapplicantEth4.set("");
-      coapplicantEth5.set("");
-      coapplicantEthOther.set("");
-      coapplicantRace1.set("");
-      coapplicantRace2.set("");
-      coapplicantRace3.set("");
-      coapplicantRace4.set("");
-      coapplicantRace5.set("");
-      coapplicantRaceOther1.set("");
-      coapplicantRaceOther2.set("");
-      coapplicantRaceOther3.set("");
-      coapplicantSex.set("");
-      coapplicantAge.set("");
-      coapplicantCreditModel.set("");
-      coapplicantCreditScore.set("");
+      coapplicantEthBasis.change(await formatChange(""));
+      coapplicantRaceBasis.change(await formatChange(""));
+      coapplicantSexBasis.change(await formatChange(""));
+      coapplicantEth1.change(await formatChange(""));
+      coapplicantEth2.change(await formatChange(""));
+      coapplicantEth3.change(await formatChange(""));
+      coapplicantEth4.change(await formatChange(""));
+      coapplicantEth5.change(await formatChange(""));
+      coapplicantEthOther.change(await formatChange(""));
+      coapplicantRace1.change(await formatChange(""));
+      coapplicantRace2.change(await formatChange(""));
+      coapplicantRace3.change(await formatChange(""));
+      coapplicantRace4.change(await formatChange(""));
+      coapplicantRace5.change(await formatChange(""));
+      coapplicantRaceOther1.change(await formatChange(""));
+      coapplicantRaceOther2.change(await formatChange(""));
+      coapplicantRaceOther3.change(await formatChange(""));
+      coapplicantSex.change(await formatChange(""));
+      coapplicantAge.changed(await formatChange(""));
+      coapplicantCreditModel.change(await formatChange(""));
+      coapplicantCreditScore.change(await formatChange(""));
+    }
+
+    async function formatChange(e) {
+      //have to format to match how it would be passed if this was being changed via the input element
+      return {
+        target: {value: e}
+      }
     }
   }
 </script>
