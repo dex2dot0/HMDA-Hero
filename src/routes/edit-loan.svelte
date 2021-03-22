@@ -5,7 +5,6 @@
   import UnderwritingDetails from "../components/Underwriting Details/UnderwritingDetails.svelte";
   import HMDAInformation from "../components/HMDA Information/HMDAInformation.svelte";
   import { action, LEI} from "../stores.js";
-  import Checkbox from "../components/Checkbox.svelte";
   import { getLEI } from "../Excel Scripts/getLEI.js";
   import CancelDialog from "../components/CancelDialog.svelte";
   import { setSetting } from "../Excel Scripts/setSetting.js";

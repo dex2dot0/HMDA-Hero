@@ -1,7 +1,7 @@
 <script>
     import {
         loanPurpose
-    } from "./../../stores.js";s
+    } from "./../../stores.js";
 </script>
 
 <label for="LoanPurpose">Loan Purpose</label>
