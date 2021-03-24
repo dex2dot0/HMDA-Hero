@@ -5,6 +5,7 @@
 
     import Checkbox from "../Checkbox.svelte";
     import HRValidation from "../HRValidation.svelte";
+    import checkValidDate from "../../Scripts/checkValidDate";
 </script>
 
 <!-- NA allowed on Purchased Loans-->
@@ -22,8 +23,10 @@
     tabindex="0"
     bind:value={$appDate}
     on:change={appDate.change} />
-{#if $appDate !== ''}
-    <HRValidation isValid={true} />
-{:else}
-    <HRValidation isValid={false} />
-{/if}
+{#await checkValidDate($appDate) then isFormattedDate}
+    {#if $appDate === 'NA' || isFormattedDate}
+        <HRValidation isValid={true} />
+    {:else}
+        <HRValidation isValid={false} />
+    {/if}
+{/await}

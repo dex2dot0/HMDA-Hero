@@ -4,6 +4,7 @@
     } from "./../../stores.js";
 
     import HRValidation from "../HRValidation.svelte";
+    import checkValidDate from "../../Scripts/checkValidDate";
 </script>
 
 <label for="ActionDate">Action Date</label>
@@ -14,8 +15,10 @@
   tabindex="0"
   bind:value={$actionTakenDate}
   on:change={actionTakenDate.change} />
-{#if $actionTakenDate !== ''}
-  <HRValidation isValid={true} />
-{:else}
-  <HRValidation isValid={false} />
-{/if}
+{#await checkValidDate($actionTakenDate) then isFormattedDate}
+  {#if $actionTakenDate !== '' || isFormattedDate}
+    <HRValidation isValid={true} />
+  {:else}
+    <HRValidation isValid={false} />
+  {/if}
+{/await}
