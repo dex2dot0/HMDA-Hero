@@ -1,6 +1,7 @@
 <script>
     import {
-        loanCosts
+        loanCosts,
+        isExempt
     } from "./../../stores.js";
 
     import Checkbox from "../Checkbox.svelte";
@@ -17,10 +18,11 @@
 <Modal
   idName="LoanCostsModal"
   modalTitle="Loan Costs"
-  modalBody="<p>Example:</p> <p>2399.04 (or) NA</p> <p>(or) Exempt</p>" />
+  modalBody={$isExempt ? "<p>Example:</p> <p>2399.04 (or) NA</p> <p>(or) Exempt</p>" : "<p>Example:</p> <p>2399.04 (or) NA</p>"}/>
 <input
   class="form-control"
   type="text"
+  placeholder={$isExempt ? "Ex. 2399.04 (or) NA (or) Exempt" : "Ex. 2399.04 (or) NA"}
   id="TotalCosts"
   tabindex="0"
   bind:value={$loanCosts}

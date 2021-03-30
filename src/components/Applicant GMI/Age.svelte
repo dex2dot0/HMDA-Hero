@@ -5,6 +5,7 @@
     import Checkbox from "../Checkbox.svelte";
     import Modal from "../Modal.svelte";
     import HRValidation from "../HRValidation.svelte";
+    import RegLink from "../RegLink.svelte";
 </script>
 
 <style>
@@ -25,6 +26,7 @@
   modalTitle="Age"
   modalBody="<p>Example: 24</p> <p>(or)</p> <p>Descriptions:</p> <p>8888.
   Not Applicable</p>" />
+<RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-10-ii"/>
 <input
   class="form-control"
   type="text"
