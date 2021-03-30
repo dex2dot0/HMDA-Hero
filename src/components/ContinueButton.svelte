@@ -1,3 +1,6 @@
+<!--
+    This component is used to cancel and revert all changes that were made in the HMDA Hero UI that were applied to the Excel workbook
+-->
 <script>
     import { cancelAddLoanChanges } from "../Scripts/cancelAddLoanChanges.js";
     import { cancelChanges } from "../Scripts/cancelChanges.js";
