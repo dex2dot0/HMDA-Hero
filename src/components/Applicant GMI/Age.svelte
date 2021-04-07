@@ -15,7 +15,7 @@
   }
 </style>
 
-<label for="Age">Age or NA</label>
+<label for="Age">Age</label>
 {#if $applicantAge !== 'NA'}
   <Checkbox value={false} on:notify={applicantAge.NA} />
 {:else}

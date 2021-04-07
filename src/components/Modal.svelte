@@ -4,28 +4,16 @@
   export let modalBody;
 </script>
 
-<style>
-  .btn-sm {
-    line-height: 1;
-    border-radius: 180px;
-    color: #217346;
-    border-color: #217346;
-  }
-
-  .btn-sm:hover {
-    background-color: #5a6268;
-    color: #fff;
-  }
-</style>
-
-<button
-  type="button"
-  class="btn btn-sm btn-outline-dark"
+<a
+  href="#"
+  class="badge badge-info"
   data-toggle="modal"
   tabindex="-1"
   data-target="#{idName}">
-  i
-</button>
+  <span class="material-icons">
+    info
+    </span>
+  </a>
 <!-- Modal -->
 <div
   class="modal fade"

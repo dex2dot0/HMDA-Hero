@@ -4,20 +4,21 @@
     reference
 -->
 <script>
-    export let regUrl = '';
+    export let errors = 0;
 </script>
 
-<style>
-    a {
-        color: #8764b8;
-    }
-    a:hover {
-        color: #5c2e91;
-    }
-</style>
-
-<a href={regUrl} target="_blank" class="badge badge-light">
+{#if Number(errors)>0}
+    <a href="#" class="badge badge-warning">
+        {errors}
+        <span class="material-icons">
+            plagiarism
+        </span>
+    </a>
+{:else}
+<a href="#" class="badge badge-success">
     <span class="material-icons">
-        account_balance
-    </span> 
+        fact_check
+    </span>
 </a>
+{/if}
+
