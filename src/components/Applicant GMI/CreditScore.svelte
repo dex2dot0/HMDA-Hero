@@ -3,54 +3,29 @@
       applicantCreditScore
     } from "../../stores.js";
     import HRValidation from "../HRValidation.svelte";
+    import Checkbox from "../Checkbox.svelte";
 </script>
 
-<style>
-input[type="checkbox"] {
-    height: 20px;
-    width: 20px;
-    background-color: #eee;
-  }
-</style>
-
-<label for="CreditScore">Score</label>
-<input
-  class="ml-3 mr-3"
-  type="text"
-  id="CreditScore"
-  bind:value={$applicantCreditScore}
-  on:change={applicantCreditScore.change}
-  style="max-width: 20%;" />
-
-<label for="appScoreNAN">Not a #</label>
-<input
-  type="checkbox"
-  id="appScoreNAN"
-  tabindex="-1"
-  checked={$applicantCreditScore == '7777' ? true : false}
-  on:change={applicantCreditScore.NAN}
-/>
-
-<label for="appScoreNA">NA</label>
-<input
-  type="checkbox"
-  id="appScoreNA"
-  tabindex="-1"
-  checked={$applicantCreditScore == '8888' ? true : false}
-  on:change={applicantCreditScore.NA}
-  />
-
-<label for="appScoreExempt">Exempt</label>
-<input
-  type="checkbox"
-  id="appScoreExempt"
-  tabindex="-1"
-  checked={$applicantCreditScore == '1111' ? true : false}
-  on:change={applicantCreditScore.Exempt}/>
-<div class="col-sm-12 col-md-6">
-  {#if Number($applicantCreditScore) > 0 && $applicantCreditScore.length < 5}
-    <HRValidation isValid={true} />
-  {:else}
-    <HRValidation />
-  {/if}
+<div class="row align-items-center">
+  <div class="col-sm-12 col-md-auto">
+    <label for="CreditScore">Score</label>
+  </div>
+  <div class="col">
+    <Checkbox text="Not a #" value={$applicantCreditScore == '7777' ? true : false} on:notify={applicantCreditScore.NAN} />
+    <Checkbox value={$applicantCreditScore == '8888' ? true : false} on:notify={applicantCreditScore.NA} />
+    <Checkbox text="Exempt" value={$applicantCreditScore == '1111' ? true : false} on:notify={applicantCreditScore.Exempt} />
+  </div>
+  <div class="col-sm-12">
+    <input
+      class="form-control"
+      type="text"
+      id="CreditScore"
+      bind:value={$applicantCreditScore}
+      on:change={applicantCreditScore.change}/>
+    {#if Number($applicantCreditScore) > 0 && $applicantCreditScore.length < 5}
+      <HRValidation isValid={true} />
+    {:else}
+      <HRValidation />
+    {/if}
+  </div>
 </div>
