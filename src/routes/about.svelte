@@ -50,10 +50,14 @@
   <p>
     HMDA Hero is a free resource provided to assist with the arduous process of
     compiling HMDA data. While there are a number of excellent tools available
-    on the market for HMDA compliation, they may be too costly for smaller
-    outfits, especially for companies that only file a small set of HMDA data.
+    on the market for HMDA compliation, they may be too costly or complicated for smaller
+    organizations, especially for companies that only file a small set of HMDA data.
     HMDA Hero is designed with that in mind and aims to be a lightweight
     solution that can carry some of the burden.
+  </p>
+  <p>
+    HMDA Hero helps organizations align with best practices by offering immediate feedback, guidance, and simplicity. 
+    HMDA Hero is also flexible though so you are always free to structure your filing data to fit your needs. 
   </p>
   <a href="/features">
     Read More About
