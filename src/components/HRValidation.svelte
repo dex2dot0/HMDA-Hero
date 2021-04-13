@@ -6,6 +6,7 @@
 -->
 <script>
   export let isValid = false;
+  export let isWarning = false;
 </script>
 
 <style>
@@ -19,10 +20,16 @@
   .is-invalid {
     border-top: 2px solid #dc3545;
   }
+
+  .is-warning {
+    border-top: 2px solid #ffaa44;
+  }
 </style>
 
 {#if isValid}
   <hr class="is-valid" />
+{:else if isWarning}
+  <hr class="is-warning" />
 {:else}
   <hr class="is-invalid" />
 {/if}
