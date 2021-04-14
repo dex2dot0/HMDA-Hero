@@ -8,7 +8,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="IntroRatePeriod">Intro Rate Period or</label>
+<label for="IntroRatePeriod">Intro Rate Period</label>
 {#if $introRatePeriod !== 'NA'}
   <Checkbox value={false} on:notify={introRatePeriod.NA} />
 {:else}

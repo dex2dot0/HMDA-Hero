@@ -9,7 +9,7 @@
 </script>
 
 <!-- NA allowed on Purchased Loans-->
-<label for="AppDate">Application Date or</label>
+<label for="AppDate">Application Date</label>
 {#if $appDate !== 'NA'}
     <Checkbox value={false} on:notify={appDate.NA} />
 {:else}

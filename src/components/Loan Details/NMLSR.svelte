@@ -8,7 +8,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="NMLSR">MLO NMLSR Identifier or</label>
+<label for="NMLSR">MLO NMLSR Identifier</label>
 {#if $NMLSR !== 'NA'}
   <Checkbox value={false} on:notify={NMLSR.NA} />
 {:else}

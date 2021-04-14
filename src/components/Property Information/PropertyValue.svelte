@@ -7,7 +7,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="Value">Property Value or</label>
+<label for="Value">Property Value</label>
 {#if $propertyValue !== 'NA'}
   <Checkbox value={false} on:notify={propertyValue.NA} />
 {:else}

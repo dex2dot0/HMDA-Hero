@@ -8,7 +8,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="StreetAddress">Street Address or</label>
+<label for="StreetAddress">Street Address</label>
 {#if $streetAddress !== 'NA'}
   <Checkbox value={false} on:notify={streetAddress.NA} />
 {:else}

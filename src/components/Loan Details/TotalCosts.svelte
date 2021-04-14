@@ -9,7 +9,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="TotalCosts">Total Loan Costs or</label>
+<label for="TotalCosts">Total Loan Costs</label>
 {#if $loanCosts !== 'NA'}
   <Checkbox value={false} on:notify={loanCosts.NA} />
 {:else}

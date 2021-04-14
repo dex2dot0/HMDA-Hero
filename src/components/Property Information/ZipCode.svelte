@@ -7,7 +7,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="zip">Zip Code or</label>
+<label for="zip">Zip Code</label>
 {#if $zipCode !== 'NA'}
   <Checkbox value={false} on:notify={zipCode.NA} />
 {:else}

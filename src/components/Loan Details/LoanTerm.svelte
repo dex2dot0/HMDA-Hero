@@ -8,7 +8,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="LoanTerm">Loan Term or</label>
+<label for="LoanTerm">Loan Term</label>
 {#if $loanTerm !== 'NA'}
   <Checkbox value={false} on:notify={loanTerm.NA} />
 {:else}

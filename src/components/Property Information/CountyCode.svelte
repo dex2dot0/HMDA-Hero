@@ -7,7 +7,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="CountyCode">County Code or</label>
+<label for="CountyCode">County Code</label>
 {#if $countyCode !== 'NA'}
   <Checkbox value={false} on:notify={countyCode.NA} />
 {:else}

@@ -7,7 +7,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="MFUnits">Multifamily Affrd. Units or</label>
+<label for="MFUnits">Multifamily Affrd. Units</label>
 {#if $multifamilyUnits !== 'NA'}
   <Checkbox value={false} on:notify={multifamilyUnits.NA} />
 {:else}

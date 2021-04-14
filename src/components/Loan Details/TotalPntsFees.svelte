@@ -8,7 +8,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
- <label for="TotalPntsFees">Total Points and Fees or</label>
+ <label for="TotalPntsFees">Total Points and Fees</label>
  {#if $pointsFees !== 'NA'}
    <Checkbox value={false} on:notify={pointsFees.NA} />
  {:else}

@@ -8,7 +8,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="DiscountPoints">Discount Points or</label>
+<label for="DiscountPoints">Discount Points</label>
 {#if $discountPoints !== 'NA'}
   <Checkbox value={false} on:notify={discountPoints.NA} />
 {:else}

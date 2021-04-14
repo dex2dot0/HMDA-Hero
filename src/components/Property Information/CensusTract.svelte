@@ -7,7 +7,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="CensusTract">Census Tract or</label>
+<label for="CensusTract">Census Tract</label>
 {#if $censusTract !== 'NA'}
   <Checkbox value={false} on:notify={censusTract.NA} />
 {:else}

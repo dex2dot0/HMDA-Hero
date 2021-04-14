@@ -8,7 +8,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="InterestRate">Interest Rate or</label>
+<label for="InterestRate">Interest Rate</label>
 {#if $interestRate !== 'NA'}
   <Checkbox value={false} on:notify={interestRate.NA} />
 {:else}

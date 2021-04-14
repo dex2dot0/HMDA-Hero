@@ -8,7 +8,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="OrigCharges">Origination Charges or</label>
+<label for="OrigCharges">Origination Charges</label>
 {#if $originationCharges !== 'NA'}
   <Checkbox value={false} on:notify={originationCharges.NA} />
 {:else}

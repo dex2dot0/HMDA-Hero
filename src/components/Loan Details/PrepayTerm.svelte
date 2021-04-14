@@ -8,7 +8,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="PrepayTerm">Prepay Penalty Term or</label>
+<label for="PrepayTerm">Prepay Penalty Term</label>
 {#if $prepaymentPenaltyTerm !== 'NA'}
   <Checkbox value={false} on:notify={prepaymentPenaltyTerm.NA} />
 {:else}
