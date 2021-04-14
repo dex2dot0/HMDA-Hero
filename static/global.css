@@ -45,3 +45,7 @@ label {
 	font-weight: bold;
 	font-size: 14px;
 }
+
+.row {
+	padding-bottom: 5px;
+}
