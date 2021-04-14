@@ -11,8 +11,8 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="RaceFree1" style="font-size: 10px;">
-    Free Form for Am Indian or Alaskan Native
+<label for="RaceFree1" style="font-size: 9px;">
+    Free Form Am Indian or AK Native
 </label>
 <Modal
   idName="AppFreeRace1"
@@ -26,7 +26,9 @@
   id="RaceFree1"
   bind:value={$applicantRaceOther1}
   on:change={applicantRaceOther1.change} />
-  <!-- If any of the race reportings are 1, show an organge validation warning to suggest that more detail might be necessary-->
+<!-- If any of the race reportings are 1, show an organge validation warning to suggest that more detail might be necessary-->
 {#if $applicantRace1 == 1 || $applicantRace2 == 1 || $applicantRace3 == 1 || $applicantRace4 == 1 || $applicantRace5 == 1}
-  <HRValidation isWarning={true}/>
+  {#if $applicantRaceOther1 == ''}
+    <HRValidation isWarning={true}/>
+  {/if}
 {/if}

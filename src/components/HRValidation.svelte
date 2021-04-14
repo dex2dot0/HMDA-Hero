@@ -15,14 +15,14 @@
     margin-bottom: 0.1rem;
   }
   .is-valid {
-    border-top: 2px solid #28a745;
+    border-top: 3px solid #28a745;
   }
   .is-invalid {
-    border-top: 2px solid #dc3545;
+    border-top: 3px solid #dc3545;
   }
 
   .is-warning {
-    border-top: 2px solid #ffaa44;
+    border-top: 3px solid #ffaa44;
   }
 </style>
 
