@@ -10,7 +10,7 @@
 </script>
 
 <label for="CreditModelFree" style="font-size: 9px;">
-    Co-Applicant Free Form Version of Credit Scoring Model
+    Free Form Version of Credit Scoring Model
 </label>
 <Modal
 idName="CoAppCBRModal"

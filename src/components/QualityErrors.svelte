@@ -5,20 +5,38 @@
 -->
 <script>
     export let errors = 0;
+    export let idName;
+    export let errorsHTML = 'No quality errors found.';
 </script>
 
-{#if Number(errors)>0}
-    <a href="#" class="badge badge-warning">
-        {errors}
-        <span class="material-icons">
-            plagiarism
-        </span>
-    </a>
-{:else}
-<a href="#" class="badge badge-success">
+<a href="#{idName}" class={Number(errors)>0 ? "badge badge-warning" : "badge badge-success"} data-toggle="modal"
+tabindex="-1"
+data-target="#{idName}">
+    {errors>0 ? errors : ''}
     <span class="material-icons">
-        fact_check
+        {Number(errors)>0 ? "plagiarism" : "fact_check"}
     </span>
 </a>
-{/if}
-
+<!-- Modal -->
+<div
+class="modal fade"
+id={idName}
+role="dialog"
+aria-labelledby={idName}
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h6 class="modal-title">Quality Errors</h6>
+    </div>
+    <div class="modal-body">
+        {@html errorsHTML}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+        Close
+        </button>
+    </div>
+    </div>
+</div>
+</div>

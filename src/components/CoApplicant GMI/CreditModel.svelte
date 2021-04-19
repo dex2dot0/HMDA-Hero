@@ -6,7 +6,7 @@
 </script>
 
 <label for="CreditModel2" style="font-size: 9px;">
-    Co-Applicant Name & Version of Credit Scoring Model
+    Name & Version of Credit Scoring Model
 </label>
 <!-- svelte-ignore a11y-no-onchange-->
 <select

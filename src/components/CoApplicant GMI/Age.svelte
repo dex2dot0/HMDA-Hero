@@ -17,6 +17,7 @@
     <label for="CoAge">Age</label>
   </div>
   <div class="col">
+    <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-10-ii"/>
     {#if $coapplicantAge !== 'NA'}
       <Checkbox value={false} on:notify={coapplicantAge.NA} />
     {:else}
@@ -27,7 +28,6 @@
       modalTitle="Co-Applicant: Age"
       modalBody="<p>Example: 24</p> <p>(or)</p> <p>Descriptions:</p> <p>8888.
       Not applicable</p> <p>9999. No co-applicant</p> " />
-      <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-10-ii"/>
       <QualityErrors errors=0/>
       <ValidityErrors errors=0/>
   </div>

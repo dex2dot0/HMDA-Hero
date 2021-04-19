@@ -4,27 +4,40 @@
     reference
 -->
 <script>
-    export let errors = null;
+    export let errors = 0;
+    export let idName;
+    export let errorsHTML = 'No validity errors found.';
 </script>
 
-<style>
-    .errors {
-        color: #8764b8;
-    }
-</style>
-
-{#if Number(errors)>0}
-    <a href="#" class="badge badge-danger">
-        {errors}
+<a href="#{idName}" class={Number(errors)>0 ? "badge badge-danger" : "badge badge-success"} data-toggle="modal"
+    tabindex="-1"
+    data-target="#{idName}">
+        {errors>0 ? errors : ''}
         <span class="material-icons">
-            gpp_maybe
+            {Number(errors)>0 ? "gpp_maybe" : "gpp_good"}
         </span>
     </a>
-{:else}
-<a href="#" class="badge badge-success">
-    <span class="material-icons">
-        gpp_good
-    </span>
-</a>
-{/if}
+    <!-- Modal -->
+    <div
+    class="modal fade"
+    id={idName}
+    role="dialog"
+    aria-labelledby={idName}
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h6 class="modal-title">Validity Errors</h6>
+        </div>
+        <div class="modal-body">
+            {@html errorsHTML}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+            </button>
+        </div>
+        </div>
+    </div>
+    </div>
 
