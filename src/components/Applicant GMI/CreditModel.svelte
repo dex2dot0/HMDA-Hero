@@ -4,6 +4,8 @@
     } from "../../stores.js";
     import DataFieldFormat from "../DataFieldFormat.svelte";
     import RegLink from "../RegLink.svelte";
+    import QualityErrors from "../QualityErrors.svelte";
+    import ValidityErrors from "../ValidityErrors.svelte";
 </script>
 
 <DataFieldFormat>
@@ -15,6 +17,8 @@
   </span>
   <span slot="helpers">
     <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-15"/>
+    <QualityErrors errors=1 idName="CreditModelQualityErrors" errorsHTML=""/>
+    <ValidityErrors errors=2 idName="CreditModelValidityErrors" errorsHTML=""/>
   </span>
   <span slot="input">
     <!-- svelte-ignore a11y-no-onchange-->

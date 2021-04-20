@@ -7,6 +7,8 @@
     import HRValidation from "../HRValidation.svelte";
     import DataFieldFormat from "../DataFieldFormat.svelte";
     import RegLink from "../RegLink.svelte";
+    import QualityErrors from "../QualityErrors.svelte";
+    import ValidityErrors from "../ValidityErrors.svelte";
 </script>
 
 <DataFieldFormat>
@@ -23,6 +25,8 @@
       modalBody="<p> Specify in text the applicant's or borrower's Other
       credit scoring model if 8 is entered. </p> <p>Otherwise, leave this data
       field blank</p>" />
+    <QualityErrors errors=1 idName="CreditModelFreeQualityErrors" errorsHTML=""/>
+    <ValidityErrors errors=2 idName="CreditModelFreeValidityErros" errorsHTML=""/>
   </span>
   <span slot="input">
     <input

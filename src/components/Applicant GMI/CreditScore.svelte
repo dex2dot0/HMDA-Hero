@@ -6,6 +6,8 @@
     import Checkbox from "../Checkbox.svelte";
     import DataFieldFormat from "../DataFieldFormat.svelte";
     import RegLink from "../RegLink.svelte";
+    import QualityErrors from "../QualityErrors.svelte";
+    import ValidityErrors from "../ValidityErrors.svelte";
 </script>
 
 <DataFieldFormat>
@@ -17,6 +19,8 @@
     <Checkbox text="Not a #" value={$applicantCreditScore == '7777' ? true : false} on:notify={applicantCreditScore.NAN} />
     <Checkbox value={$applicantCreditScore == '8888' ? true : false} on:notify={applicantCreditScore.NA} />
     <Checkbox text="Exempt" value={$applicantCreditScore == '1111' ? true : false} on:notify={applicantCreditScore.Exempt} />
+    <QualityErrors errors=1 idName="CreditScoreErrors" errorsHTML=""/>
+    <ValidityErrors errors=2 idName="CreditScoreErros" errorsHTML=""/>
   </span> 
   <span slot="input">
     <input
