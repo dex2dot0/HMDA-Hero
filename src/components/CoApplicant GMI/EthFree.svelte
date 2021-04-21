@@ -12,7 +12,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="CoEthFree" style="font-size: 12px;">
+<label for="CoEthFree">
 Free Form for Other Hispanic or Latino
 </label>
 <Modal

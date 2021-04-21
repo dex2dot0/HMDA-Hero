@@ -1,23 +1,23 @@
 <script>
-    import {
-      applicantEthOther,
-      applicantEth1, 
-      applicantEth2,
-      applicantEth3,
-      applicantEth4,
-      applicantEth5,
-    } from "./../../stores.js";
-    import Modal from "../Modal.svelte";
-    import HRValidation from "../HRValidation.svelte";
-    import DataFieldFormat from "../DataFieldFormat.svelte";
-    import RegLink from "../RegLink.svelte";
-    import QualityErrors from "../QualityErrors.svelte";
-    import ValidityErrors from "../ValidityErrors.svelte";
+  import {
+    applicantEthOther,
+    applicantEth1, 
+    applicantEth2,
+    applicantEth3,
+    applicantEth4,
+    applicantEth5,
+  } from "./../../stores.js";
+  import Modal from "../Modal.svelte";
+  import HRValidation from "../HRValidation.svelte";
+  import DataFieldFormat from "../DataFieldFormat.svelte";
+  import RegLink from "../RegLink.svelte";
+  import QualityErrors from "../QualityErrors.svelte";
+  import ValidityErrors from "../ValidityErrors.svelte";
 </script>
 
 <DataFieldFormat>
   <span slot="label">
-    <label for="EthFree" style="font-size: 12px;">
+    <label for="EthFree">
       Other Hispanic or Latino
     </label>
   </span>

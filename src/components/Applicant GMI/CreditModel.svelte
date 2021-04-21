@@ -1,11 +1,11 @@
 <script>
-    import {
-      applicantCreditModel
-    } from "../../stores.js";
-    import DataFieldFormat from "../DataFieldFormat.svelte";
-    import RegLink from "../RegLink.svelte";
-    import QualityErrors from "../QualityErrors.svelte";
-    import ValidityErrors from "../ValidityErrors.svelte";
+  import {
+    applicantCreditModel
+  } from "../../stores.js";
+  import DataFieldFormat from "../DataFieldFormat.svelte";
+  import RegLink from "../RegLink.svelte";
+  import QualityErrors from "../QualityErrors.svelte";
+  import ValidityErrors from "../ValidityErrors.svelte";
 </script>
 
 <DataFieldFormat>

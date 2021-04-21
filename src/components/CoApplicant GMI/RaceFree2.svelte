@@ -12,7 +12,7 @@
     import HRValidation from "../HRValidation.svelte";
 </script>
 
-<label for="CoAppRaceFree2">Free Form Text for Other Asian</label>
+<label for="CoAppRaceFree2">Free Form for Other Asian</label>
 <Modal
   idName="CoAppFreeRace2"
   modalTitle="Co-Applicant Race: Free Form Text for Other Asian"
