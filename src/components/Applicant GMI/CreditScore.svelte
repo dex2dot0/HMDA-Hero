@@ -20,7 +20,7 @@
     <Checkbox value={$applicantCreditScore == '8888' ? true : false} on:notify={applicantCreditScore.NA} />
     <Checkbox text="Exempt" value={$applicantCreditScore == '1111' ? true : false} on:notify={applicantCreditScore.Exempt} />
     <QualityErrors errors=1 idName="CreditScoreErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="CreditScoreErros" errorsHTML=""/>
+    <ValidityErrors errors=2 idName="CreditScoreErrors" errorsHTML=""/>
   </span> 
   <span slot="input">
     <input

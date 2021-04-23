@@ -28,7 +28,7 @@
       modalBody="<p>Example: 24</p> <p>(or)</p> <p>Descriptions:</p> <p>8888.
       Not Applicable</p>" />
     <QualityErrors errors=1 idName="AppAgeQualityErrors" errorsHTML="<p>Example should inject results</p>"/>
-    <ValidityErrors errors=2 idName="AppAgeValidityErros" errorsHTML="<p>Example, should inject results</p>"/>
+    <ValidityErrors errors=2 idName="AppAgeValidityErrors" errorsHTML="<p>Example, should inject results</p>"/>
   </span>
   <span slot="input">
     <input

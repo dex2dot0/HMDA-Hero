@@ -30,7 +30,7 @@
       Islander race(s) provided by the Applicant or Borrower. </p> <p>Otherwise,
       leave this data field blank</p>" />
     <QualityErrors errors=1 idName="RaceFree3QualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="RaceFree3ValidityErros" errorsHTML=""/>
+    <ValidityErrors errors=2 idName="RaceFree3ValidityErrors" errorsHTML=""/>
   </span>
   <span slot="input">
     <input

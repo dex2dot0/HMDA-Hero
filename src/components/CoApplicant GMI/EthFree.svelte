@@ -31,7 +31,7 @@
         Hispanic or Latino ethnicity(ies) provided by the Co-Applicant or
         Co-Borrower. </p> <p>Otherwise, leave this data field blank</p>" />
         <QualityErrors errors=1 idName="EthFreeQualityErrors" errorsHTML=""/>
-        <ValidityErrors errors=2 idName="EthFreeValidityErros" errorsHTML=""/>
+        <ValidityErrors errors=2 idName="EthFreeValidityErrors" errorsHTML=""/>
     </span>
     <span slot="input">
         <input

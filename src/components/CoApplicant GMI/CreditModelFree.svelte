@@ -28,7 +28,7 @@
         credit scoring model if 8 is entered. </p> <p>Otherwise, leave this data
         field blank</p>" />
         <QualityErrors errors=1 idName="CreditModelFreeQualityErrors" errorsHTML=""/>
-        <ValidityErrors errors=2 idName="CreditModelFreeValidityErros" errorsHTML=""/> 
+        <ValidityErrors errors=2 idName="CreditModelFreeValidityErrors" errorsHTML=""/> 
     </span>
     <span slot="input">
         <input

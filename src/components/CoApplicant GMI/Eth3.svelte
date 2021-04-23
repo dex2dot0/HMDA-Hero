@@ -16,7 +16,7 @@
   <span slot="helpers">
     <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-10"/>
     <QualityErrors errors=1 idName="Eth3QualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="Eth3ValidityErros" errorsHTML=""/>
+    <ValidityErrors errors=2 idName="Eth3ValidityErrors" errorsHTML=""/>
   </span>
   <span slot="input">
     <!-- svelte-ignore a11y-no-onchange-->

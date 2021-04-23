@@ -32,7 +32,7 @@
         by the Applicant or Borrower. </p> <p>Otherwise, leave this data field
         blank</p>" />
         <QualityErrors errors=1 idName="RaceFree1QualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="RaceFree1ValidityErros" errorsHTML=""/>
+    <ValidityErrors errors=2 idName="RaceFree1ValidityErrors" errorsHTML=""/>
     </span>
     <span slot="input">
         <input
