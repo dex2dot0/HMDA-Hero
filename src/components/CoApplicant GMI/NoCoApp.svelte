@@ -83,15 +83,15 @@
   }
 </script>
 
-<NoCoAppCheckbox
+<label for="noCoApp" class="mr-2 mb-1" style="font-size: 14px;">
+    No Co-Applicant
+  </label>
+  <NoCoAppCheckbox
     value={$NoCoApp}
     on:notify={NoCoApp.changed}
     on:notify={coAppChanged}
     on:notify={coapplicantAge.NA}
     text="" />
-<label for="noCoApp" class="mr-2 mb-1" style="font-size: 14px;">
-    No Co-Applicant
-  </label>
   <Modal
     idName="NoCoAppModal"
     modalTitle="No Co-Applicant"

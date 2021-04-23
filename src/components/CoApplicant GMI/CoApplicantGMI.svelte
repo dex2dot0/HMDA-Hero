@@ -92,15 +92,15 @@
   }
 </style>
 
-<h6 style="color: #217346; font-style: italic; margin-top: 1rem;">
-  Method of Collection - Co-Applicant
-</h6>
-
-<div class="row baseline">
+<div class="row baseline pt-1">
   <div class="col">
     <NoCoApp/>
   </div>
 </div>
+
+<h6 style="color: #217346; font-style: italic; margin-top: 1rem;">
+  Method of Collection - Co-Applicant
+</h6>
 
 <div class="row">
   <div class="col-sm-12 col-md-4">
