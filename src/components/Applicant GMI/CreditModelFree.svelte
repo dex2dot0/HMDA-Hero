@@ -1,14 +1,14 @@
 <script>
-    import {
-      applicantCreditModelOther,
-      applicantCreditModel
-    } from "../../stores.js";
-    import Modal from "../Modal.svelte";
-    import HRValidation from "../HRValidation.svelte";
-    import DataFieldFormat from "../DataFieldFormat.svelte";
-    import RegLink from "../RegLink.svelte";
-    import QualityErrors from "../QualityErrors.svelte";
-    import ValidityErrors from "../ValidityErrors.svelte";
+  import {
+    applicantCreditModelOther,
+    applicantCreditModel
+  } from "../../stores.js";
+  import Modal from "../Modal.svelte";
+  import HRValidation from "../HRValidation.svelte";
+  import DataFieldFormat from "../DataFieldFormat.svelte";
+  import RegLink from "../RegLink.svelte";
+  import QualityErrors from "../QualityErrors.svelte";
+  import ValidityErrors from "../ValidityErrors.svelte";
 </script>
 
 <DataFieldFormat>

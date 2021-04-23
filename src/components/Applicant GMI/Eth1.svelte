@@ -1,11 +1,11 @@
 <script>
-    import {
-      applicantEth1
-    } from "./../../stores.js";
-    import DataFieldFormat from "../DataFieldFormat.svelte";
-    import RegLink from "../RegLink.svelte";
-    import QualityErrors from "../QualityErrors.svelte";
-    import ValidityErrors from "../ValidityErrors.svelte";
+  import {
+    applicantEth1
+  } from "./../../stores.js";
+  import DataFieldFormat from "../DataFieldFormat.svelte";
+  import RegLink from "../RegLink.svelte";
+  import QualityErrors from "../QualityErrors.svelte";
+  import ValidityErrors from "../ValidityErrors.svelte";
 </script>
 
 <DataFieldFormat>

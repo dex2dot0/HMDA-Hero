@@ -6,18 +6,25 @@
 
     import HRValidation from "../HRValidation.svelte";
     import Checkbox from "../Checkbox.svelte";
+    import DataFieldFormat from "../DataFieldFormat.svelte";
+    import RegLink from "../RegLink.svelte";
+    import QualityErrors from "../QualityErrors.svelte";
+    import ValidityErrors from "../ValidityErrors.svelte";
 </script>
 
-<div class="row align-items-center">
-  <div class="col-sm-12 col-md-auto">
+<DataFieldFormat>
+  <span slot="label">
     <label for="CreditScore">Credit Score</label>
-  </div>
-  <div class="col">
+  </span>
+  <span slot="helpers">
+    <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-15" />
     <Checkbox text="Not a #" value={$coapplicantCreditScore == '7777' ? true : false} on:notify={coapplicantCreditScore.NAN} />
     <Checkbox value={$coapplicantCreditScore == '8888' ? true : false} on:notify={coapplicantCreditScore.NA} />
     <Checkbox text="Exempt" value={$coapplicantCreditScore == '1111' ? true : false} on:notify={coapplicantCreditScore.Exempt} />
-  </div>
-  <div class="col-sm-12">
+    <QualityErrors errors=1 idName="CreditScoreErrors" errorsHTML=""/>
+    <ValidityErrors errors=2 idName="CreditScoreErros" errorsHTML=""/>
+  </span> 
+  <span slot="input">
     <input
       class="form-control"
       type="text"
@@ -30,5 +37,5 @@
     {:else}
       <HRValidation />
     {/if}
-  </div>
-</div>
+  </span>
+</DataFieldFormat>

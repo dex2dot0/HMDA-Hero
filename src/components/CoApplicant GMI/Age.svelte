@@ -3,7 +3,7 @@
         coapplicantAge,
         NoCoApp
     } from "./../../stores.js";
-
+    import DataFieldFormat from "../DataFieldFormat.svelte";
     import Checkbox from "../Checkbox.svelte";
     import Modal from "../Modal.svelte";
     import HRValidation from "../HRValidation.svelte";
@@ -12,11 +12,11 @@
     import ValidityErrors from "../ValidityErrors.svelte";
 </script>
 
-<div class="row align-items-center">
-  <div class="col-sm-12 col-md-auto">
+<DataFieldFormat>
+  <span slot="label">
     <label for="CoAge">Age</label>
-  </div>
-  <div class="col">
+  </span>
+  <span slot="helpers">
     <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-10-ii"/>
     {#if $coapplicantAge !== 'NA'}
       <Checkbox value={false} on:notify={coapplicantAge.NA} />
@@ -28,10 +28,10 @@
       modalTitle="Co-Applicant: Age"
       modalBody="<p>Example: 24</p> <p>(or)</p> <p>Descriptions:</p> <p>8888.
       Not applicable</p> <p>9999. No co-applicant</p> " />
-      <QualityErrors errors=0/>
-      <ValidityErrors errors=0/>
-  </div>
-  <div class="col-sm-12">
+      <QualityErrors errors=1 idName="AppAgeQualityErrors" errorsHTML="<p>Example should inject results</p>"/>
+        <ValidityErrors errors=2 idName="AppAgeValidityErros" errorsHTML="<p>Example, should inject results</p>"/>
+  </span>
+  <span slot="input">
     <input
       class="form-control"
       type="text"
@@ -44,5 +44,5 @@
     {:else}
       <HRValidation />
     {/if}
-  </div>
-</div>
+  </span>
+</DataFieldFormat>
