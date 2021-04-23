@@ -1,6 +1,7 @@
 <script>
   import {
-      denialReason1
+    denialReason1,
+    actionTaken
   } from "./../../stores.js";
   import DataFieldFormat from "../DataFieldFormat.svelte";
   import RegLink from "../RegLink.svelte";
@@ -20,7 +21,7 @@
   <span slot="input">
     <!-- svelte-ignore a11y-no-onchange-->
     <select
-      class={$denialReason1 > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
+      class={$actionTaken == '3' && !$denialReason1 > 0 ? 'custom-select is-invalid' : 'custom-select'}
       id="Denial1"
       bind:value={$denialReason1}
       on:change={denialReason1.change}>
