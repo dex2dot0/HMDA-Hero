@@ -5,7 +5,7 @@
 </script>
 
 <a
-  href="#"
+  href="#{idName}"
   class="badge badge-info"
   data-toggle="modal"
   tabindex="-1"

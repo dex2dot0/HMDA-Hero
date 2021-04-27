@@ -1,6 +1,6 @@
 <script>
   import {
-      ausResult1
+    ausResult1
   } from "./../../stores.js";
   import DataFieldFormat from "../DataFieldFormat.svelte";
   import RegLink from "../RegLink.svelte";
