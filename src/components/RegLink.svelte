@@ -16,7 +16,7 @@
     }
 </style>
 
-<a href={regUrl} target="_blank" class="badge badge-light">
+<a href={regUrl} target="_blank" class="badge badge-light" tabindex="-1">
     <span class="material-icons">
         account_balance
     </span> 

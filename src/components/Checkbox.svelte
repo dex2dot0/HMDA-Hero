@@ -6,7 +6,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<button type="button" class="badge badge-light" on:click={() => {
+<button tabindex="-1" type="button" class="badge badge-light" on:click={() => {
   value === true ? (value = false) : (value = true);
   dispatch('notify', value);
 }}> 
