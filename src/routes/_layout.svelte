@@ -11,7 +11,7 @@
   <script type="text/javascript">
     //Must initialize Office.js on each new page
     (() => {
-      Office.initialize = function() {};
+      Office.initialize = function () {};
     })();
   </script>
 </svelte:head>

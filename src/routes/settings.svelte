@@ -1,10 +1,10 @@
 <script>
-  import Checkbox from "../components/Checkbox.svelte";
-  import Modal from "../components/Modal.svelte";
-  import { getLEI } from "../Excel Scripts/getLEI.js";
-  import { setSetting } from "../Excel Scripts/setSetting.js";
-  import { getSetting } from "../Excel Scripts/getSetting.js";
-  
+  import Checkbox from '../components/Checkbox.svelte';
+  import Modal from '../components/Modal.svelte';
+  import { getLEI } from '../Excel Scripts/getLEI.js';
+  import { setSetting } from '../Excel Scripts/setSetting.js';
+  import { getSetting } from '../Excel Scripts/getSetting.js';
+
   let lei;
   let exempt = false;
   //Attempt to load settings
@@ -13,19 +13,19 @@
       await Office.onReady().then(async function () {
         //Attempt to pull LEI from Excel Settings
         let leiSetting = await getSetting('LEI');
-        if(leiSetting) {
+        if (leiSetting) {
           lei = leiSetting;
         } else {
-          console.log("attempting to set LEI from Excel file");
-            try {
-              let leiFromExcel = await getLEI();
-              let leiArray = leiFromExcel[0];
-              lei = leiArray[0];
-              setSetting('LEI', leiArray[0]);
-            } catch (error) {
-              console.log("Error attempting to set LEI from Excel file");
-              console.log(error);
-            }
+          console.log('attempting to set LEI from Excel file');
+          try {
+            let leiFromExcel = await getLEI();
+            let leiArray = leiFromExcel[0];
+            lei = leiArray[0];
+            setSetting('LEI', leiArray[0]);
+          } catch (error) {
+            console.log('Error attempting to set LEI from Excel file');
+            console.log(error);
+          }
         }
 
         //Attempt to pull Exemption from Excel Settings
@@ -66,15 +66,17 @@
 <div class="container">
   <div class="form-row d-flex align-items-end">
     <div class="col-10">
-      <h6>Apply S2155 Exemption<Modal
-        idName="exemptionModal"
-        modalTitle="S2155 Exemption"
-        tabindex="-1"
-        modalBody="<p>Applying the S2155 exemption in your settings controls which fields you will see when adding or editing loans. 
-          If you would like to see all fields regardless of exemption, do not apply this setting.</p>" /></h6>
+      <h6>
+        Apply S2155 Exemption<Modal
+          idName="exemptionModal"
+          modalTitle="S2155 Exemption"
+          tabindex="-1"
+          modalBody="<p>Applying the S2155 exemption in your settings controls which fields you will see when adding or editing loans. 
+          If you would like to see all fields regardless of exemption, do not apply this setting.</p>" />
+      </h6>
     </div>
     <div class="col d-flex align-self-start">
-      <Checkbox value={exempt} on:notify={updateExempt} text=""/>
+      <Checkbox value="{exempt}" on:notify="{updateExempt}" text="" />
     </div>
   </div>
   <div class="form-row pt-3 d-flex align-items-end">
@@ -82,7 +84,11 @@
       <h6>LEI</h6>
     </div>
     <div class="col pl-4">
-      <input class="form-control mr-sm-2" type="text" bind:value={lei} on:change={updateLEI} />
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        bind:value="{lei}"
+        on:change="{updateLEI}" />
     </div>
   </div>
 </div>

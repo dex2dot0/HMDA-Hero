@@ -1,7 +1,7 @@
 <script>
-  import Modal from "../components/Modal.svelte";
-  import { getEndRow } from "../Excel Scripts/getEndRow.js";
-  import { pipeImport } from "../Excel Scripts/pipeImport.js";
+  import Modal from '../components/Modal.svelte';
+  import { getEndRow } from '../Excel Scripts/getEndRow.js';
+  import { pipeImport } from '../Excel Scripts/pipeImport.js';
 
   checkBrowser();
   let modalStr = `<p>The file you are uploading should conform to the
@@ -14,13 +14,13 @@
   async function checkBrowser() {
     if (process.browser) {
       if (window.File && window.FileReader && window.FileList && window.Blob) {
-        console.log("fileReader is supported");
+        console.log('fileReader is supported');
         return true;
       } else {
         errorUI(
           pipeError,
-          "#dc3545",
-          "The browser your are using in Excel Online or the browser used by your version of Excel Desktop does not support this file upload feature."
+          '#dc3545',
+          'The browser your are using in Excel Online or the browser used by your version of Excel Desktop does not support this file upload feature.'
         );
         return false;
       }
@@ -30,29 +30,31 @@
   async function pipeFile() {
     try {
       if (checkBrowser()) {
-        console.log("Start pipe-delimited import");
+        console.log('Start pipe-delimited import');
         let fileInput = document.querySelector(`#pipe`);
-        let pipeError = document.querySelector("#pipeError");
-        errorUI(pipeError, "#fff", "");
+        let pipeError = document.querySelector('#pipeError');
+        errorUI(pipeError, '#fff', '');
 
         let file = fileInput.files[0];
         let reader = new FileReader();
         let textFile = /text.*/;
         if (file !== undefined) {
           if (file.type.match(textFile)) {
-            reader.onload = async function(e) {
+            reader.onload = async function (e) {
               let txt = reader.result;
               let txtArray = txt.split(/\r?\n/);
               let orgInfoTxt = txtArray[0];
-              let orgInfo = orgInfoTxt.split("|");
+              let orgInfo = orgInfoTxt.split('|');
               //Check for organization information validity
               let year = Number(orgInfo[2]);
               let quarter = Number(orgInfo[3]);
               if (
-                orgInfo[0] == "1" &&
+                orgInfo[0] == '1' &&
                 orgInfo.length == 15 &&
-                (year >= 2018 && year < 2099) &&
-                (quarter >= 1 && quarter <= 4) &&
+                year >= 2018 &&
+                year < 2099 &&
+                quarter >= 1 &&
+                quarter <= 4 &&
                 orgInfo[9].length == 2
               ) {
                 //Remove empty array item
@@ -60,7 +62,7 @@
                 let loanData = new Array(txtArray.length - 1);
                 for (let i = 1; i < txtArray.length; i++) {
                   let lDataTxt = txtArray[i].toString();
-                  loanData[i - 1] = lDataTxt.split("|");
+                  loanData[i - 1] = lDataTxt.split('|');
                   //Remove the first element of the array which should always be 2
                   loanData[i - 1].shift();
                 }
@@ -71,35 +73,35 @@
                   //Process data here
                   let endRow = await getEndRow();
                   let runImport = await pipeImport(loanData, endRow);
-                  if (runImport == "success") {
+                  if (runImport == 'success') {
                     //handle success here, maybe something with UI
                   } else {
                     //handle error here
                     errorUI(
                       pipeError,
-                      "#dc3545",
+                      '#dc3545',
                       `The process ran in to an unexpected error: ${runImport.toString()}`
                     );
                   }
                 } else {
-                  console.log("Data does not meet CFPB specifications");
+                  console.log('Data does not meet CFPB specifications');
                   errorUI(
                     pipeError,
-                    "#dc3545",
+                    '#dc3545',
                     `The file you specified does not appear to be a valid pipe-delimited file according to CFPB specifications.`
                   );
                 }
               } else {
                 errorUI(
                   pipeError,
-                  "#dc3545",
-                  "The file you specified does not appear to be a valid pipe-delimited file according to CFPB specifications."
+                  '#dc3545',
+                  'The file you specified does not appear to be a valid pipe-delimited file according to CFPB specifications.'
                 );
               }
             };
             reader.readAsText(file);
           } else {
-            errorUI(pipeError, "#dc3545", "The file should be a text file");
+            errorUI(pipeError, '#dc3545', 'The file should be a text file');
           }
         }
       }
@@ -107,7 +109,7 @@
       console.log(error);
       errorUI(
         pipeError,
-        "#dc3545",
+        '#dc3545',
         `An unexpected error occured: ${error.message.toString()}`
       );
     }
@@ -115,7 +117,7 @@
     async function checkData(loanData) {
       let canImport = true;
       for (let i = 0; i < loanData.length; i++) {
-        loanData[i].length == 109 ? "" : (canImport = false);
+        loanData[i].length == 109 ? '' : (canImport = false);
       }
       return canImport;
     }
@@ -124,7 +126,7 @@
       element.style.backgroundColor = bgColor;
       element.innerText = msg;
     }
-    return "done";
+    return 'done';
   }
 </script>
 
@@ -188,7 +190,7 @@
             idName="pipeDelimited"
             modalTitle="CFPB Pipe-delimited Formatted Text File"
             tabindex="-1"
-            modalBody={modalStr} />
+            modalBody="{modalStr}" />
         </h5>
         <div class="input-group align-items-end">
           <div class="custom-file">
@@ -196,7 +198,7 @@
               type="file"
               class="custom-file-input"
               id="pipe"
-              on:change={pipeFile}
+              on:change="{pipeFile}"
               accept="text/plain" />
             <label
               class="custom-file-label"
@@ -212,7 +214,8 @@
         </p>
         <p
           style="text-align:left;font-size:11px;background-color:#fff;padding:10px;"
-          id="pipeError" />
+          id="pipeError">
+        </p>
       </div>
     </div>
   </form>

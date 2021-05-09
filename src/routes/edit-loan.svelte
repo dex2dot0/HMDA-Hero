@@ -1,19 +1,19 @@
 <script>
-  import LoanDetails from "../components/Loan Details/LoanDetails.svelte";
-  import PropertyInformation from "../components/Property Information/PropertyInformation.svelte";
-  import BorrowerInformation from "../components/BorrowerInformation.svelte";
-  import UnderwritingDetails from "../components/Underwriting Details/UnderwritingDetails.svelte";
-  import HMDAInformation from "../components/HMDA Information/HMDAInformation.svelte";
-  import { action, LEI} from "../stores.js";
-  import { getLEI } from "../Excel Scripts/getLEI.js";
-  import CancelDialog from "../components/CancelDialog.svelte";
-  import { setSetting } from "../Excel Scripts/setSetting.js";
-  import { getSetting } from "../Excel Scripts/getSetting.js";
+  import LoanDetails from '../components/Loan Details/LoanDetails.svelte';
+  import PropertyInformation from '../components/Property Information/PropertyInformation.svelte';
+  import BorrowerInformation from '../components/BorrowerInformation.svelte';
+  import UnderwritingDetails from '../components/Underwriting Details/UnderwritingDetails.svelte';
+  import HMDAInformation from '../components/HMDA Information/HMDAInformation.svelte';
+  import { action, LEI } from '../stores.js';
+  import { getLEI } from '../Excel Scripts/getLEI.js';
+  import CancelDialog from '../components/CancelDialog.svelte';
+  import { setSetting } from '../Excel Scripts/setSetting.js';
+  import { getSetting } from '../Excel Scripts/getSetting.js';
 
-  let activeOpt = "Loan";
+  let activeOpt = 'Loan';
   //Running media queries to determine what to display. If screen is larger, show everything.
   //If screen is smaller, only show one section at a time with a menu.
-  action.set("edit");
+  action.set('edit');
 
   //Attempt to retrieve LEI
   (async () => {
@@ -21,17 +21,17 @@
       await Office.onReady().then(async function () {
         //Attempt to pull LEI from Excel Settings
         let leiSetting = await getSetting('LEI');
-        if ($LEI == "" && !leiSetting) {
-          console.log("attempting to set LEI from Excel file");
+        if ($LEI == '' && !leiSetting) {
+          console.log('attempting to set LEI from Excel file');
           try {
-              let leiFromExcel = await getLEI();
-              let leiArray = leiFromExcel[0];
-              LEI.change(leiArray[0]);
-              setSetting('LEI', leiArray[0]);
-            } catch (error) {
-              console.log("Error attempting to set LEI from Excel file");
-              console.log(error);
-            }
+            let leiFromExcel = await getLEI();
+            let leiArray = leiFromExcel[0];
+            LEI.change(leiArray[0]);
+            setSetting('LEI', leiArray[0]);
+          } catch (error) {
+            console.log('Error attempting to set LEI from Excel file');
+            console.log(error);
+          }
         }
       });
     }
@@ -140,7 +140,7 @@
       aria-controls="navbarTogglerDemo02"
       aria-expanded="false"
       aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon" />
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -155,7 +155,7 @@
             <select
               class="custom-select pl-2"
               id="activeOpt"
-              bind:value={activeOpt}>
+              bind:value="{activeOpt}">
               <option value="Loan">Loan Details</option>
               <option value="Property">Property Information</option>
               <option value="Borrower">Borrower Information</option>
@@ -167,9 +167,9 @@
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <CancelDialog
-        idName="CancelChangesModal"
-        modalTitle="Cancel Confiration"
-        modalBody="<p>Are you sure you want to cancel your changes?</p>" />
+          idName="CancelChangesModal"
+          modalTitle="Cancel Confiration"
+          modalBody="<p>Are you sure you want to cancel your changes?</p>" />
       </form>
     </div>
   </nav>
