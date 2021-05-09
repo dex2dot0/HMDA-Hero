@@ -1,12 +1,9 @@
 <script>
-  import {
-      coapplicantSex,
-      NoCoApp
-  } from "./../../stores.js";
-  import DataFieldFormat from "../DataFieldFormat.svelte";
-  import RegLink from "../RegLink.svelte";
-  import QualityErrors from "../QualityErrors.svelte";
-  import ValidityErrors from "../ValidityErrors.svelte";
+  import { coapplicantSex, NoCoApp } from './../../stores.js';
+  import DataFieldFormat from '../DataFieldFormat.svelte';
+  import RegLink from '../RegLink.svelte';
+  import QualityErrors from '../QualityErrors.svelte';
+  import ValidityErrors from '../ValidityErrors.svelte';
 </script>
 
 <DataFieldFormat>
@@ -14,19 +11,22 @@
     <label for="CoSex">Sex</label>
   </span>
   <span slot="helpers">
-    <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-10"/>
-    <QualityErrors errors=1 idName="SexQualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="SexValidityErrors" errorsHTML=""/>
+    <RegLink
+      regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-10" />
+    <QualityErrors errors="1" idName="SexQualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="SexValidityErrors" errorsHTML="" />
   </span>
   <span slot="input">
     <!-- svelte-ignore a11y-no-onchange-->
     <select
-      class={$coapplicantSex > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
+      class="{$coapplicantSex > 0
+        ? 'custom-select is-valid'
+        : 'custom-select is-invalid'}"
       id="CoSex"
-      bind:value={$coapplicantSex}
-      on:change={coapplicantSex.change}
-      disabled={$NoCoApp}>
-      <option />
+      bind:value="{$coapplicantSex}"
+      on:change="{coapplicantSex.change}"
+      disabled="{$NoCoApp}">
+      <option></option>
       <option value="1">1. Male</option>
       <option value="2">2. Female</option>
       <option value="3">

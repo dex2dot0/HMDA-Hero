@@ -1,11 +1,9 @@
 <script>
-  import {
-      purchaserType
-  } from "./../../stores.js";
-  import DataFieldFormat from "../DataFieldFormat.svelte";
-  import RegLink from "../RegLink.svelte";
-  import QualityErrors from "../QualityErrors.svelte";
-  import ValidityErrors from "../ValidityErrors.svelte";
+  import { purchaserType } from './../../stores.js';
+  import DataFieldFormat from '../DataFieldFormat.svelte';
+  import RegLink from '../RegLink.svelte';
+  import QualityErrors from '../QualityErrors.svelte';
+  import ValidityErrors from '../ValidityErrors.svelte';
 </script>
 
 <DataFieldFormat>
@@ -13,19 +11,28 @@
     <label for="PurchaserType">Type of Purchaser</label>
   </span>
   <span slot="helpers">
-    <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-11"/>
-    <QualityErrors errors=1 idName="purchaserTypeQualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="purchaserTypeValidityErrors" errorsHTML=""/>
+    <RegLink
+      regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-11" />
+    <QualityErrors
+      errors="1"
+      idName="purchaserTypeQualityErrors"
+      errorsHTML="" />
+    <ValidityErrors
+      errors="2"
+      idName="purchaserTypeValidityErrors"
+      errorsHTML="" />
   </span>
   <span slot="input">
     <!-- svelte-ignore a11y-no-onchange-->
     <select
-      class={$purchaserType !== '' ? 'custom-select is-valid' : 'custom-select is-invalid'}
+      class="{$purchaserType !== ''
+        ? 'custom-select is-valid'
+        : 'custom-select is-invalid'}"
       id="PurchaserType"
       tabindex="0"
-      bind:value={$purchaserType}
-      on:change={purchaserType.change}>
-      <option />
+      bind:value="{$purchaserType}"
+      on:change="{purchaserType.change}">
+      <option></option>
       <option value="0">0. Not applicable</option>
       <option value="1">1. Fannie Mae</option>
       <option value="2">2. Ginnie Mae</option>

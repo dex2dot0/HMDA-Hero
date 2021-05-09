@@ -10,16 +10,14 @@
   data-toggle="modal"
   tabindex="-1"
   data-target="#{idName}">
-  <span class="material-icons">
-    info
-    </span>
-  </a>
+  <span class="material-icons"> info </span>
+</a>
 <!-- Modal -->
 <div
   class="modal fade"
-  id={idName}
+  id="{idName}"
   role="dialog"
-  aria-labelledby={idName}
+  aria-labelledby="{idName}"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

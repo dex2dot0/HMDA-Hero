@@ -1,33 +1,35 @@
 <script>
-  import {
-    applicantCreditModel
-  } from "../../stores.js";
-  import DataFieldFormat from "../DataFieldFormat.svelte";
-  import RegLink from "../RegLink.svelte";
-  import QualityErrors from "../QualityErrors.svelte";
-  import ValidityErrors from "../ValidityErrors.svelte";
+  import { applicantCreditModel } from '../../stores.js';
+  import DataFieldFormat from '../DataFieldFormat.svelte';
+  import RegLink from '../RegLink.svelte';
+  import QualityErrors from '../QualityErrors.svelte';
+  import ValidityErrors from '../ValidityErrors.svelte';
 </script>
 
 <DataFieldFormat>
   <span slot="label">
     <!-- svelte-ignore a11y-label-has-associated-control-->
-    <label for="CreditModel">
-      Name & Version of Credit Scoring Model
-    </label>
+    <label for="CreditModel"> Name & Version of Credit Scoring Model </label>
   </span>
   <span slot="helpers">
-    <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-15"/>
-    <QualityErrors errors=1 idName="CreditModelQualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="CreditModelValidityErrors" errorsHTML=""/>
+    <RegLink
+      regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-15" />
+    <QualityErrors errors="1" idName="CreditModelQualityErrors" errorsHTML="" />
+    <ValidityErrors
+      errors="2"
+      idName="CreditModelValidityErrors"
+      errorsHTML="" />
   </span>
   <span slot="input">
     <!-- svelte-ignore a11y-no-onchange-->
     <select
-      class={$applicantCreditModel > 0 ? 'custom-select is-valid' : 'custom-select is-invalid'}
+      class="{$applicantCreditModel > 0
+        ? 'custom-select is-valid'
+        : 'custom-select is-invalid'}"
       id="CreditModel"
-      bind:value={$applicantCreditModel}
-      on:change={applicantCreditModel.change}>
-      <option />
+      bind:value="{$applicantCreditModel}"
+      on:change="{applicantCreditModel.change}">
+      <option></option>
       <option value="1">1.Equifax Beacon 5.0</option>
       <option value="2">2.Experian Fair Isaac</option>
       <option value="3">3.FICO Risk Score Classic 04</option>

@@ -1,11 +1,9 @@
 <script>
-  import {
-      denialReason2
-  } from "./../../stores.js";
-  import DataFieldFormat from "../DataFieldFormat.svelte";
-  import RegLink from "../RegLink.svelte";
-  import QualityErrors from "../QualityErrors.svelte";
-  import ValidityErrors from "../ValidityErrors.svelte";
+  import { denialReason2 } from './../../stores.js';
+  import DataFieldFormat from '../DataFieldFormat.svelte';
+  import RegLink from '../RegLink.svelte';
+  import QualityErrors from '../QualityErrors.svelte';
+  import ValidityErrors from '../ValidityErrors.svelte';
 </script>
 
 <DataFieldFormat>
@@ -13,14 +11,19 @@
     <label for="Denial2">Reason for Denial: 2</label>
   </span>
   <span slot="helpers">
-    <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-16"/>
-    <QualityErrors errors=1 idName="Denial2QualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="Denial2ValidityErrors" errorsHTML=""/>
+    <RegLink
+      regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-16" />
+    <QualityErrors errors="1" idName="Denial2QualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="Denial2ValidityErrors" errorsHTML="" />
   </span>
   <span slot="input">
     <!-- svelte-ignore a11y-no-onchange-->
-    <select class="custom-select" id="Denial2" bind:value={$denialReason2} on:change={denialReason2.change}>
-      <option />
+    <select
+      class="custom-select"
+      id="Denial2"
+      bind:value="{$denialReason2}"
+      on:change="{denialReason2.change}">
+      <option></option>
       <option value="1">1.Debt-to-income ratio</option>
       <option value="2">2.Employment history</option>
       <option value="3">3.Credit history</option>

@@ -5,11 +5,14 @@ export async function updateRowByULI(uli, endRow, data) {
   return new Promise((resolve, reject) => {
     try {
       Excel.run(async (context) => {
-        let sheet = context.workbook.worksheets.getItem("Data");
+        let sheet = context.workbook.worksheets.getItem('Data');
         let searchRange = sheet.getRange(`C5:C${endRow}`);
-        let foundRange = searchRange.find(uli, { completeMatch: true, searchDirection: Excel.SearchDirection.forward });
+        let foundRange = searchRange.find(uli, {
+          completeMatch: true,
+          searchDirection: Excel.SearchDirection.forward,
+        });
 
-        foundRange.load("address");
+        foundRange.load('address');
 
         context.sync().then(async function () {
           let rowAddress = foundRange.address;
@@ -22,8 +25,8 @@ export async function updateRowByULI(uli, endRow, data) {
         });
       });
     } catch (error) {
-      console.log(error)
-      reject(error)
+      console.log(error);
+      reject(error);
     }
   });
 }

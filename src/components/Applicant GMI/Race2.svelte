@@ -1,11 +1,9 @@
 <script>
-  import {
-    applicantRace2
-  } from "./../../stores.js";
-  import DataFieldFormat from "../DataFieldFormat.svelte";
-  import RegLink from "../RegLink.svelte";
-  import QualityErrors from "../QualityErrors.svelte";
-  import ValidityErrors from "../ValidityErrors.svelte";
+  import { applicantRace2 } from './../../stores.js';
+  import DataFieldFormat from '../DataFieldFormat.svelte';
+  import RegLink from '../RegLink.svelte';
+  import QualityErrors from '../QualityErrors.svelte';
+  import ValidityErrors from '../ValidityErrors.svelte';
 </script>
 
 <DataFieldFormat>
@@ -13,17 +11,18 @@
     <label for="Race2">Race 2</label>
   </span>
   <span slot="helpers">
-    <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-10"/>
-    <QualityErrors errors=1 idName="Race2QualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="Race2ValidityErrors" errorsHTML=""/>
+    <RegLink
+      regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-10" />
+    <QualityErrors errors="1" idName="Race2QualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="Race2ValidityErrors" errorsHTML="" />
   </span>
   <span slot="input">
     <!-- svelte-ignore a11y-no-onchange-->
     <select
       class="custom-select"
       id="Race2"
-      bind:value={$applicantRace2}
-      on:change={applicantRace2.change}>
+      bind:value="{$applicantRace2}"
+      on:change="{applicantRace2.change}">
       <option selected value="">Blank, If none are applicable</option>
       <option value="1">1. American Indian or Alaska Native</option>
       <option value="2">2. Asian</option>

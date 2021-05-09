@@ -1,16 +1,14 @@
 <script>
-  import {
-    isExempt,
-  } from "./../../stores.js";
+  import { isExempt } from './../../stores.js';
 
-  import Submission from "./Submission.svelte";
-  import InitiallyPayable from "./InitiallyPayable.svelte";
-  import RateSpread from "./RateSpread.svelte";
-  import Denial1 from "./Denial1.svelte";
-  import Denial2 from "./Denial2.svelte";
-  import Denial3 from "./Denial3.svelte";
-  import Denial4 from "./Denial4.svelte";
-  import DenialFree from "./DenialFree.svelte";
+  import Submission from './Submission.svelte';
+  import InitiallyPayable from './InitiallyPayable.svelte';
+  import RateSpread from './RateSpread.svelte';
+  import Denial1 from './Denial1.svelte';
+  import Denial2 from './Denial2.svelte';
+  import Denial3 from './Denial3.svelte';
+  import Denial4 from './Denial4.svelte';
+  import DenialFree from './DenialFree.svelte';
 
   (async () => {
     if (process.browser) {
@@ -32,33 +30,33 @@
 {:else}
   <div class="row">
     <div class="col-12 col-md-4">
-      <Submission/>
+      <Submission />
     </div>
     <div class="col-12 col-md-4">
-      <InitiallyPayable/>
+      <InitiallyPayable />
     </div>
     <div class="col-12 col-md-4">
-      <RateSpread/>
+      <RateSpread />
     </div>
   </div>
 
   <div class="row">
     <div class="col-12 col-md-3">
-      <Denial1/>
+      <Denial1 />
     </div>
     <div class="col-12 col-md-3">
-      <Denial2/>
+      <Denial2 />
     </div>
     <div class="col-12 col-md-3">
-      <Denial3/>
+      <Denial3 />
     </div>
     <div class="col-12 col-md-3">
-      <Denial4/>
+      <Denial4 />
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <DenialFree/>
+      <DenialFree />
     </div>
   </div>
 {/if}

@@ -4,20 +4,18 @@
     reference
 -->
 <script>
-    export let regUrl = '';
+  export let regUrl = '';
 </script>
 
 <style>
-    a {
-        color: #8764b8;
-    }
-    a:hover {
-        color: #5c2e91;
-    }
+  a {
+    color: #8764b8;
+  }
+  a:hover {
+    color: #5c2e91;
+  }
 </style>
 
-<a href={regUrl} target="_blank" class="badge badge-light" tabindex="-1">
-    <span class="material-icons">
-        account_balance
-    </span> 
+<a href="{regUrl}" target="_blank" class="badge badge-light" tabindex="-1">
+  <span class="material-icons"> account_balance </span>
 </a>

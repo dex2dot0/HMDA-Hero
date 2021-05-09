@@ -2,17 +2,17 @@
 //This function requires you pass all the data for the entire row minus the LEI!!!
 
 export async function updateRow(endRow, data) {
-	return new Promise((resolve, reject) => {
-		try {
-			Excel.run(async (context) => {
-				let sheet = context.workbook.worksheets.getItem('Data');
-				let range = sheet.getRange(`C${endRow}:DF${endRow}`);
-				range.values = [data];
-				return context.sync();
-			});
-		} catch (error) {
-			console.log(error);
-			reject(error);
-		}
-	});
+  return new Promise((resolve, reject) => {
+    try {
+      Excel.run(async (context) => {
+        let sheet = context.workbook.worksheets.getItem('Data');
+        let range = sheet.getRange(`C${endRow}:DF${endRow}`);
+        range.values = [data];
+        return context.sync();
+      });
+    } catch (error) {
+      console.log(error);
+      reject(error);
+    }
+  });
 }

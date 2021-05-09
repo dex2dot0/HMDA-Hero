@@ -28,6 +28,8 @@
     "npm-run-all": "^4.1.5",
     "office-addin-debugging": "^3.0.33",
     "office-addin-dev-certs": "^1.5.4",
+    "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
     "rollup": "^1.32.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.0.0",

@@ -1,12 +1,9 @@
 <script>
-  import {
-      coapplicantRace5,
-      NoCoApp
-  } from "./../../stores.js";
-  import DataFieldFormat from "../DataFieldFormat.svelte";
-  import RegLink from "../RegLink.svelte";
-  import QualityErrors from "../QualityErrors.svelte";
-  import ValidityErrors from "../ValidityErrors.svelte";
+  import { coapplicantRace5, NoCoApp } from './../../stores.js';
+  import DataFieldFormat from '../DataFieldFormat.svelte';
+  import RegLink from '../RegLink.svelte';
+  import QualityErrors from '../QualityErrors.svelte';
+  import ValidityErrors from '../ValidityErrors.svelte';
 </script>
 
 <DataFieldFormat>
@@ -14,18 +11,19 @@
     <label for="CoRace5">Race 5</label>
   </span>
   <span slot="helpers">
-    <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-10"/>
-    <QualityErrors errors=1 idName="Race5QualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="Race5ValidityErrors" errorsHTML=""/>
+    <RegLink
+      regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-10" />
+    <QualityErrors errors="1" idName="Race5QualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="Race5ValidityErrors" errorsHTML="" />
   </span>
   <span slot="input">
     <!-- svelte-ignore a11y-no-onchange-->
     <select
       class="custom-select"
       id="CoRace5"
-      bind:value={$coapplicantRace5}
-      on:change={coapplicantRace5.change}
-      disabled={$NoCoApp}>
+      bind:value="{$coapplicantRace5}"
+      on:change="{coapplicantRace5.change}"
+      disabled="{$NoCoApp}">
       <option selected value="">Blank, If none are applicable</option>
       <option value="1">1. American Indian or Alaska Native</option>
       <option value="2">2. Asian</option>

@@ -16,4 +16,4 @@
   }
 </script>
 
-<slot {matches} />
+<slot matches="{matches}" />

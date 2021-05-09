@@ -7,16 +7,15 @@ export async function addNewLoan(newRow, data, lastRow) {
   return new Promise((resolve, reject) => {
     try {
       Excel.run(async (context) => {
-        let sheet = context.workbook.worksheets.getItem("Data");
+        let sheet = context.workbook.worksheets.getItem('Data');
         let range = sheet.getRange(`B${newRow}:DF${lastRow}`);
-        range.values = data
+        range.values = data;
         range.format.autofitColumns();
         resolve(context.sync());
       });
     } catch (error) {
-      console.log(error)
-      reject(error)
+      console.log(error);
+      reject(error);
     }
   });
 }
-
