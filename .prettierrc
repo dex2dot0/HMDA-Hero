@@ -4,5 +4,15 @@
   "svelteBracketNewLine": false,
   "svelteAllowShorthand": false,
   "svelteIndentScriptAndStyle": true,
-  "singleQuote": true
+  "singleQuote": true,
+  "endOfLine": "auto",
+  "enable": true,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "jsxBracketSameLine": true,
+  "jsxSingleQuote": true,
+  "semi": true,
+  "printWidth": 90,
+  "trailingComma": "es5",
+  "useTabs": true
 }

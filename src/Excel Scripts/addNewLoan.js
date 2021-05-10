@@ -4,18 +4,18 @@
 //This function requires you pass all the data for the entire row!!!
 
 export async function addNewLoan(newRow, data, lastRow) {
-  return new Promise((resolve, reject) => {
-    try {
-      Excel.run(async (context) => {
-        let sheet = context.workbook.worksheets.getItem('Data');
-        let range = sheet.getRange(`B${newRow}:DF${lastRow}`);
-        range.values = data;
-        range.format.autofitColumns();
-        resolve(context.sync());
-      });
-    } catch (error) {
-      console.log(error);
-      reject(error);
-    }
-  });
+	return new Promise((resolve, reject) => {
+		try {
+			Excel.run(async (context) => {
+				let sheet = context.workbook.worksheets.getItem('Data');
+				let range = sheet.getRange(`B${newRow}:DF${lastRow}`);
+				range.values = data;
+				range.format.autofitColumns();
+				resolve(context.sync());
+			});
+		} catch (error) {
+			console.log(error);
+			reject(error);
+		}
+	});
 }
