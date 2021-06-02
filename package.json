@@ -12,7 +12,9 @@
 		"test": "run-p --race dev cy:run",
 		"validate": "office-toolbox validate -m Manifest/Prod/manifest-prod.xml",
 		"validate:local": "office-toolbox validate -m Manifests/localhost/manifest-localhost.xml",
-		"certs": "office-addin-dev-certs install"
+		"certs": "office-addin-dev-certs install",
+		"certs:verify": "office-addin-dev-certs verify",
+		"certs:uninstall": "office-addin-dev-certs uninstall"
 	},
 	"dependencies": {
 		"compression": "^1.7.1",
