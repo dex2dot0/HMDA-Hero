@@ -6,13 +6,22 @@ const devCerts = require('office-addin-dev-certs');
 
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
+console.log(dev);
 
 const { createServer } = require('https');
 const ssl_port = 443;
 
-initServer();
+dev ? runLocalServer() : runProductionServer();
 
-async function initServer() {
+function runProductionServer() {
+	polka() // You can also use Express
+		.use(compression({ threshold: 0 }), sirv('static', { dev }), sapper.middleware())
+		.listen(PORT, (err) => {
+			if (err) console.log('error', err);
+		});
+}
+
+async function runLocalServer() {
 	const devCertOptions = await devCerts.getHttpsServerOptions();
 
 	let options = {
