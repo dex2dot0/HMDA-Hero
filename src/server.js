@@ -6,7 +6,6 @@ const devCerts = require('office-addin-dev-certs');
 
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
-console.log(dev);
 
 const { createServer } = require('https');
 const ssl_port = 443;
