@@ -2,6 +2,8 @@
 	import Modal from '../components/Modal.svelte';
 	import { getEndRow } from '../Excel Scripts/getEndRow.js';
 	import { pipeImport } from '../Excel Scripts/pipeImport.js';
+	import { updateOrg } from '../Excel Scripts/updateOrg';
+
 	let isAllData = true;
 
 	async function updateIsAllData() {
@@ -73,6 +75,20 @@
 								let canImport = await checkData(loanData);
 
 								if (canImport) {
+									//Process org data here
+									if (isAllData) {
+										let importOrg = await pipeOrg(orgInfo);
+										if (importOrg == 'success') {
+											//handle success here, maybe something with UI
+										} else {
+											errorUI(
+												pipeError,
+												'#dc3545',
+												'Organizaton data could not be imported due to an error. Loan data will still be processed.'
+											);
+										}
+									}
+
 									//Process data here
 									let endRow = await getEndRow();
 									let runImport = await pipeImport(loanData, endRow);
@@ -123,6 +139,17 @@
 				loanData[i].length == 109 ? '' : (canImport = false);
 			}
 			return canImport;
+		}
+
+		async function pipeOrg(orgData) {
+			try {
+				orgData.shift(); //remove the 1
+				let rowData = [...orgData];
+				let processUpdate = await updateOrg(rowData);
+				return processUpdate;
+			} catch (error) {
+				return 'failure';
+			}
 		}
 
 		async function errorUI(element, bgColor, msg) {
