@@ -1,4 +1,25 @@
 export async function getEndRow() {
+	async function reverseString(str) {
+		let reversedString = [...str].reverse();
+		let finalString = await finalizeString(reversedString);
+		return finalString;
+	}
+
+	async function finalizeString (strArr) {
+		let stringNums = [];
+		let foundNAN = false;
+		strArr.forEach((char) => {
+			if(!foundNAN && !isNaN(char)) {
+				stringNums.push(char);
+			} else {
+				foundNAN = true;
+			}
+		});
+
+		let endRow = stringNums.reverse().join('');
+		return endRow > 4 ? endRow : 4; //4 is the minimum endRow should be
+	}
+
 	return new Promise((resolve, reject) => {
 		try {
 			Excel.run(async (context) => {
@@ -14,11 +35,7 @@ export async function getEndRow() {
 				context.sync().then(async function () {
 					//Need to get the ending row
 					let vRange = valuesRange.address;
-					let vRangeArr = vRange.split(',');
-					let endingRangeVal;
-					vRangeArr.length > 0 ? (endingRangeVal = vRangeArr[vRangeArr.length]) : vRange;
-					console.log(endingRangeVal);
-					let endRow = vRange.slice(9, vRange.length);
+					let endRow = await reverseString(vRange);
 					console.log(`end row is ${endRow}`);
 					resolve(endRow);
 				});
