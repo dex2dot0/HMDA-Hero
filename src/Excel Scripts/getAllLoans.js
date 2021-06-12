@@ -1,4 +1,26 @@
 export async function getAllLoans() {
+
+  async function reverseString(str) {
+		let reversedString = [...str].reverse();
+		let finalString = await finalizeString(reversedString);
+		return finalString;
+	}
+
+	async function finalizeString (strArr) {
+		let stringNums = [];
+		let foundNAN = false;
+		strArr.forEach((char) => {
+			if(!foundNAN && !isNaN(char)) {
+				stringNums.push(char);
+			} else {
+				foundNAN = true;
+			}
+		});
+
+		let endRow = stringNums.reverse().join('');
+		return endRow > 4 ? endRow : 4; //4 is the minimum endRow should be
+	}
+
   return new Promise((resolve, reject) => {
     try {
       Excel.run(async (context) => {
@@ -14,7 +36,10 @@ export async function getAllLoans() {
         context.sync().then(async function () {
           //Need to get the ending row
           let vRange = valuesRange.address;
-          let endRow = vRange.slice(9, vRange.length);
+          let endRow = await reverseString(vRange);
+          if(Number(endRow) < 5) {
+            throw new Error('No valid data range found');
+          }
           let allLoansRange = sheet.getRange(`B5:DF${endRow}`);
           allLoansRange.load('values');
 

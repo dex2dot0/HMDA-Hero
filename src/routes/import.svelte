@@ -57,8 +57,6 @@
                 quarter <= 4 &&
                 orgInfo[9].length == 2
               ) {
-                //Remove empty array item
-                txtArray.pop();
                 let loanData = new Array(txtArray.length - 1);
                 for (let i = 1; i < txtArray.length; i++) {
                   let lDataTxt = txtArray[i].toString();
