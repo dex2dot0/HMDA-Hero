@@ -226,7 +226,7 @@
         <bt:Url id="AddLoan.Url" DefaultValue="https://hmda-hero-app.netlify.app/add-loan" />
         <bt:Url id="EditLoan.Url" DefaultValue="https://hmda-hero-app.netlify.app/edit-search" />
         <bt:Url id="Import.Url" DefaultValue="https://hmda-hero-app.netlify.app/import" />
-        <bt:Url id="Export.Url" DefaultValue="http://localhost:3000/export" />
+        <bt:Url id="Export.Url" DefaultValue="https://hmda-hero-app.netlify.app/export" />
         <bt:Url id="FilingResources.Url" DefaultValue="https://hmda-hero-app.netlify.app/resources" />
         <bt:Url id="About.Url" DefaultValue="https://hmda-hero-app.netlify.app/about" />
         <bt:Url id="Settings.Url" DefaultValue="https://hmda-hero-app.netlify.app/settings" />
