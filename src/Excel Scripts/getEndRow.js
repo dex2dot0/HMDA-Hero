@@ -5,11 +5,11 @@ export async function getEndRow() {
 		return finalString;
 	}
 
-	async function finalizeString (strArr) {
+	async function finalizeString(strArr) {
 		let stringNums = [];
 		let foundNAN = false;
 		strArr.forEach((char) => {
-			if(!foundNAN && !isNaN(char)) {
+			if (!foundNAN && !isNaN(char)) {
 				stringNums.push(char);
 			} else {
 				foundNAN = true;
