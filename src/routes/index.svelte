@@ -40,4 +40,5 @@
 	<a href="/resources" hidden>Resources</a>
 	<a href="/export" hidden>export</a>
 	<a href="/settings" hidden>settings</a>
+	<a href="/hmda-errors" hidden>hmda-errors</a>
 </div>

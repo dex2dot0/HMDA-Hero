@@ -15,6 +15,9 @@ export const visible = writable(false);
 export const isExempt = writable(false);
 export const editRow = writable('');
 export const editRowData = writable();
+export const parseErrors = writable([]);
+export const validityErrors = writable([]);
+export const qualityErrors = writable([]);
 
 let editRowVal;
 editRow.subscribe((value) => {

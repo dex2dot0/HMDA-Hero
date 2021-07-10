@@ -3,9 +3,11 @@
 	import getOrgPipeData from '../Scripts/getOrgPipeData';
 	import getPipeData from '../Scripts/getPipeData.js';
 	import { getFilingYear } from '../Excel Scripts/getFilingYear';
+	import { parseErrors, validityErrors } from '../stores';
 
 	let validateExport = true;
-	let validationFeedback;
+	let parserErrors = [];
+	let validationErrors = [];
 
 	let outputType = 'defaultFormat';
 	async function radioChange(e) {
@@ -44,19 +46,25 @@
 			fetch(`https://ffiec.cfpb.gov/v2/public/hmda/validate/${year}`, requestOptions)
 				.then((response) => response.json())
 				.then((results) => {
-					let parseErrors = results.parseErrors;
-					let validationErrors = results.validationErrors;
-					if (parseErrors) {
+					console.log('results ', results);
+					parserErrors = results.parserErrors;
+					validationErrors = results.validationErrors;
+					if (parserErrors) {
+						console.log('Total Parsing Errors - ', parseErrors.length);
 						console.log('Parsing Errors: ', parseErrors);
+						parseErrors.update(parserErrors);
 					} else {
 						console.log('No parsing errors! ');
+						parseErrors.update([]);
 					}
 
 					if (validationErrors) {
 						console.log('Total Validation Errors - ', validationErrors[0].length);
 						console.log('Validation Errors: ', validationErrors);
+						validityErrors.update(validationErrors);
 					} else {
 						console.log('No validation errors!');
+						validityErrors.update([]);
 					}
 
 					download(pipeData, 'lar.txt', 'text/plain');
@@ -278,6 +286,19 @@
 					Download Export File
 				</button>
 			</div>
+			{#if parserErrors.length > 0 || validationErrors.length > 0}
+				<div class="card-body">
+					<div class="alert alert-warning" role="alert">
+						Errors have been detected for your export file
+					</div>
+					<p>
+						You can view and directly edit the errors by <a href="/hmda-errors"
+							>clicking here</a>
+					</p>
+					<p>or</p>
+					<p>Download a report summary of the errors</p>
+				</div>
+			{/if}
 		</div>
 	</form>
 </div>
