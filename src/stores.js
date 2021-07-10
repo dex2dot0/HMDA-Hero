@@ -15,9 +15,41 @@ export const visible = writable(false);
 export const isExempt = writable(false);
 export const editRow = writable('');
 export const editRowData = writable();
-export const parseErrors = writable([]);
-export const validityErrors = writable([]);
-export const qualityErrors = writable([]);
+
+function parseErrorsFn() {
+	const { subscribe, set } = writable([]);
+	return {
+		subscribe,
+		change: (val) => {
+			set(val);
+		},
+	};
+}
+
+export const parseErrors = parseErrorsFn();
+
+function validityErrorsFn() {
+	const { subscribe, set } = writable([]);
+	return {
+		subscribe,
+		change: (val) => {
+			set(val);
+		},
+	};
+}
+
+export const validityErrors = validityErrorsFn();
+
+function qualityErrorsFn() {
+	const { subscribe, set } = writable([]);
+	return {
+		subscribe,
+		change: (val) => {
+			set(val);
+		},
+	};
+}
+export const qualityErrors = qualityErrorsFn();
 
 let editRowVal;
 editRow.subscribe((value) => {

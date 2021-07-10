@@ -5,9 +5,9 @@
 	import { getFilingYear } from '../Excel Scripts/getFilingYear';
 	import { parseErrors, validityErrors } from '../stores';
 
-	let validateExport = true;
 	let parserErrors = [];
 	let validationErrors = [];
+	let validateExport = true;
 
 	let outputType = 'defaultFormat';
 	async function radioChange(e) {
@@ -50,21 +50,21 @@
 					parserErrors = results.parserErrors;
 					validationErrors = results.validationErrors;
 					if (parserErrors) {
-						console.log('Total Parsing Errors - ', parseErrors.length);
-						console.log('Parsing Errors: ', parseErrors);
-						parseErrors.update(parserErrors);
+						console.log('Total Parsing Errors - ', parserErrors.length);
+						console.log('Parsing Errors: ', parserErrors);
+						parseErrors.change(parserErrors);
 					} else {
 						console.log('No parsing errors! ');
-						parseErrors.update([]);
+						parseErrors.change([]);
 					}
 
 					if (validationErrors) {
 						console.log('Total Validation Errors - ', validationErrors[0].length);
 						console.log('Validation Errors: ', validationErrors);
-						validityErrors.update(validationErrors);
+						validityErrors.change(validationErrors);
 					} else {
 						console.log('No validation errors!');
-						validityErrors.update([]);
+						validityErrors.change([]);
 					}
 
 					download(pipeData, 'lar.txt', 'text/plain');
