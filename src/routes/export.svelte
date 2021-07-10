@@ -3,9 +3,10 @@
 	import getOrgPipeData from '../Scripts/getOrgPipeData';
 	import getPipeData from '../Scripts/getPipeData.js';
 	import { getFilingYear } from '../Excel Scripts/getFilingYear';
-	import { parseErrors, validityErrors } from '../stores';
+	import { parseErrors, formatErrors, validityErrors } from '../stores';
 
 	let parserErrors = [];
+	let formattingErrors = [];
 	let validationErrors = [];
 	let validateExport = true;
 
@@ -25,7 +26,7 @@
 		let year = yearRange[0];
 		let exempt = outputType == 'exemptFormat' ? true : false;
 		let loanData = await getPipeData(exempt);
-		let pipeData = `1|${orgData}${loanData}`;
+		let pipeData = `12|${orgData}${loanData}`;
 
 		//run CFPB validation if validation is validation option is selected
 		if (validateExport) {
@@ -48,14 +49,27 @@
 				.then((results) => {
 					console.log('results ', results);
 					parserErrors = results.parserErrors;
-					validationErrors = results.validationErrors;
+					formattingErrors = results.validationErrors[1]
+						? results.validationErrors[0]
+						: undefined;
+					validationErrors = results.validationErrors[1]
+						? results.validationErrors[1]
+						: results.validationErrors[0];
 					if (parserErrors) {
 						console.log('Total Parsing Errors - ', parserErrors.length);
 						console.log('Parsing Errors: ', parserErrors);
 						parseErrors.change(parserErrors);
 					} else {
-						console.log('No parsing errors! ');
+						console.log('No parsing errors!');
 						parseErrors.change([]);
+					}
+
+					if (formattingErrors) {
+						console.log('formatting errors - ', formattingErrors);
+						formatErrors.change(formattingErrors);
+					} else {
+						console.log('No formatting errors!');
+						formatErrors.change([]);
 					}
 
 					if (validationErrors) {
