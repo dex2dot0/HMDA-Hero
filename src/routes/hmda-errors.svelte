@@ -4,17 +4,17 @@
 </script>
 
 <h1>Welcome to the hmda-errors page!</h1>
-{#if $parseErrors.length > 0}
+{#if $parseErrors.length && $parseErrors.length > 0}
 	{#each $parseErrors as error}
 		<p>{JSON.stringify(error)}</p>
 	{/each}
 {/if}
-{#if $validityErrors.length > 0}
+{#if $validityErrors.length && $validityErrors.length > 0}
 	{#each $validityErrors as error}
 		<p>{JSON.stringify(error)}</p>
 	{/each}
 {/if}
-{#if $qualityErrors.length > 0}
+{#if $qualityErrors.length && $qualityErrors.length > 0}
 	{#each $qualityErrors as error}
 		<p>{JSON.stringify(error)}</p>
 	{/each}
