@@ -65,6 +65,7 @@
 					}
 
 					if (formattingErrors) {
+						console.log('Total Formatting Errors - ', formattingErrors.length);
 						console.log('formatting errors - ', formattingErrors);
 						formatErrors.change(formattingErrors);
 					} else {
@@ -73,7 +74,7 @@
 					}
 
 					if (validationErrors) {
-						console.log('Total Validation Errors - ', validationErrors[0].length);
+						console.log('Total Validation Errors - ', validationErrors.length);
 						console.log('Validation Errors: ', validationErrors);
 						validityErrors.change(validationErrors);
 					} else {
@@ -277,8 +278,7 @@
 								name="inlineRadioOptions"
 								id="validateData"
 								on:change={updateValidateExport}
-								value="allData"
-								checked />
+								value="allData" />
 							<label class="form-check-label" for="validateData">Validate</label>
 						</div>
 						<div class="form-check form-check-inline">
@@ -288,7 +288,8 @@
 								name="inlineRadioOptions"
 								id="noValidate"
 								on:change={updateValidateExport}
-								value="isAllData" />
+								value="isAllData"
+								checked />
 							<label class="form-check-label" for="noValidate">No Validation</label>
 						</div>
 					{/if}
@@ -300,11 +301,15 @@
 					Download Export File
 				</button>
 			</div>
-			{#if parserErrors.length > 0 || validationErrors.length > 0}
+			{#if parserErrors.length > 0 || formattingErrors.length > 0 || validationErrors.length > 0}
 				<div class="card-body">
 					<div class="alert alert-warning" role="alert">
 						Errors have been detected for your export file
 					</div>
+					<h6>Total Parsing Errors: {parserErrors.length}</h6>
+					<h6>Total Formatting Errors: {formattingErrors.length}</h6>
+					<h6>Total Validation Errors: {validationErrors.length}</h6>
+					<hr />
 					<p>
 						You can view and directly edit the errors by <a href="/hmda-errors"
 							>clicking here</a>
