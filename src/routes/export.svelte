@@ -26,9 +26,9 @@
 		let year = yearRange[0];
 		let exempt = outputType == 'exemptFormat' ? true : false;
 		let loanData = await getPipeData(exempt);
-		let pipeData = `12|${orgData}${loanData}`;
+		let pipeData = `1|${orgData}${loanData}`;
 
-		//run CFPB validation if validation is validation option is selected
+		//run CFPB validation if validation option is selected
 		if (validateExport) {
 			console.log('running export validation');
 			let pipeDataBlob = new Blob([pipeData], {
@@ -51,7 +51,7 @@
 					parserErrors = results.parserErrors;
 					formattingErrors = results.validationErrors[1]
 						? results.validationErrors[0]
-						: undefined;
+						: [];
 					validationErrors = results.validationErrors[1]
 						? results.validationErrors[1]
 						: results.validationErrors[0];
@@ -152,6 +152,10 @@
 			}, 333);
 			return true;
 		}
+	}
+
+	async function validationReport() {
+		console.log('validation report');
 	}
 </script>
 
@@ -306,16 +310,19 @@
 					<div class="alert alert-warning" role="alert">
 						Errors have been detected for your export file
 					</div>
-					<h6>Total Parsing Errors: {parserErrors.length}</h6>
-					<h6>Total Formatting Errors: {formattingErrors.length}</h6>
-					<h6>Total Validation Errors: {validationErrors.length}</h6>
+          <h6>Total Parsing Errors: {parserErrors.length}</h6>
+          <h6>Total Formatting Errors: {formattingErrors.length}</h6>
+          <h6>Total Validation Errors: {validationErrors.length}</h6>
 					<hr />
 					<p>
 						You can view and directly edit the errors by <a href="/hmda-errors"
-							>clicking here</a>
+							>clicking here</a
+						>. Or
+						<button
+							type="button"
+							class="btn btn-sm btn-outline-primary"
+							on:click={validationReport}>download</button> a report summary of the errors
 					</p>
-					<p>or</p>
-					<p>Download a report summary of the errors</p>
 				</div>
 			{/if}
 		</div>
