@@ -25,15 +25,23 @@ For local development, you'll need to generate CA certificates to get https on l
 
 `npm run certs`
 
+Once the command completes, the console should log the file path to the Certificate and Key and you will need to:
+1. Copy the paths
+2. Create a .env in the root of the project
+3. setup as follows:
+
+`KEYPATH=/path/to/your/key`
+`CERTPATH=/path/to/your/cert`
+
+4. Save the file
+
 You should now be able to run the project in development mode with:
 
-```bash
-npm run dev
-```
+`npm run dev`
 
-Open up [localhost:443](https://localhost:443) and start clicking around.
+Open up [localhost:443](https://localhost:443) and start clicking around. This is the HMDA Hero application outside an Excel document. 
 
-Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help with Svelte/Sapper. Svelte is similar to React, Vue, and Angular. Sapper is the server library for Svelte.
+Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help with Svelte/Sapper. Svelte is similar to React, Vue, and Angular. Sapper is the server library for Svelte. There is also a Svelte/Sapper Overview section further below that discusses this more. 
 
 ### Side-Load Excel Add-in to Run on localhost
 
@@ -48,10 +56,6 @@ If you get an error upon loading the add-in a local Excel file, refer to https:/
 Refer to https://docs.microsoft.com/en-us/office/dev/add-ins/testing/sideload-office-add-ins-for-testing
 
 The folder you want to share locally is ./HMDA-HERO/Manifests/localhost
-
-### Features
-
-### Scripts
 
 ### Svelte/Sapper overview
 
