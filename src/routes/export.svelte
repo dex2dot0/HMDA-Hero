@@ -47,6 +47,9 @@
 			fetch(`https://ffiec.cfpb.gov/v2/public/hmda/validate/${year}`, requestOptions)
 				.then((response) => response.json())
 				.then((results) => {
+					//.parseErrors contains errors for the LAR itself if .parseErrors.rowNumber === 1 
+					//.parseErrors.rowNumber > 1 is telling you the row of the LAR and something wrong with parsing a value on the loan record on that line
+					//.validationErrors is split by ULI and contains both validity and quality edits
 					console.log('results ', results);
 					parserErrors = results.parserErrors;
 					formattingErrors = results.validationErrors[1]
