@@ -310,9 +310,9 @@
 					<div class="alert alert-warning" role="alert">
 						Errors have been detected for your export file
 					</div>
-          <h6>Total Parsing Errors: {parserErrors.length}</h6>
-          <h6>Total Formatting Errors: {formattingErrors.length}</h6>
-          <h6>Total Validation Errors: {validationErrors.length}</h6>
+					<h6>Total Parsing Errors: {parserErrors.length}</h6>
+					<h6>Total Formatting Errors: {formattingErrors.length}</h6>
+					<h6>Total Validation Errors: {validationErrors.length}</h6>
 					<hr />
 					<p>
 						You can view and directly edit the errors by <a href="/hmda-errors"
