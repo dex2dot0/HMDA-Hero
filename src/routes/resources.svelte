@@ -5,6 +5,7 @@
 	let d = new Date();
 	let Year = d.getFullYear();
 	let filingYear = 2018; //default
+	//Excel restricts some things based on the context we are running in so this next variable will help to determine what our restrictions are
 	let excelEnv = 'online';
 	let girGuide;
 	let fiGuide;
@@ -41,8 +42,6 @@
 				if (window.top == window) {
 					// the add-in is not running in Excel Online
 					excelEnv = 'desktop';
-					girGuide = 'https://www.ffiec.gov/hmda/guide.htm';
-					fiGuide = 'https://ffiec.cfpb.gov/documentation/2020/fig/';
 				}
 			});
 		}
@@ -235,6 +234,48 @@
 				</div>
 				<!-- 2021 and beyond -->
 				{#if filingYear > 2020}
+					<div class="row">
+						<a target="_blank" href={girGuide}>Getting It Right Guide</a>
+					</div>
+					{#if excelEnv == 'online'}
+						<div class="row">
+							<a
+								target="_blank"
+								href="https://files.consumerfinance.gov/f/documents/cfpb_hmda_small-entity-compliance-guide_2020.pdf">
+								Small Entity Compliance Guide
+							</a>
+						</div>
+					{/if}
+					<div class="row">
+						<a target="_blank" href={fiGuide}>Filing Instructions Guide</a>
+					</div>
+					{#if excelEnv == 'online'}
+						<div class="row">
+							<a
+								target="_blank"
+								href="https://files.consumerfinance.gov/f/documents/cfpb_reportable-hmda-data_regulatory-and-reporting-overview-reference-chart-2020.pdf">
+								Filing Overview Reference Chart
+							</a>
+						</div>
+					{/if}
+					<div class="row">
+						<a
+							target="_blank"
+							href="https://hmdahelp.consumerfinance.gov/knowledgebase/s/">
+							HMDA Help Search
+						</a>
+					</div>
+				{/if}
+				<div class="row">
+					<a
+						target="_blank"
+						href="https://www.consumerfinance.gov/policy-compliance/guidance/mortgage-resources/hmda-reporting-requirements/">
+						CFPB HMDA Resources Page
+					</a>
+				</div>
+			</div>
+			<!-- 2021 and beyond -->
+				{#if filingYear > 2021}
 					<div class="row">
 						<a target="_blank" href={girGuide}>Getting It Right Guide</a>
 					</div>
