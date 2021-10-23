@@ -26,11 +26,13 @@
       modalTitle="Reason for Denial: Free Form"
       modalBody="<p>Specify in text the Other Denial Reason(s) if 9 is
       entered.</p> <p>Otherwise, leave this data field blank</p>" />
-    <QualityErrors errors="1" idName="DenialFreeQualityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="DenialFreeQualityErrors" errorsHTML="" />
     <ValidityErrors
       errors="2"
       idName="DenialFreeValidityErrors"
-      errorsHTML="" />
+      errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

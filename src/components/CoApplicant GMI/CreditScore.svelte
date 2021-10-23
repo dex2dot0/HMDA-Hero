@@ -27,8 +27,10 @@
       text="Exempt"
       value="{$coapplicantCreditScore == '1111' ? true : false}"
       on:notify="{coapplicantCreditScore.Exempt}" />
-    <QualityErrors errors="1" idName="CreditScoreErrors" errorsHTML="" />
-    <ValidityErrors errors="2" idName="CreditScoreErrors" errorsHTML="" />
+      <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="CreditScoreErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="CreditScoreErrors" errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

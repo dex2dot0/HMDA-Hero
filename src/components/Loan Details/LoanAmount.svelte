@@ -20,11 +20,13 @@
       idName="LoanAmountModal"
       modalTitle="Loan Amount"
       modalBody="<p>Example:</p> <p>110500 (or)</p> <p>110500.00</p>" />
-    <QualityErrors errors="1" idName="loanAmountQualityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="loanAmountQualityErrors" errorsHTML="" />
     <ValidityErrors
       errors="2"
       idName="loanAmountValidityErrors"
-      errorsHTML="" />
+      errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

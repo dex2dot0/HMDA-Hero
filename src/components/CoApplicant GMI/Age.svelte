@@ -26,14 +26,16 @@
       modalTitle="Co-Applicant: Age"
       modalBody="<p>Example: 24</p> <p>(or)</p> <p>Descriptions:</p> <p>8888.
       Not applicable</p> <p>9999. No co-applicant</p> " />
-    <QualityErrors
+      <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors
       errors="1"
       idName="AppAgeQualityErrors"
       errorsHTML="<p>Example should inject results</p>" />
     <ValidityErrors
       errors="2"
       idName="AppAgeValidityErrors"
-      errorsHTML="<p>Example, should inject results</p>" />
+      errorsHTML="<p>Example, should inject results</p>" /> -->
   </span>
   <span slot="input">
     <input

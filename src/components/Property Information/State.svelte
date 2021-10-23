@@ -21,8 +21,10 @@
     {:else}
       <Checkbox value="{true}" on:notify="{stateCode.NA}" />
     {/if}
-    <QualityErrors errors="1" idName="StateQualityErrors" errorsHTML="" />
-    <ValidityErrors errors="2" idName="StateValidityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="StateQualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="StateValidityErrors" errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

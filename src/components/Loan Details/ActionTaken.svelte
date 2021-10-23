@@ -13,11 +13,13 @@
   <span slot="helpers">
     <RegLink
       regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-8-i" />
-    <QualityErrors errors="1" idName="actionTakenQualityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="actionTakenQualityErrors" errorsHTML="" />
     <ValidityErrors
       errors="2"
       idName="actionTakenValidityErrors"
-      errorsHTML="" />
+      errorsHTML="" /> -->
   </span>
   <span slot="input">
     <!-- svelte-ignore a11y-no-onchange-->

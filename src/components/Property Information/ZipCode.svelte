@@ -21,8 +21,10 @@
     {:else}
       <Checkbox value="{true}" on:notify="{zipCode.NA}" />
     {/if}
-    <QualityErrors errors="1" idName="zipQualityErrors" errorsHTML="" />
-    <ValidityErrors errors="2" idName="zipValidityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="zipQualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="zipValidityErrors" errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

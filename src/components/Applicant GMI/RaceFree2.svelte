@@ -28,8 +28,10 @@
       modalBody="<p> Specify in text the Applicant's or Borrower's Other Asian
       race(s) provided by the Applicant or Borrower. </p> <p>Otherwise, leave
       this data field blank</p>" />
-    <QualityErrors errors="1" idName="RaceFree2QualityErrors" errorsHTML="" />
-    <ValidityErrors errors="2" idName="RaceFree2ValidityErrors" errorsHTML="" />
+      <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="RaceFree2QualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="RaceFree2ValidityErrors" errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

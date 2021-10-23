@@ -28,8 +28,10 @@
       modalBody="<p> Specify in text the Other Automated Underwriting
       System(s) if 5 is entered. </p> <p>Otherwise, leave this data field
       blank</p>" />
-    <QualityErrors errors=1 idName="AUSFreeQualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="AUSFreeValidityErrors" errorsHTML=""/>
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors=1 idName="AUSFreeQualityErrors" errorsHTML=""/>
+    <ValidityErrors errors=2 idName="AUSFreeValidityErrors" errorsHTML=""/> -->
   </span>
   <span slot="input">
     <input

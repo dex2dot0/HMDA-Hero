@@ -27,14 +27,16 @@
       modalTitle="Discount Points"
       modalBody="<p>Example:</p> <p>2399.04 (or) NA</p> <p>(or) Exempt</p>
       <p>If no points were paid, leave this data field blank</p>" />
-    <QualityErrors
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors
       errors="1"
       idName="discountPointsQualityErrors"
       errorsHTML="" />
     <ValidityErrors
       errors="2"
       idName="discountPointsValidityErrors"
-      errorsHTML="" />
+      errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

@@ -28,11 +28,13 @@
       modalBody="{$isExempt
         ? '<p>Example:</p> <p>2399.04 (or) NA</p> <p>(or) Exempt</p>'
         : '<p>Example:</p> <p>2399.04 (or) NA</p>'}" />
-    <QualityErrors errors="1" idName="totalCostsQualityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="totalCostsQualityErrors" errorsHTML="" />
     <ValidityErrors
       errors="2"
       idName="totalCostsValidityErrors"
-      errorsHTML="" />
+      errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

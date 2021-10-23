@@ -28,14 +28,16 @@
       modalBody="<p> Specify in text the co-applicant or co-borrower's Other
         credit scoring model if 8 is entered. </p> <p>Otherwise, leave this data
         field blank</p>" />
-    <QualityErrors
+        <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors
       errors="1"
       idName="CreditModelFreeQualityErrors"
       errorsHTML="" />
     <ValidityErrors
       errors="2"
       idName="CreditModelFreeValidityErrors"
-      errorsHTML="" />
+      errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

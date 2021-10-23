@@ -27,8 +27,10 @@
       modalTitle="City"
       modalBody="<p>Example:</p> <p>Anytown (or)</p> <p>NA (or)</p>
       <p>Exempt</p>" />
-    <QualityErrors errors="1" idName="cityQualityErrors" errorsHTML="" />
-    <ValidityErrors errors="2" idName="cityValidityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="cityQualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="cityValidityErrors" errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

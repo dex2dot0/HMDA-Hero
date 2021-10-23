@@ -26,8 +26,10 @@
       idName="NMLSRModal"
       modalTitle="MLO NMLSR Identifier"
       modalBody="<p>Example:</p> <p>123450 (or) NA (or)</p> <p>Exempt</p>" />
-    <QualityErrors errors="1" idName="nmlsrQualityErrors" errorsHTML="" />
-    <ValidityErrors errors="2" idName="nmlsrValidityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="nmlsrQualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="nmlsrValidityErrors" errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

@@ -26,14 +26,16 @@
       idName="PointsModal"
       modalTitle="Total Points & Fees"
       modalBody="<p>Example:</p> <p>2399.04 (or) NA</p> <p>(or) Exempt</p>" />
-    <QualityErrors
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors
       errors="1"
       idName="totalPntsFeesQualityErrors"
       errorsHTML="" />
     <ValidityErrors
       errors="2"
       idName="totalPntsFeesValidityErrors"
-      errorsHTML="" />
+      errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

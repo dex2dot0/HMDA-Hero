@@ -26,14 +26,16 @@
       idName="InterestRateModal"
       modalTitle="Interest Rate"
       modalBody="<p>Example:</p> <p>4.125 (or) NA</p> <p>(or) Exempt</p>" />
-    <QualityErrors
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors
       errors="1"
       idName="interestRateQualityErrors"
       errorsHTML="" />
     <ValidityErrors
       errors="2"
       idName="interestRateValidityErrors"
-      errorsHTML="" />
+      errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

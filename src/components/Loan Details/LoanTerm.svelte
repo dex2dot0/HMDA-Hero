@@ -26,8 +26,10 @@
       idName="LoanTermModal"
       modalTitle="Loan Term"
       modalBody="<p>Example:</p> <p>360 (or) NA</p> <p>(or) Exempt</p>" />
-    <QualityErrors errors="1" idName="loanTermQualityErrors" errorsHTML="" />
-    <ValidityErrors errors="2" idName="loanTermValidityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="loanTermQualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="loanTermValidityErrors" errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

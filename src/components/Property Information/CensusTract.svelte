@@ -21,11 +21,13 @@
     {:else}
       <Checkbox value="{true}" on:notify="{censusTract.NA}" />
     {/if}
-    <QualityErrors errors="1" idName="censusTractQualityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="censusTractQualityErrors" errorsHTML="" />
     <ValidityErrors
       errors="2"
       idName="censusTractValidityErrors"
-      errorsHTML="" />
+      errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

@@ -23,8 +23,10 @@
 		{:else}
 			<Checkbox value="{true}" on:notify="{appDate.NA}" />
 		{/if}
-		<QualityErrors errors="1" idName="appDateQualityErrors" errorsHTML="" />
-		<ValidityErrors errors="2" idName="appDateValidityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+		<!-- <QualityErrors errors="1" idName="appDateQualityErrors" errorsHTML="" />
+		<ValidityErrors errors="2" idName="appDateValidityErrors" errorsHTML="" /> -->
 	</span>
 	<span slot="input">
 		<input

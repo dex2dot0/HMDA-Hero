@@ -20,11 +20,13 @@
       idName="RateSpreadModal"
       modalTitle="Rate Spread"
       modalBody="<p>Example:</p> <p>0.428 (or) NA</p> <p>(or) Exempt</p>" />
-    <QualityErrors errors="1" idName="RateSpreadQualityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="RateSpreadQualityErrors" errorsHTML="" />
     <ValidityErrors
       errors="2"
       idName="RateSpreadValidityErrors"
-      errorsHTML="" />
+      errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

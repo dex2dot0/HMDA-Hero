@@ -28,8 +28,10 @@
       modalBody="<p> Specify in text the Applicant or borrower's Other Hispanic
       or Latino ethnicity(ies) provided by the Applicant or Borrower. </p>
       <p>Otherwise, leave this data field blank</p>" />
-    <QualityErrors errors="1" idName="EthFreeQualityErrors" errorsHTML="" />
-    <ValidityErrors errors="2" idName="EthFreeValidityErrors" errorsHTML="" />
+      <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="EthFreeQualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="EthFreeValidityErrors" errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

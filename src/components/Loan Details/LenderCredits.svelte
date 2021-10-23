@@ -27,14 +27,16 @@
       modalTitle="Lender Credits"
       modalBody="<p>Example:</p> <p>2399.04 (or) NA</p> <p>(or) Exempt</p> <p>
       If no lender credits were provided, leave this data field blank </p>" />
-    <QualityErrors
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors
       errors="1"
       idName="lenderCreditsQualityErrors"
       errorsHTML="" />
     <ValidityErrors
       errors="2"
       idName="lenderCreditsValidityErrors"
-      errorsHTML="" />
+      errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

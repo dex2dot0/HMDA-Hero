@@ -29,8 +29,10 @@
       modalBody="<p> Specify in text the Co-Applicant's or Co-Borrower's Other
       Pacific Islander race(s) provided by the Applicant or Borrower. </p>
       <p>Otherwise, leave this data field blank</p>" />
-    <QualityErrors errors="1" idName="RaceFree3QualityErrors" errorsHTML="" />
-    <ValidityErrors errors="2" idName="RaceFree3ValidityErrors" errorsHTML="" />
+      <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="RaceFree3QualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="RaceFree3ValidityErrors" errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

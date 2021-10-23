@@ -16,8 +16,10 @@
   </span>
   <span slot="helpers">
     <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-24"/>
-    <QualityErrors errors=1 idName="CLTVQualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="CLTVValidityErrors" errorsHTML=""/>
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors=1 idName="CLTVQualityErrors" errorsHTML=""/>
+    <ValidityErrors errors=2 idName="CLTVValidityErrors" errorsHTML=""/> -->
   </span>
   <span slot="input">
     <input

@@ -26,11 +26,13 @@
       idName="PrepayTermModal"
       modalTitle="Prepayment Penalty Term"
       modalBody="<p>Example:</p> <p>24 (or) NA</p> <p>(or) Exempt</p>" />
-    <QualityErrors errors="1" idName="prepayTermQualityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="prepayTermQualityErrors" errorsHTML="" />
     <ValidityErrors
       errors="2"
       idName="prepayTermValidityErrors"
-      errorsHTML="" />
+      errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

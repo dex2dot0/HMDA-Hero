@@ -23,8 +23,10 @@
             a combination of both</p> <p>2. Must be unique within the financial
             institution, and</p> <p>3. Must not include any information that could
             be used to directly identify the applicant or borrower </p>" />
-    <QualityErrors errors="1" idName="NULIQualityErrors" errorsHTML="" />
-    <ValidityErrors errors="2" idName="NULIValidityErrors" errorsHTML="" />
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors="1" idName="NULIQualityErrors" errorsHTML="" />
+    <ValidityErrors errors="2" idName="NULIValidityErrors" errorsHTML="" /> -->
   </span>
   <span slot="input">
     <input

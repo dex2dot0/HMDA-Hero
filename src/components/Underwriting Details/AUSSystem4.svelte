@@ -14,8 +14,10 @@
   </span>
   <span slot="helpers">
     <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-35"/>
-    <QualityErrors errors=1 idName="AUS4QualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="AUS4ValidityErrors" errorsHTML=""/>
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors=1 idName="AUS4QualityErrors" errorsHTML=""/>
+    <ValidityErrors errors=2 idName="AUS4ValidityErrors" errorsHTML=""/> -->
   </span>
   <span slot="input">
     <!-- svelte-ignore a11y-no-onchange-->

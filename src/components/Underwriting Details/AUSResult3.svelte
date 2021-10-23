@@ -13,9 +13,11 @@
     <label for="AUSR3">AUS Result: 3</label>
   </span>
   <span slot="helpers">
-    <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-35"/>
-    <QualityErrors errors=1 idName="AUSR3QualityErrors" errorsHTML=""/>
-    <ValidityErrors errors=2 idName="AUSR3ValidityErrors" errorsHTML=""/>
+    <RegLink regUrl="https://www.consumerfinance.gov/rules-policy/regulations/1003/4/#a-35"/>\
+    <!-- TODO
+    Stripping out for now. Needs works.  -->
+    <!-- <QualityErrors errors=1 idName="AUSR3QualityErrors" errorsHTML=""/>
+    <ValidityErrors errors=2 idName="AUSR3ValidityErrors" errorsHTML=""/> -->
   </span>
   <span slot="input">
     <!-- svelte-ignore a11y-no-onchange-->
