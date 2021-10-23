@@ -198,7 +198,7 @@
 						<div class="row">
 							<a
 								target="_blank"
-								href="https://files.consumerfinance.gov/f/documents/cfpb_reportable-hmda-data_regulatory-and-reporting-overview-reference-chart-2020.pdf">
+								href="https://files.consumerfinance.gov/f/documents/cfpb_2020-reportable-hmda-data.pdf">
 								Filing Overview Reference Chart
 							</a>
 						</div>
@@ -218,9 +218,10 @@
 					</div>
 					{#if excelEnv == 'online'}
 						<div class="row">
+							<!-- No published guide for 2021 as of 10/23/21 -->
 							<a
 								target="_blank"
-								href="https://files.consumerfinance.gov/f/documents/cfpb_hmda_small-entity-compliance-guide_2021.pdf">
+								href="https://files.consumerfinance.gov/f/documents/cfpb_hmda_small-entity-compliance-guide_2020.pdf">
 								Small Entity Compliance Guide
 							</a>
 						</div>
@@ -232,7 +233,7 @@
 						<div class="row">
 							<a
 								target="_blank"
-								href="https://files.consumerfinance.gov/f/documents/cfpb_reportable-hmda-data_regulatory-and-reporting-overview-reference-chart-2021.pdf">
+								href="https://files.consumerfinance.gov/f/documents/cfpb_2021-reportable-hmda-data.pdf">
 								Filing Overview Reference Chart
 							</a>
 						</div>
