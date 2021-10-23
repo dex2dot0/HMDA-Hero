@@ -18,7 +18,7 @@ You must have node.js installed. We'd recommend the latest stable version.
 
 ### Bootstrap 4
 
-Really? Why? Bootstrap 5 is out now and even then... This is all true. However, Excel add-ins have some limitations. Namely, Excel Desktop only supports certain browser contexts. Bootstrap becomes a seemingly good candidate for this. Also, also you'll read further below, Svelte works okay with Bootstrap 4 out of the box. There are some conflicts such as `$` but in general, Svelte and Bootstrap 4 can peacfully co-exists with one another fairly well.
+Really? Why? Bootstrap 5 is out now and even then... This is all true. However, Excel add-ins have some limitations. Namely, Excel Desktop only supports certain browser contexts. Bootstrap becomes a seemingly good candidate for this. Also, as you'll read further below, Svelte works okay with Bootstrap 4 out of the box. There are some conflicts such as `$` but in general, Svelte and Bootstrap 4 can peacfully co-exists with one another fairly well. That said, Bootstrap 4 can happily go by the wayside in the future as long as Svelte stays. Of course, if you are forking this and doing your own thing, feel free to take things in any direction you feel.
 
 ### Running the project
 
@@ -39,6 +39,8 @@ Once the command completes, the console should log the file path to the Certific
 `KEYPATH=/path/to/your/key`
 `CERTPATH=/path/to/your/cert`
 
+**note- your path will likely be outside the project directory**
+
 4. Save the file
 
 You should now be able to run the project in development mode with:
@@ -49,11 +51,11 @@ Open up [localhost:443](https://localhost:443) and start clicking around. This i
 
 Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help with Svelte/Sapper. Svelte is similar to React, Vue, and Angular. Sapper is the server library for Svelte. There is also a Svelte/Sapper Overview section further below that discusses this more.
 
-Svelte is awesome, refreshing, and one of the main motivations for this project.
+Svelte is awesome, refreshing, and one of the main motivations for this project. At present, SvelteKit is gaining some traction but may not yet be suitable for this project which is why Sapper is being used. If at some point in the future there is a chance to refactor the project to use SvelteKit, its likely this project will be migrated.
 
 ### Side-Load Excel Add-in to Run on localhost
 
-Once the project is running at localhost, you can side-load it and instantiate the add-in for local development.
+Once the project is running at localhost, you can side-load the Excel add-in and instantiate it for local development.
 
 Refer to https://docs.microsoft.com/en-us/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins for general instructions on sideloading the project locally to run in a local Excel file as an add-in. The folder you want to share locally is ./HMDA-HERO/Manifests/localhost
 
