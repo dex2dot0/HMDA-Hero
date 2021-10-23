@@ -1,5 +1,5 @@
 <script>
-	import Modal from '../components/Modal.svelte';
+	//mport Modal from '../components/Modal.svelte';
 	import getOrgPipeData from '../Scripts/getOrgPipeData';
 	import getPipeData from '../Scripts/getPipeData.js';
 	import { getFilingYear } from '../Excel Scripts/getFilingYear';
@@ -233,11 +233,7 @@
 						class="custom-control-input"
 						checked />
 					<label class="custom-control-label" for="defaultFormat"
-						>Standard CFPB Export<Modal
-							idName="defaultFormat"
-							modalTitle="CFPB Pipe-delimited Formatted Text File"
-							tabindex="-1"
-							modalBody="<p>The standard CFPB formatted file.</p>" /></label>
+						>Standard CFPB Export</label>
 				</div>
 				<div class="custom-control custom-radio">
 					<input
@@ -247,13 +243,7 @@
 						name="customRadio"
 						class="custom-control-input" />
 					<label class="custom-control-label" for="exemptFormat"
-						>S2155 Exempt Export
-						<Modal
-							idName="exemptFormat"
-							modalTitle="S2155 Exempt Pipe-delimited Formatted Text File"
-							tabindex="-1"
-							modalBody="<p>The same standard CFPB formatted file except exemptions are output for fields where an exemption is allowed.</p>
-              		<p>You should only use this option if your organization qualifies for the exemptions.</p>" /></label>
+						>S2155 Exempt Export</label>
 				</div>
 				<!-- 
 					Stripping this out for now. Needs work. Could be fully implemented in the future if time allows

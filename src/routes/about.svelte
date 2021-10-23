@@ -63,14 +63,4 @@
     set of HMDA data. HMDA Hero is designed with that in mind and aims to be a
     lightweight solution that can carry some of the burden.
   </p>
-  <p>
-    HMDA Hero helps organizations align with best practices by offering
-    immediate feedback, guidance, and simplicity. HMDA Hero is also flexible
-    though so you are always free to structure your filing data to fit your
-    needs.
-  </p>
-  <a href="/features">
-    Read More About
-    <strong>Features</strong>
-  </a>
 </div>
