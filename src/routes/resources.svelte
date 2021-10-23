@@ -212,7 +212,7 @@
 					</div>
 				{/if}
 				<!-- 2021 and beyond -->
-				{#if filingYear == 2020}
+				{#if filingYear > 2020}
 					<div class="row">
 						<a target="_blank" href={girGuide}>Getting It Right Guide</a>
 					</div>
