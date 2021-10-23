@@ -16,22 +16,22 @@
 
 	const setFiGuide = (year) => {
 		fiGuide = `https://s3.amazonaws.com/cfpb-hmda-public/prod/help/${year}-hmda-fig.pdf`;
-	}
+	};
 
 	switch (Year) {
 		case 2020:
 			filingYear = 2019;
 			break;
-		case 2021: 
+		case 2021:
 			filingYear = 2021;
 			break;
-		case 2022, 2023, 2024, 2025, 2026:
+		case (2022, 2023, 2024, 2025, 2026):
 			filingYear - 2021; //Going with the latest
 			break;
 		default:
 			filingYear = 2018;
 			break;
-	};
+	}
 
 	setGirGuide(filingYear);
 	setFiGuide(filingYear);
@@ -143,13 +143,6 @@
 						</a>
 					</div>
 				{/if}
-				<div class="row">
-					<a
-						target="_blank"
-						href="https://www.consumerfinance.gov/policy-compliance/guidance/mortgage-resources/hmda-reporting-requirements/">
-						CFPB HMDA Resources Page
-					</a>
-				</div>
 				<!-- 2019 -->
 				{#if filingYear == 2019}
 					<div class="row">
@@ -184,13 +177,6 @@
 						</a>
 					</div>
 				{/if}
-				<div class="row">
-					<a
-						target="_blank"
-						href="https://www.consumerfinance.gov/policy-compliance/guidance/mortgage-resources/hmda-reporting-requirements/">
-						CFPB HMDA Resources Page
-					</a>
-				</div>
 				<!-- 2020 -->
 				{#if filingYear == 2020}
 					<div class="row">
@@ -225,57 +211,8 @@
 						</a>
 					</div>
 				{/if}
-				<div class="row">
-					<a
-						target="_blank"
-						href="https://www.consumerfinance.gov/policy-compliance/guidance/mortgage-resources/hmda-reporting-requirements/">
-						CFPB HMDA Resources Page
-					</a>
-				</div>
 				<!-- 2021 and beyond -->
-				{#if filingYear > 2020}
-					<div class="row">
-						<a target="_blank" href={girGuide}>Getting It Right Guide</a>
-					</div>
-					{#if excelEnv == 'online'}
-						<div class="row">
-							<a
-								target="_blank"
-								href="https://files.consumerfinance.gov/f/documents/cfpb_hmda_small-entity-compliance-guide_2020.pdf">
-								Small Entity Compliance Guide
-							</a>
-						</div>
-					{/if}
-					<div class="row">
-						<a target="_blank" href={fiGuide}>Filing Instructions Guide</a>
-					</div>
-					{#if excelEnv == 'online'}
-						<div class="row">
-							<a
-								target="_blank"
-								href="https://files.consumerfinance.gov/f/documents/cfpb_reportable-hmda-data_regulatory-and-reporting-overview-reference-chart-2020.pdf">
-								Filing Overview Reference Chart
-							</a>
-						</div>
-					{/if}
-					<div class="row">
-						<a
-							target="_blank"
-							href="https://hmdahelp.consumerfinance.gov/knowledgebase/s/">
-							HMDA Help Search
-						</a>
-					</div>
-				{/if}
-				<div class="row">
-					<a
-						target="_blank"
-						href="https://www.consumerfinance.gov/policy-compliance/guidance/mortgage-resources/hmda-reporting-requirements/">
-						CFPB HMDA Resources Page
-					</a>
-				</div>
-			</div>
-			<!-- 2021 and beyond -->
-				{#if filingYear > 2021}
+				{#if filingYear == 2020}
 					<div class="row">
 						<a target="_blank" href={girGuide}>Getting It Right Guide</a>
 					</div>
