@@ -3,12 +3,16 @@
 	import getOrgPipeData from '../Scripts/getOrgPipeData';
 	import getPipeData from '../Scripts/getPipeData.js';
 	import { getFilingYear } from '../Excel Scripts/getFilingYear';
-	import { parseErrors, formatErrors, validityErrors } from '../stores';
+	//TODO
+	//Stripping out for now. Needs work. If there is time, implement in future.
+	//import { parseErrors, formatErrors, validityErrors } from '../stores';
 
-	let parserErrors = [];
-	let formattingErrors = [];
-	let validationErrors = [];
-	let validateExport = true;
+	//TODO
+	//Stripping out for now. Needs work. If there is time, implement in future.
+	// let parserErrors = [];
+	// let formattingErrors = [];
+	// let validationErrors = [];
+	// let validateExport = true;
 
 	let outputType = 'defaultFormat';
 	async function radioChange(e) {
@@ -16,9 +20,11 @@
 		outputType = e.target.id;
 	}
 
-	async function updateValidateExport() {
-		validateExport = !validateExport;
-	}
+	//TODO
+	//Stripping out for now. Needs work. If there is time, implement in future.
+	// async function updateValidateExport() {
+	// 	validateExport = !validateExport;
+	// }
 
 	async function runExport() {
 		let orgData = await getOrgPipeData(); //get org data from Excel
@@ -28,69 +34,71 @@
 		let loanData = await getPipeData(exempt);
 		let pipeData = `1|${orgData}${loanData}`;
 
+		//TODO
+		//stripping this out for now. It still needs work. Could be implemented in the future with more time.
 		//run CFPB validation if validation option is selected
-		if (validateExport) {
-			console.log('running export validation');
-			let pipeDataBlob = new Blob([pipeData], {
-				type: 'text/plain',
-			});
-			let formdata = new FormData();
-			formdata.append('file', pipeDataBlob, 'lar.txt');
+		// if (validateExport) {
+		// 	console.log('running export validation');
+		// 	let pipeDataBlob = new Blob([pipeData], {
+		// 		type: 'text/plain',
+		// 	});
+		// 	let formdata = new FormData();
+		// 	formdata.append('file', pipeDataBlob, 'lar.txt');
 
-			let requestOptions = {
-				method: 'POST',
-				body: formdata,
-				//mode: 'no-cors',
-				redirect: 'follow',
-			};
+		// 	let requestOptions = {
+		// 		method: 'POST',
+		// 		body: formdata,
+		// 		//mode: 'no-cors',
+		// 		redirect: 'follow',
+		// 	};
 
-			fetch(`https://ffiec.cfpb.gov/v2/public/hmda/validate/${year}`, requestOptions)
-				.then((response) => response.json())
-				.then((results) => {
-					//.parseErrors contains errors for the LAR itself if .parseErrors.rowNumber === 1 
-					//.parseErrors.rowNumber > 1 is telling you the row of the LAR and something wrong with parsing a value on the loan record on that line
-					//.validationErrors is split by ULI and contains both validity and quality edits
-					console.log('results ', results);
-					parserErrors = results.parserErrors;
-					formattingErrors = results.validationErrors[1]
-						? results.validationErrors[0]
-						: [];
-					validationErrors = results.validationErrors[1]
-						? results.validationErrors[1]
-						: results.validationErrors[0];
-					if (parserErrors) {
-						console.log('Total Parsing Errors - ', parserErrors.length);
-						console.log('Parsing Errors: ', parserErrors);
-						parseErrors.change(parserErrors);
-					} else {
-						console.log('No parsing errors!');
-						parseErrors.change([]);
-					}
+		// 	fetch(`https://ffiec.cfpb.gov/v2/public/hmda/validate/${year}`, requestOptions)
+		// 		.then((response) => response.json())
+		// 		.then((results) => {
+		// 			//.parseErrors contains errors for the LAR itself if .parseErrors.rowNumber === 1
+		// 			//.parseErrors.rowNumber > 1 is telling you the row of the LAR and something wrong with parsing a value on the loan record on that line
+		// 			//.validationErrors is split by ULI and contains both validity and quality edits
+		// 			console.log('results ', results);
+		// 			parserErrors = results.parserErrors;
+		// 			formattingErrors = results.validationErrors[1]
+		// 				? results.validationErrors[0]
+		// 				: [];
+		// 			validationErrors = results.validationErrors[1]
+		// 				? results.validationErrors[1]
+		// 				: results.validationErrors[0];
+		// 			if (parserErrors) {
+		// 				console.log('Total Parsing Errors - ', parserErrors.length);
+		// 				console.log('Parsing Errors: ', parserErrors);
+		// 				parseErrors.change(parserErrors);
+		// 			} else {
+		// 				console.log('No parsing errors!');
+		// 				parseErrors.change([]);
+		// 			}
 
-					if (formattingErrors) {
-						console.log('Total Formatting Errors - ', formattingErrors.length);
-						console.log('formatting errors - ', formattingErrors);
-						formatErrors.change(formattingErrors);
-					} else {
-						console.log('No formatting errors!');
-						formatErrors.change([]);
-					}
+		// 			if (formattingErrors) {
+		// 				console.log('Total Formatting Errors - ', formattingErrors.length);
+		// 				console.log('formatting errors - ', formattingErrors);
+		// 				formatErrors.change(formattingErrors);
+		// 			} else {
+		// 				console.log('No formatting errors!');
+		// 				formatErrors.change([]);
+		// 			}
 
-					if (validationErrors) {
-						console.log('Total Validation Errors - ', validationErrors.length);
-						console.log('Validation Errors: ', validationErrors);
-						validityErrors.change(validationErrors);
-					} else {
-						console.log('No validation errors!');
-						validityErrors.change([]);
-					}
+		// 			if (validationErrors) {
+		// 				console.log('Total Validation Errors - ', validationErrors.length);
+		// 				console.log('Validation Errors: ', validationErrors);
+		// 				validityErrors.change(validationErrors);
+		// 			} else {
+		// 				console.log('No validation errors!');
+		// 				validityErrors.change([]);
+		// 			}
 
-					download(pipeData, 'lar.txt', 'text/plain');
-				})
-				.catch((error) => console.log('error', error));
-		} else {
-			download(pipeData, 'lar.txt', 'text/plain');
-		}
+		// 			download(pipeData, 'lar.txt', 'text/plain');
+		// 		})
+		// 		.catch((error) => console.log('error', error));
+		// } else {
+		download(pipeData, 'lar.txt', 'text/plain');
+		//}
 
 		async function download(strData, strFileName, strMimeType) {
 			//solution from https://stackoverflow.com/questions/21012580/is-it-possible-to-write-data-to-file-using-only-javascript
@@ -245,8 +253,10 @@
 							modalTitle="S2155 Exempt Pipe-delimited Formatted Text File"
 							tabindex="-1"
 							modalBody="<p>The same standard CFPB formatted file except exemptions are output for fields where an exemption is allowed.</p>
-              <p>You should only use this option if your organization qualifies for the exemptions.</p>" /></label>
+              		<p>You should only use this option if your organization qualifies for the exemptions.</p>" /></label>
 				</div>
+				<!-- 
+					Stripping this out for now. Needs work. Could be fully implemented in the future if time allows
 				<div style="padding-top: 25px;">
 					<p>
 						Export Validation Options: <Modal
@@ -255,6 +265,7 @@
 							tabindex="-1"
 							modalBody="<p>If the Validate option is selected when the export is generated, the file will be checked and validated by securely sending the data to tools provided by the CFPB.</p>" />
 					</p>
+					
 					{#if validateExport}
 						<div class="form-check form-check-inline">
 							<input
@@ -277,30 +288,30 @@
 								value="isAllData" />
 							<label class="form-check-label" for="noValidate">No Validation</label>
 						</div>
-					{:else}
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								name="inlineRadioOptions"
-								id="validateData"
-								on:change={updateValidateExport}
-								value="allData" />
-							<label class="form-check-label" for="validateData">Validate</label>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								name="inlineRadioOptions"
-								id="noValidate"
-								on:change={updateValidateExport}
-								value="isAllData"
-								checked />
-							<label class="form-check-label" for="noValidate">No Validation</label>
-						</div>
-					{/if}
-				</div>
+					{:else} -->
+				<!-- <div class="form-check form-check-inline">
+						<input
+							class="form-check-input"
+							type="radio"
+							name="inlineRadioOptions"
+							id="validateData"
+							on:change={updateValidateExport}
+							value="allData" />
+						<label class="form-check-label" for="validateData">Validate</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input
+							class="form-check-input"
+							type="radio"
+							name="inlineRadioOptions"
+							id="noValidate"
+							on:change={updateValidateExport}
+							value="isAllData"
+							checked />
+						<label class="form-check-label" for="noValidate">No Validation</label>
+					</div> -->
+				<!-- {/if} 
+				</div> -->
 				<button
 					type="button"
 					class="btn btn-sm btn-outline-secondary ml-2"
@@ -308,6 +319,8 @@
 					Download Export File
 				</button>
 			</div>
+			<!-- 
+			Stripping this out for now. Needs work. Could be fully implemented in the future if time allows	
 			{#if parserErrors.length > 0 || formattingErrors.length > 0 || validationErrors.length > 0}
 				<div class="card-body">
 					<div class="alert alert-warning" role="alert">
@@ -327,7 +340,7 @@
 							on:click={validationReport}>download</button> a report summary of the errors
 					</p>
 				</div>
-			{/if}
+			{/if} -->
 		</div>
 	</form>
 </div>

@@ -24,7 +24,6 @@ export const larValidation = async (larFile, filingYear) => {
 				//TODO
 				//So we have:
 
-				
 				//ULI specific parsing errors
 				//ULI specific validity edits
 				//ULI specific quality edits
@@ -35,20 +34,23 @@ export const larValidation = async (larFile, filingYear) => {
 				let ULIs = [];
 
 				//LAR level parsing errors
-				if (results.parseErrors.length > 0) {
-					isErrors = true;
-					results.parseErrors.map((err) => {
-						if(err.rowNumber === 1) {
-							parseErrors.change(err);
-						} else {
-							let estimatedULI = err.estimatedULI;
-							ULIs.estimatedULI = {
-									parseError: err
-								}
-							});
-						}
-					})	
-				};
+				//TODO
+				// stripping this out for now. It is not fully implemented but may be in the future.
+				// It still needs work.
+				// if (results.parseErrors.length > 0) {
+				// 	isErrors = true;
+				// 	results.parseErrors.map((err) => {
+				// 		if(err.rowNumber === 1) {
+				// 			parseErrors.change(err);
+				// 		} else {
+				// 			let estimatedULI = err.estimatedULI;
+				// 			ULIs.estimatedULI = {
+				// 					parseError: err
+				// 				}
+				// 			});
+				// 		}
+				// 	})
+				// };
 
 				formattingErrors = results.validationErrors[1] ? results.validationErrors[0] : [];
 				validationErrors = results.validationErrors[1]
