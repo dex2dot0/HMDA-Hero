@@ -2,18 +2,23 @@
 
 If anything needs a hero, it's HMDA!
 
-## To-do
+## To-do Wishlist
 
--Batch updater.
+- The CFPB publishes a number of different APIs, see https://cfpb.github.io/hmda-platform/#hmda-api-documentation. Integrating these APIs has alway been a goal of this project and some work has been accomplished to that end but there is still much that needs to be done. Ideally, a user should get as close to real-time feedback on quality and validity errors as possible whether that be adding a loan record, editing a record, importing, or exporting a LAR file.
 
--Quality and Validity errors check.
+- Batch updater. The ability to batch update key data points in the LAR.
 
--Import should check for duplicates.
--Also much more that could be done to validate the import file
+- Import should also check for duplicates.
+
+- Import file validation v2
 
 ## Getting started
 
-You must have node.js installed.
+You must have node.js installed. We'd recommend the latest stable version.
+
+### Bootstrap 4
+
+Really? Why? Bootstrap 5 is out now and even then... This is all true. However, Excel add-ins have some limitations. Namely, Excel Desktop only supports certain browser contexts. Bootstrap becomes a seemingly good candidate for this. Also, also you'll read further below, Svelte works okay with Bootstrap 4 out of the box. There are some conflicts such as `$` but in general, Svelte and Bootstrap 4 can peacfully co-exists with one another fairly well.
 
 ### Running the project
 
@@ -21,14 +26,15 @@ First things first:
 
 `npm install` or `npm i`
 
-For local development, you'll need to generate CA certificates to get https on localhost
+For local development, you'll need to generate CA certificates to get https on localhost. If you do not run an HTTPS server locally, Excel add-ins may not function properly.
 
 `npm run certs`
 
 Once the command completes, the console should log the file path to the Certificate and Key and you will need to:
+
 1. Copy the paths
 2. Create a .env in the root of the project
-3. setup as follows:
+3. Setup as follows:
 
 `KEYPATH=/path/to/your/key`
 `CERTPATH=/path/to/your/cert`
@@ -39,9 +45,11 @@ You should now be able to run the project in development mode with:
 
 `npm run dev`
 
-Open up [localhost:443](https://localhost:443) and start clicking around. This is the HMDA Hero application outside an Excel document. 
+Open up [localhost:443](https://localhost:443) and start clicking around. This is the HMDA Hero application outside an Excel document.
 
-Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help with Svelte/Sapper. Svelte is similar to React, Vue, and Angular. Sapper is the server library for Svelte. There is also a Svelte/Sapper Overview section further below that discusses this more. 
+Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help with Svelte/Sapper. Svelte is similar to React, Vue, and Angular. Sapper is the server library for Svelte. There is also a Svelte/Sapper Overview section further below that discusses this more.
+
+Svelte is awesome, refreshing, and one of the main motivations for this project.
 
 ### Side-Load Excel Add-in to Run on localhost
 

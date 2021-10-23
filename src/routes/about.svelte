@@ -39,17 +39,26 @@
 <div class="about container">
 	<h1>Why HMDA Hero</h1>
 	<h5>
-		Fast <i class="material-icons" style="font-size: 1.1rem; width: 1rem;">
-			offline_bolt
-		</i>
-		Light-weight
-		<i class="material-icons" style="font-size: 1.1rem; width: 1rem;"> cloud_queue </i>
-		Powerful
-		<i class="material-icons" style="font-size: 1.1rem; width: 1rem;">
-			battery_charging_full
-		</i>
-		And Free
-		<i class="material-icons" style="font-size: 1.1rem; width: 1rem;"> favorite </i>
+		<span class="border-0">
+			Fast <i class="material-icons" style="font-size: 1.1rem; width: 1rem;">
+				offline_bolt
+			</i>
+		</span>
+		<span class="border-0">
+			Light-weight
+			<i class="material-icons" style="font-size: 1.1rem; width: 1rem;"> cloud_queue </i>
+		</span>
+		<span class="border-0">
+			Powerful
+			<i class="material-icons" style="font-size: 1.1rem; width: 1rem;">
+				battery_charging_full
+			</i>
+		</span>
+		<span class="border-0">
+			And Free
+			<i class="material-icons" style="font-size: 1.1rem; width: 1rem;"> favorite </i>
+		</span>
+		<span class="border-0" />
 	</h5>
 	<p>
 		HMDA Hero is a free resource provided to assist with the arduous process of compiling
@@ -64,6 +73,6 @@
 		free to modify and extend the underlying source code to fit their needs and/or provide
 		additional functionality as they may see fit. In fact, its encouraged. All that we'd
 		personally ask is that if at all possible, any enhancements be shared with the broader
-		community, though that is not a requirement.
+		community, though that is not a requirement and we respect your decision either way.
 	</p>
 </div>
