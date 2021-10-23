@@ -28,9 +28,9 @@
     }
   }
 
-  a {
+  /* a {
     color: #4e9668;
-  }
+  } */
 </style>
 
 <svelte:head>

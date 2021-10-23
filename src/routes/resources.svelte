@@ -9,7 +9,7 @@
 	let girGuide;
 	let fiGuide;
 
-	const setGirGuide = (year) =>> {
+	const setGirGuide = (year) => {
 		girGuide = `https://www.ffiec.gov/hmda/pdf/${year}guide.pdf`;
 	};
 
@@ -21,8 +21,9 @@
 		case 2020:
 			filingYear = 2019;
 			break;
-		case: 2021: 
+		case 2021: 
 			filingYear = 2021;
+			break;
 		case 2022, 2023, 2024, 2025, 2026:
 			filingYear - 2021; //Going with the latest
 			break;
