@@ -1,24 +1,38 @@
 <script>
+	//TODO
+	//This is the wrong approach as we are only considering current date
+	//Should actually be considering the date from the Excel file for Calendar Year
 	let d = new Date();
 	let Year = d.getFullYear();
-	//Month is 0-11, Jan = 0
-	let Month = d.getMonth();
-	let filingYear;
+	let filingYear = 2018; //default
 	let excelEnv = 'online';
-	let girGuide = 'https://www.ffiec.gov/hmda/pdf/2019guide.pdf';
-	let fiGuide = 'https://s3.amazonaws.com/cfpb-hmda-public/prod/help/2019-hmda-fig.pdf';
+	let girGuide;
+	let fiGuide;
+
+	const setGirGuide = (year) =>> {
+		girGuide = `https://www.ffiec.gov/hmda/pdf/${year}guide.pdf`;
+	};
+
+	const setFiGuide = (year) => {
+		fiGuide = `https://s3.amazonaws.com/cfpb-hmda-public/prod/help/${year}-hmda-fig.pdf`;
+	}
 
 	switch (Year) {
 		case 2020:
 			filingYear = 2019;
 			break;
-		case 2021:
-			//Handling for future to occur here...
-			Month < 12 ? (filingYear = 2019) : (filingYear = 2020); //Just change Month based on month we publish updated resources
+		case: 2021: 
+			filingYear = 2021;
+		case 2022, 2023, 2024, 2025, 2026:
+			filingYear - 2021; //Going with the latest
 			break;
 		default:
+			filingYear = 2018;
 			break;
-	}
+	};
+
+	setGirGuide(filingYear);
+	setFiGuide(filingYear);
 
 	(async () => {
 		if (process.browser) {
@@ -95,7 +109,90 @@
 		<div class="card">
 			<div class="card-body">
 				<h5>{filingYear} Filing Resources</h5>
+				<!-- 2018 -->
+				{#if filingYear == 2018}
+					<div class="row">
+						<a target="_blank" href={girGuide}>Getting It Right Guide</a>
+					</div>
+					{#if excelEnv == 'online'}
+						<div class="row">
+							<a
+								target="_blank"
+								href="https://files.consumerfinance.gov/f/documents/cfpb_hmda_small-entity-compliance-guide_2018.pdf">
+								Small Entity Compliance Guide
+							</a>
+						</div>
+					{/if}
+					<div class="row">
+						<a target="_blank" href={fiGuide}>Filing Instructions Guide</a>
+					</div>
+					{#if excelEnv == 'online'}
+						<div class="row">
+							<a
+								target="_blank"
+								href="https://files.consumerfinance.gov/f/documents/cfpb_reportable-hmda-data_regulatory-and-reporting-overview-reference-chart-2018.pdf">
+								Filing Overview Reference Chart
+							</a>
+						</div>
+					{/if}
+					<div class="row">
+						<a
+							target="_blank"
+							href="https://hmdahelp.consumerfinance.gov/knowledgebase/s/">
+							HMDA Help Search
+						</a>
+					</div>
+				{/if}
+				<div class="row">
+					<a
+						target="_blank"
+						href="https://www.consumerfinance.gov/policy-compliance/guidance/mortgage-resources/hmda-reporting-requirements/">
+						CFPB HMDA Resources Page
+					</a>
+				</div>
+				<!-- 2019 -->
 				{#if filingYear == 2019}
+					<div class="row">
+						<a target="_blank" href={girGuide}>Getting It Right Guide</a>
+					</div>
+					{#if excelEnv == 'online'}
+						<div class="row">
+							<a
+								target="_blank"
+								href="https://files.consumerfinance.gov/f/documents/cfpb_hmda_small-entity-compliance-guide_2019.pdf">
+								Small Entity Compliance Guide
+							</a>
+						</div>
+					{/if}
+					<div class="row">
+						<a target="_blank" href={fiGuide}>Filing Instructions Guide</a>
+					</div>
+					{#if excelEnv == 'online'}
+						<div class="row">
+							<a
+								target="_blank"
+								href="https://files.consumerfinance.gov/f/documents/cfpb_reportable-hmda-data_regulatory-and-reporting-overview-reference-chart-2019.pdf">
+								Filing Overview Reference Chart
+							</a>
+						</div>
+					{/if}
+					<div class="row">
+						<a
+							target="_blank"
+							href="https://hmdahelp.consumerfinance.gov/knowledgebase/s/">
+							HMDA Help Search
+						</a>
+					</div>
+				{/if}
+				<div class="row">
+					<a
+						target="_blank"
+						href="https://www.consumerfinance.gov/policy-compliance/guidance/mortgage-resources/hmda-reporting-requirements/">
+						CFPB HMDA Resources Page
+					</a>
+				</div>
+				<!-- 2020 -->
+				{#if filingYear == 2020}
 					<div class="row">
 						<a target="_blank" href={girGuide}>Getting It Right Guide</a>
 					</div>
@@ -115,7 +212,48 @@
 						<div class="row">
 							<a
 								target="_blank"
-								href="https://files.consumerfinance.gov/f/documents/cfpb_reportable-hmda-data_regulatory-and-reporting-overview-reference-chart-2019.pdf">
+								href="https://files.consumerfinance.gov/f/documents/cfpb_reportable-hmda-data_regulatory-and-reporting-overview-reference-chart-2020.pdf">
+								Filing Overview Reference Chart
+							</a>
+						</div>
+					{/if}
+					<div class="row">
+						<a
+							target="_blank"
+							href="https://hmdahelp.consumerfinance.gov/knowledgebase/s/">
+							HMDA Help Search
+						</a>
+					</div>
+				{/if}
+				<div class="row">
+					<a
+						target="_blank"
+						href="https://www.consumerfinance.gov/policy-compliance/guidance/mortgage-resources/hmda-reporting-requirements/">
+						CFPB HMDA Resources Page
+					</a>
+				</div>
+				<!-- 2021 and beyond -->
+				{#if filingYear > 2020}
+					<div class="row">
+						<a target="_blank" href={girGuide}>Getting It Right Guide</a>
+					</div>
+					{#if excelEnv == 'online'}
+						<div class="row">
+							<a
+								target="_blank"
+								href="https://files.consumerfinance.gov/f/documents/cfpb_hmda_small-entity-compliance-guide_2021.pdf">
+								Small Entity Compliance Guide
+							</a>
+						</div>
+					{/if}
+					<div class="row">
+						<a target="_blank" href={fiGuide}>Filing Instructions Guide</a>
+					</div>
+					{#if excelEnv == 'online'}
+						<div class="row">
+							<a
+								target="_blank"
+								href="https://files.consumerfinance.gov/f/documents/cfpb_reportable-hmda-data_regulatory-and-reporting-overview-reference-chart-2021.pdf">
 								Filing Overview Reference Chart
 							</a>
 						</div>
