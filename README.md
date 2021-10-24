@@ -4,13 +4,13 @@ If anything needs a hero, it's HMDA!
 
 ## To-do Wishlist
 
-- The CFPB publishes a number of different APIs, see https://cfpb.github.io/hmda-platform/#hmda-api-documentation. Integrating these APIs has alway been a goal of this project and some work has been accomplished to that end but there is still much that needs to be done. Ideally, a user should get as close to real-time feedback on quality and validity errors as possible whether that be adding a loan record, editing a record, importing, or exporting a LAR file.
+- The CFPB publishes a number of different APIs, see https://cfpb.github.io/hmda-platform/#hmda-api-documentation. Integrating these APIs has alway been a goal of this project and some work has been accomplished to that end but there is still much that needs to be done. Ideally, a user should get as close to real-time feedback on quality and validity errors as possible whether that be adding a loan record, editing a record, importing, or exporting a LAR file. At current, the work that has been done has been commented out and the base version of HMDA Hero does not include any such functionality. 
 
 - Batch updater. The ability to batch update key data points in the LAR.
 
-- Import should also check for duplicates.
+- Import should check for duplicates. Currently you can import the same file multiple times without any errors thrown. 
 
-- Import file validation v2
+- Bug... If a loan record does not have enough information, such as a ULI, it can not be selected for edit in the Edit Loan action. It will show up in search but fail to load when selected for edit. 
 
 ## Getting started
 
@@ -18,7 +18,7 @@ You must have node.js installed. We'd recommend the latest stable version.
 
 ### Bootstrap 4
 
-Really? Why? Bootstrap 5 is out now and even then... This is all true. However, Excel add-ins have some limitations. Namely, Excel Desktop only supports certain browser contexts. Bootstrap becomes a seemingly good candidate for this. Also, as you'll read further below, Svelte works okay with Bootstrap 4 out of the box. There are some conflicts such as `$` but in general, Svelte and Bootstrap 4 can peacfully co-exists with one another fairly well. That said, Bootstrap 4 can happily go by the wayside in the future as long as Svelte stays. Of course, if you are forking this and doing your own thing, feel free to take things in any direction you feel.
+Really? Why? Bootstrap 5 is out now and even then... This is all true. In all reality, I don't care for Bootstrap to begin with whether that is v4 or v5. I'm not hating on Bootstrap by any means, obviously it is a strong component library that has extensive use and that's all gravy to me. I have my own personal reservations though and prefer other options. However, Excel add-ins have some limitations. Namely, Excel Desktop only supports certain browser contexts. As a result, Bootstrap becomes a seemingly good candidate for this. Also, as you'll read further below, Svelte works **okay** with Bootstrap 4 out of the box. There are some conflicts such as `$` but in general, Svelte and Bootstrap 4 can peacfully co-exists with one another fairly well. That said, Bootstrap 4 can happily go by the wayside in the future as long as Svelte stays. Of course, if you are forking this and doing your own thing, feel free to take things in any direction you feel.
 
 ### Running the project
 
