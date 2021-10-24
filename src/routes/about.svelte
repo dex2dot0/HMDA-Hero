@@ -1,65 +1,33 @@
 <style>
-	.about {
-		text-align: center;
-		max-width: 90%;
-	}
+	nav {
+    padding: 0;
+  }
 
-	@media (min-width: 576px) {
-		.about {
-			max-width: 90%;
-		}
-	}
+  nav {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #323130;
+    min-height: 50px;
+  }
 
-	@media (min-width: 768px) {
-		.about {
-			max-width: 80%;
-		}
-	}
-
-	@media (min-width: 992px) {
-		.about {
-			max-width: 70%;
-		}
-	}
-
-	@media (min-width: 1200px) {
-		.about {
-			max-width: 60%;
-		}
-	}
-
-	/* a {
-    color: #4e9668;
-  } */
+  p {
+	  margin-left: 40px;
+	  margin-right: 40px;
+	  padding-top: 10px;
+  }
 </style>
 
 <svelte:head>
 	<title>About</title>
 </svelte:head>
-<div class="about container">
-	<h1>Why HMDA Hero</h1>
-	<h5>
-		<span class="border-0">
-			Fast <i class="material-icons" style="font-size: 1.1rem; width: 1rem;">
-				offline_bolt
-			</i>
-		</span>
-		<span class="border-0">
-			Light-weight
-			<i class="material-icons" style="font-size: 1.1rem; width: 1rem;"> cloud_queue </i>
-		</span>
-		<span class="border-0">
-			Powerful
-			<i class="material-icons" style="font-size: 1.1rem; width: 1rem;">
-				battery_charging_full
-			</i>
-		</span>
-		<span class="border-0">
-			And Free
-			<i class="material-icons" style="font-size: 1.1rem; width: 1rem;"> favorite </i>
-		</span>
-		<span class="border-0" />
-	</h5>
+<form class="shadow-sm mb-5 bg-white rounded">
+	<nav class="navbar navbar-expand-lg navbar-dark align-items-center">
+		<div class="navbar-brand">
+			<h3 class="pr-3 pl-3">About</h3>
+		</div>
+	</nav>
 	<p>
 		HMDA Hero is a free resource provided to assist with the arduous process of compiling
 		HMDA data. While there are a number of excellent tools available on the market for
@@ -75,4 +43,4 @@
 		personally ask is that if at all possible, any enhancements be shared with the broader
 		community, though that is not a requirement and we respect your decision either way.
 	</p>
-</div>
+</form>
