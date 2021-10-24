@@ -39,9 +39,9 @@
               <Group id="LoanGroup">
                 <Label resid="LoanLabel" />
                 <Icon>
-                  <bt:Image size="16" resid="Icon.16" />
-                  <bt:Image size="32" resid="Icon.32" />
-                  <bt:Image size="80" resid="Icon.80" />
+                  <bt:Image size="16" resid="Add.16" />
+                  <bt:Image size="32" resid="Add.32" />
+                  <bt:Image size="80" resid="Add.80" />
                 </Icon>
                 <Control xsi:type="Button" id="AddLoan">
                   <Label resid="AddLoan.Label" />
@@ -50,9 +50,9 @@
                     <Description resid="AddLoanSupertip.Desc" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Icon.Code.16" />
-                    <bt:Image size="32" resid="Icon.Code.32" />
-                    <bt:Image size="80" resid="Icon.Code.80" />
+                    <bt:Image size="16" resid="Add.16" />
+                    <bt:Image size="32" resid="Add.32" />
+                    <bt:Image size="80" resid="Add.80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>AddLoan</TaskpaneId>
@@ -195,6 +195,12 @@
     </Hosts>
     <Resources>
       <bt:Images>
+        <bt:Image id="Add.16" DefaultValue="https://localhost:443/assets/plus16x16.png" />
+        <bt:Image id="Add.32" DefaultValue="https://localhost:443/assets/plus32x32.png" />
+        <bt:Image id="Add.80" DefaultValue="https://localhost:443/assets/plus80x80.png" />
+        <bt:Image id="Icon.Add.16" DefaultValue="https://localhost:443/assets/plus16x16.png" />
+        <bt:Image id="Icon.Add.32" DefaultValue="https://localhost:443/assets/plus32x32.png" />
+        <bt:Image id="Icon.Add.80" DefaultValue="https://localhost:443/assets/plus80x80.png" />
         <bt:Image id="Icon.16" DefaultValue="https://localhost:443/assets/Button16x16.png" />
         <bt:Image id="Icon.32" DefaultValue="https://localhost:443/assets/Button32x32.png" />
         <bt:Image id="Icon.80" DefaultValue="https://localhost:443/assets/Button80x80.png" />
