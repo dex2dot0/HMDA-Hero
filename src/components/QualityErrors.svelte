@@ -8,7 +8,7 @@
 	export let idName;
 	//TODO
 	//Implement when time allows. Needs work. This should be wired to CFPB APIs.
-	//export let errorsHTML = 'No quality errors found.';
+	export let errorsHTML = 'No quality errors found.';
 </script>
 
 <a
