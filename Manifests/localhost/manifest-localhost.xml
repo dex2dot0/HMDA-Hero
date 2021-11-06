@@ -9,8 +9,8 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="HMDA Hero" />
   <Description DefaultValue="If anything needs a hero, it's HMDA"/>
-  <IconUrl DefaultValue="https://localhost:443/assets/Button32x32.png" />
-  <HighResolutionIconUrl DefaultValue="https://localhost:443/assets/Button80x80.png" />
+  <IconUrl DefaultValue="https://localhost:443/assets/HH32x32.png" />
+  <HighResolutionIconUrl DefaultValue="https://localhost:443/assets/HH80x80.png" />
   <SupportUrl DefaultValue="https://hmda-hero-app.netlify.app/" />
   <AppDomains>
     <AppDomain>https://localhost:443</AppDomain>
@@ -67,9 +67,9 @@
                     <Description resid="EditLoanSupertip.Desc" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="edit.16" />
-                    <bt:Image size="32" resid="edit.32" />
-                    <bt:Image size="80" resid="edit.80" />
+                    <bt:Image size="16" resid="Edit.16" />
+                    <bt:Image size="32" resid="Edit.32" />
+                    <bt:Image size="80" resid="Edit.80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>EditLoan</TaskpaneId>
@@ -81,9 +81,9 @@
               <Group id="UtilitiesGroup">
                 <Label resid="UtilitiesGroupLabel" />
                 <Icon>
-                  <bt:Image size="16" resid="import.16" />
-                  <bt:Image size="32" resid="import.32" />
-                  <bt:Image size="80" resid="import.80" />
+                  <bt:Image size="16" resid="Import.16" />
+                  <bt:Image size="32" resid="Import.32" />
+                  <bt:Image size="80" resid="Import.80" />
                 </Icon>
                 <Control xsi:type="Button" id="Import">
                   <Label resid="Import.Label" />
@@ -92,9 +92,9 @@
                     <Description resid="Import.Desc" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="import.16" />
-                    <bt:Image size="32" resid="import.32" />
-                    <bt:Image size="80" resid="import.80" />
+                    <bt:Image size="16" resid="Import.16" />
+                    <bt:Image size="32" resid="Import.32" />
+                    <bt:Image size="80" resid="Import.80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Import</TaskpaneId>
@@ -109,9 +109,9 @@
                     <Description resid="Export.Desc" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="export.16" />
-                    <bt:Image size="32" resid="export.32" />
-                    <bt:Image size="80" resid="export.80" />
+                    <bt:Image size="16" resid="Export.16" />
+                    <bt:Image size="32" resid="Export.32" />
+                    <bt:Image size="80" resid="Export.80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Export</TaskpaneId>
@@ -123,9 +123,9 @@
               <Group id="ResourcesGroup">
                 <Label resid="ResourcesGroupLabel" />
                 <Icon>
-                  <bt:Image size="16" resid="resources.16" />
-                  <bt:Image size="32" resid="resources.32" />
-                  <bt:Image size="80" resid="resources.80" />
+                  <bt:Image size="16" resid="Resources.16" />
+                  <bt:Image size="32" resid="Resources.32" />
+                  <bt:Image size="80" resid="Resources.80" />
                 </Icon>
                 <Control xsi:type="Button" id="FilingResource">
                   <Label resid="FilingResource.Label" />
@@ -134,9 +134,9 @@
                     <Description resid="FilingResource.Desc" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="resources.16" />
-                    <bt:Image size="32" resid="resources.32" />
-                    <bt:Image size="80" resid="resources.80" />
+                    <bt:Image size="16" resid="Resources.16" />
+                    <bt:Image size="32" resid="Resources.32" />
+                    <bt:Image size="80" resid="Resources.80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>FilingResources</TaskpaneId>
@@ -151,9 +151,9 @@
                     <Description resid="Settings.Desc" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="settings.16" />
-                    <bt:Image size="32" resid="settings.32" />
-                    <bt:Image size="80" resid="settings.80" />
+                    <bt:Image size="16" resid="Settings.16" />
+                    <bt:Image size="32" resid="Settings.32" />
+                    <bt:Image size="80" resid="Settings.80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Settings</TaskpaneId>
@@ -165,9 +165,9 @@
               <Group id="AboutGroup">
                 <Label resid="AboutGroupLabel" />
                 <Icon>
-                  <bt:Image size="16" resid="about.16" />
-                  <bt:Image size="32" resid="about.32" />
-                  <bt:Image size="80" resid="about.80" />
+                  <bt:Image size="16" resid="About.16" />
+                  <bt:Image size="32" resid="About.32" />
+                  <bt:Image size="80" resid="About.80" />
                 </Icon>
                 <Control xsi:type="Button" id="AboutHH">
                   <Label resid="AboutHH.Label" />
@@ -176,9 +176,9 @@
                     <Description resid="AboutHH.Desc" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="about.16" />
-                    <bt:Image size="32" resid="about.32" />
-                    <bt:Image size="80" resid="about.80" />
+                    <bt:Image size="16" resid="About.16" />
+                    <bt:Image size="32" resid="About.32" />
+                    <bt:Image size="80" resid="About.80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>About</TaskpaneId>
@@ -195,27 +195,27 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="about.16" DefaultValue="https://localhost:443/assets/about16x16.png" />
-        <bt:Image id="about.32" DefaultValue="https://localhost:443/assets/about32x32.png" />
-        <bt:Image id="about.80" DefaultValue="https://localhost:443/assets/about80x80.png" />
-        <bt:Image id="add.16" DefaultValue="https://localhost:443/assets/add16x16.png" />
-        <bt:Image id="add.32" DefaultValue="https://localhost:443/assets/add32x32.png" />
-        <bt:Image id="add.80" DefaultValue="https://localhost:443/assets/add80x80.png" />
-        <bt:Image id="edit.16" DefaultValue="https://localhost:443/assets/edit16x16.png" />
-        <bt:Image id="edit.32" DefaultValue="https://localhost:443/assets/edit32x32.png" />
-        <bt:Image id="edit.80" DefaultValue="https://localhost:443/assets/edit80x80.png" />
-        <bt:Image id="export.16" DefaultValue="https://localhost:443/assets/export16x16.png" />
-        <bt:Image id="export.32" DefaultValue="https://localhost:443/assets/export32x32.png" />
-        <bt:Image id="export.80" DefaultValue="https://localhost:443/assets/export80x80.png" />
-        <bt:Image id="import.16" DefaultValue="https://localhost:443/assets/import16x16.png" />
-        <bt:Image id="import.32" DefaultValue="https://localhost:443/assets/import32x32.png" />
-        <bt:Image id="import.80" DefaultValue="https://localhost:443/assets/import80x80.png" />
-        <bt:Image id="resources.16" DefaultValue="https://localhost:443/assets/resources16x16.png" />
-        <bt:Image id="resources.32" DefaultValue="https://localhost:443/assets/resources32x32.png" />
-        <bt:Image id="resources.80" DefaultValue="https://localhost:443/assets/resources80x80.png" />
-        <bt:Image id="settings.16" DefaultValue="https://localhost:443/assets/settings16x16.png" />
-        <bt:Image id="settings.32" DefaultValue="https://localhost:443/assets/settings32x32.png" />
-        <bt:Image id="settings.80" DefaultValue="https://localhost:443/assets/settings80x80.png" />
+        <bt:Image id="Add.16" DefaultValue="https://localhost:443/assets/add16x16.png" />
+        <bt:Image id="Add.32" DefaultValue="https://localhost:443/assets/add32x32.png" />
+        <bt:Image id="Add.80" DefaultValue="https://localhost:443/assets/add80x80.png" />
+        <bt:Image id="Edit.16" DefaultValue="https://localhost:443/assets/edit16x16.png" />
+        <bt:Image id="Edit.32" DefaultValue="https://localhost:443/assets/edit32x32.png" />
+        <bt:Image id="Edit.80" DefaultValue="https://localhost:443/assets/edit80x80.png" />
+        <bt:Image id="Import.16" DefaultValue="https://localhost:443/assets/import16x16.png" />
+        <bt:Image id="Import.32" DefaultValue="https://localhost:443/assets/import32x32.png" />
+        <bt:Image id="Import.80" DefaultValue="https://localhost:443/assets/import80x80.png" />
+        <bt:Image id="Export.16" DefaultValue="https://localhost:443/assets/export16x16.png" />
+        <bt:Image id="Export.32" DefaultValue="https://localhost:443/assets/export32x32.png" />
+        <bt:Image id="Export.80" DefaultValue="https://localhost:443/assets/export80x80.png" />
+        <bt:Image id="About.16" DefaultValue="https://localhost:443/assets/about16x16.png" />
+        <bt:Image id="About.32" DefaultValue="https://localhost:443/assets/about32x32.png" />
+        <bt:Image id="About.80" DefaultValue="https://localhost:443/assets/about80x80.png" />
+        <bt:Image id="Resources.16" DefaultValue="https://localhost:443/assets/resources16x16.png" />
+        <bt:Image id="Resources.32" DefaultValue="https://localhost:443/assets/resources32x32.png" />
+        <bt:Image id="Resources.80" DefaultValue="https://localhost:443/assets/resources80x80.png" />
+        <bt:Image id="Settings.16" DefaultValue="https://localhost:443/assets/settings16x16.png" />
+        <bt:Image id="Settings.32" DefaultValue="https://localhost:443/assets/settings32x32.png" />
+        <bt:Image id="Settings.80" DefaultValue="https://localhost:443/assets/settings80x80.png" />
       </bt:Images>
       <bt:Urls>
         <bt:Url id="AddLoan.Url" DefaultValue="https://localhost:443/add-loan" />
