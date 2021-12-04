@@ -9,11 +9,11 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="HMDA Hero" />
   <Description DefaultValue="If anything needs a hero, it's HMDA"/>
-  <IconUrl DefaultValue="https://hmda-hero-app.netlify.app/assets/HH32x32.png" />
-  <HighResolutionIconUrl DefaultValue="https://hmda-hero-app.netlify.app/assets/HH80x80.png" />
-  <SupportUrl DefaultValue="https://hmda-hero-app.netlify.app/" />
+  <IconUrl DefaultValue="https://app.hmdahero.com/assets/HH32x32.png" />
+  <HighResolutionIconUrl DefaultValue="https://app.hmdahero.com/assets/HH80x80.png" />
+  <SupportUrl DefaultValue="https://app.hmdahero.com/" />
   <AppDomains>
-    <AppDomain>https://hmda-hero-app.netlify.app/</AppDomain>
+    <AppDomain>https://app.hmdahero.com.com</AppDomain>
     <AppDomain>https://www.consumerfinance.gov</AppDomain>
     <AppDomain>https://www.ffiec.gov</AppDomain>
     <AppDomain>https://files.consumerfinance.gov</AppDomain>
@@ -24,7 +24,7 @@
     <Host Name="Workbook" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://hmda-hero-app.netlify.app/about" />
+    <SourceLocation DefaultValue="https://app.hmdahero.com/about" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -194,37 +194,37 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Add.16" DefaultValue="https://hmda-hero-app.netlify.app/assets/add16x16.png" />
-        <bt:Image id="Add.32" DefaultValue="https://hmda-hero-app.netlify.app/assets/add32x32.png" />
-        <bt:Image id="Add.80" DefaultValue="https://hmda-hero-app.netlify.app/assets/add80x80.png" />
-        <bt:Image id="Edit.16" DefaultValue="https://hmda-hero-app.netlify.app/assets/edit16x16.png" />
-        <bt:Image id="Edit.32" DefaultValue="https://hmda-hero-app.netlify.app/assets/edit32x32.png" />
-        <bt:Image id="Edit.80" DefaultValue="https://hmda-hero-app.netlify.app/assets/edit80x80.png" />
-        <bt:Image id="Import.16" DefaultValue="https://hmda-hero-app.netlify.app/assets/import16x16.png" />
-        <bt:Image id="Import.32" DefaultValue="https://hmda-hero-app.netlify.app/assets/import32x32.png" />
-        <bt:Image id="Import.80" DefaultValue="https://hmda-hero-app.netlify.app/assets/import80x80.png" />
-        <bt:Image id="Export.16" DefaultValue="https://hmda-hero-app.netlify.app/assets/export16x16.png" />
-        <bt:Image id="Export.32" DefaultValue="https://hmda-hero-app.netlify.app/assets/export32x32.png" />
-        <bt:Image id="Export.80" DefaultValue="https://hmda-hero-app.netlify.app/assets/export80x80.png" />
-        <bt:Image id="About.16" DefaultValue="https://hmda-hero-app.netlify.app/assets/about16x16.png" />
-        <bt:Image id="About.32" DefaultValue="https://hmda-hero-app.netlify.app/assets/about32x32.png" />
-        <bt:Image id="About.80" DefaultValue="https://hmda-hero-app.netlify.app/assets/about80x80.png" />
-        <bt:Image id="Resources.16" DefaultValue="https://hmda-hero-app.netlify.app/assets/resources16x16.png" />
-        <bt:Image id="Resources.32" DefaultValue="https://hmda-hero-app.netlify.app/assets/resources32x32.png" />
-        <bt:Image id="Resources.80" DefaultValue="https://hmda-hero-app.netlify.app/assets/resources80x80.png" />
-        <bt:Image id="Settings.16" DefaultValue="https://hmda-hero-app.netlify.app/assets/settings16x16.png" />
-        <bt:Image id="Settings.32" DefaultValue="https://hmda-hero-app.netlify.app/assets/settings32x32.png" />
-        <bt:Image id="Settings.80" DefaultValue="https://hmda-hero-app.netlify.app/assets/settings80x80.png" />
+        <bt:Image id="Add.16" DefaultValue="https://app.hmdahero.com/assets/add16x16.png" />
+        <bt:Image id="Add.32" DefaultValue="https://app.hmdahero.com/assets/add32x32.png" />
+        <bt:Image id="Add.80" DefaultValue="https://app.hmdahero.com/assets/add80x80.png" />
+        <bt:Image id="Edit.16" DefaultValue="https://app.hmdahero.com/assets/edit16x16.png" />
+        <bt:Image id="Edit.32" DefaultValue="https://app.hmdahero.com/assets/edit32x32.png" />
+        <bt:Image id="Edit.80" DefaultValue="https://app.hmdahero.com/assets/edit80x80.png" />
+        <bt:Image id="Import.16" DefaultValue="https://app.hmdahero.com/assets/import16x16.png" />
+        <bt:Image id="Import.32" DefaultValue="https://app.hmdahero.com/assets/import32x32.png" />
+        <bt:Image id="Import.80" DefaultValue="https://app.hmdahero.com/assets/import80x80.png" />
+        <bt:Image id="Export.16" DefaultValue="https://app.hmdahero.com/assets/export16x16.png" />
+        <bt:Image id="Export.32" DefaultValue="https://app.hmdahero.com/assets/export32x32.png" />
+        <bt:Image id="Export.80" DefaultValue="https://app.hmdahero.com/assets/export80x80.png" />
+        <bt:Image id="About.16" DefaultValue="https://app.hmdahero.com/assets/about16x16.png" />
+        <bt:Image id="About.32" DefaultValue="https://app.hmdahero.com/assets/about32x32.png" />
+        <bt:Image id="About.80" DefaultValue="https://app.hmdahero.com/assets/about80x80.png" />
+        <bt:Image id="Resources.16" DefaultValue="https://app.hmdahero.com/assets/resources16x16.png" />
+        <bt:Image id="Resources.32" DefaultValue="https://app.hmdahero.com/assets/resources32x32.png" />
+        <bt:Image id="Resources.80" DefaultValue="https://app.hmdahero.com/assets/resources80x80.png" />
+        <bt:Image id="Settings.16" DefaultValue="https://app.hmdahero.com/assets/settings16x16.png" />
+        <bt:Image id="Settings.32" DefaultValue="https://app.hmdahero.com/assets/settings32x32.png" />
+        <bt:Image id="Settings.80" DefaultValue="https://app.hmdahero.com/assets/settings80x80.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="AddLoan.Url" DefaultValue="https://hmda-hero-app.netlify.app/add-loan" />
-        <bt:Url id="EditLoan.Url" DefaultValue="https://hmda-hero-app.netlify.app/edit-search" />
-        <bt:Url id="Import.Url" DefaultValue="https://hmda-hero-app.netlify.app/import" />
-        <bt:Url id="Export.Url" DefaultValue="https://hmda-hero-app.netlify.app/export" />
-        <bt:Url id="FilingResources.Url" DefaultValue="https://hmda-hero-app.netlify.app/resources" />
-        <bt:Url id="About.Url" DefaultValue="https://hmda-hero-app.netlify.app/about" />
-        <bt:Url id="Settings.Url" DefaultValue="https://hmda-hero-app.netlify.app/settings" />
-        <bt:Url id="Functions.Url" DefaultValue="https://hmda-hero-app.netlify.app/functions.html" />
+        <bt:Url id="AddLoan.Url" DefaultValue="https://app.hmdahero.com/add-loan" />
+        <bt:Url id="EditLoan.Url" DefaultValue="https://app.hmdahero.com/edit-search" />
+        <bt:Url id="Import.Url" DefaultValue="https://app.hmdahero.com/import" />
+        <bt:Url id="Export.Url" DefaultValue="https://app.hmdahero.com/export" />
+        <bt:Url id="FilingResources.Url" DefaultValue="https://app.hmdahero.com/resources" />
+        <bt:Url id="About.Url" DefaultValue="https://app.hmdahero.com/about" />
+        <bt:Url id="Settings.Url" DefaultValue="https://app.hmdahero.com/settings" />
+        <bt:Url id="Functions.Url" DefaultValue="https://app.hmdahero.com/functions.html" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="TabLabel" DefaultValue="HMDA Hero" />
