@@ -222,7 +222,7 @@
         <bt:Url id="Import.Url" DefaultValue="https://app.hmdahero.com/import" />
         <bt:Url id="Export.Url" DefaultValue="https://app.hmdahero.com/export" />
         <bt:Url id="FilingResources.Url" DefaultValue="https://app.hmdahero.com/resources" />
-        <bt:Url id="About.Url" DefaultValue="https://www.hmdahero.com/docs/" />
+        <bt:Url id="About.Url" DefaultValue="https://app.hmdahero.com/about" />
         <bt:Url id="Settings.Url" DefaultValue="https://app.hmdahero.com/settings" />
         <bt:Url id="Functions.Url" DefaultValue="https://app.hmdahero.com/functions.html" />
       </bt:Urls>

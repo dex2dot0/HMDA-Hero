@@ -11,11 +11,8 @@
 		background-color: #323130;
 		min-height: 50px;
 	}
-
-	p {
-		margin-left: 40px;
-		margin-right: 40px;
-		padding-top: 10px;
+	button {
+		padding: 20px;
 	}
 </style>
 
@@ -33,6 +30,7 @@
 		target="_blank"
 		class="badge badge-light"
 		tabindex="-1">
-		<p>Please click here to open the documentation pages.</p>
+		<button type="button" class="btn btn-secondary btn-lg btn-block btn-small"
+			>Click here to open the documentation pages</button>
 	</a>
 </form>
