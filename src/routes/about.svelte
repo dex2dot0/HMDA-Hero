@@ -12,7 +12,8 @@
 		min-height: 50px;
 	}
 	button {
-		padding: 20px;
+		margin: 20px;
+		width: 100%;
 	}
 </style>
 
