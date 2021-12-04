@@ -11,9 +11,8 @@
 		background-color: #323130;
 		min-height: 50px;
 	}
-	button {
+	a {
 		margin: 20px;
-		width: 100%;
 	}
 </style>
 
@@ -26,12 +25,15 @@
 			<h3 class="pr-3 pl-3">About</h3>
 		</div>
 	</nav>
-	<a
-		href="https://www.hmdahero.com/docs/"
-		target="_blank"
-		class="badge badge-light"
-		tabindex="-1">
-		<button type="button" class="btn btn-secondary btn-lg btn-block btn-small"
-			>Click here to open the documentation pages</button>
-	</a>
+	<div class="container">
+		<div class="row">
+			<a
+				href="https://www.hmdahero.com/docs/"
+				target="_blank"
+				class="btn btn-secondary btn-block"
+				tabindex="-1">
+				Click here to open the documentation pages
+			</a>
+		</div>
+	</div>
 </form>
