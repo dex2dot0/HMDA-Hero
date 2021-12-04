@@ -13,7 +13,7 @@
   <HighResolutionIconUrl DefaultValue="https://app.hmdahero.com/assets/HH80x80.png" />
   <SupportUrl DefaultValue="https://app.hmdahero.com/" />
   <AppDomains>
-    <AppDomain>https://app.hmdahero.com.com</AppDomain>
+    <AppDomain>https://www.hmdahero.com</AppDomain>
     <AppDomain>https://www.consumerfinance.gov</AppDomain>
     <AppDomain>https://www.ffiec.gov</AppDomain>
     <AppDomain>https://files.consumerfinance.gov</AppDomain>
@@ -24,7 +24,7 @@
     <Host Name="Workbook" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://app.hmdahero.com/about" />
+    <SourceLocation DefaultValue="https://app.hmdahero.com.com" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -180,7 +180,7 @@
                     <bt:Image size="80" resid="About.80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>About</TaskpaneId>
+                    <TaskpaneId>Documentation</TaskpaneId>
                     <SourceLocation resid="About.Url" />
                     <Title resid="About.Title" />
                   </Action>
@@ -222,7 +222,7 @@
         <bt:Url id="Import.Url" DefaultValue="https://app.hmdahero.com/import" />
         <bt:Url id="Export.Url" DefaultValue="https://app.hmdahero.com/export" />
         <bt:Url id="FilingResources.Url" DefaultValue="https://app.hmdahero.com/resources" />
-        <bt:Url id="About.Url" DefaultValue="https://app.hmdahero.com/about" />
+        <bt:Url id="About.Url" DefaultValue="https://www.hmdahero.com/docs/" />
         <bt:Url id="Settings.Url" DefaultValue="https://app.hmdahero.com/settings" />
         <bt:Url id="Functions.Url" DefaultValue="https://app.hmdahero.com/functions.html" />
       </bt:Urls>
@@ -248,7 +248,7 @@
         <bt:String id="FilingResource.TipTitle" DefaultValue="Current reporting year filing resources"/>
         <bt:String id="FilingResources.Title" DefaultValue="Filing Resources"/>
         <bt:String id="AboutHH.Label" DefaultValue="About HMDA Hero"/>
-        <bt:String id="AboutHH.TipTitle" DefaultValue="HMDA Hero About Information"/>
+        <bt:String id="AboutHH.TipTitle" DefaultValue="HMDA Hero Documentation"/>
         <bt:String id="About.Title" DefaultValue="About"/>
         <bt:String id="Settings.Label" DefaultValue="Settings"/>
         <bt:String id="Settings.TipTitle" DefaultValue="Configuration settings for HMDA Hero"/>
@@ -260,7 +260,7 @@
         <bt:String id="Import.Desc" DefaultValue="Import loan records from an existing pipe delimited file"/>
         <bt:String id="Export.Desc" DefaultValue="Easily create a full or exempt version export in pipe delimited format"/>
         <bt:String id="FilingResource.Desc" DefaultValue="Quick access to current year filing resources and guides"/>
-        <bt:String id="AboutHH.Desc" DefaultValue="More information about HMDA Hero"/>
+        <bt:String id="AboutHH.Desc" DefaultValue="HMDA Hero Documentation"/>
         <bt:String id="Settings.Desc" DefaultValue="Configure and save settings used by HMDA Helper"/>
         <bt:String id="Description" DefaultValue="Extend and simplify the HMDA LAR Formatting Tool and HMDA data entry"/>
       </bt:LongStrings>

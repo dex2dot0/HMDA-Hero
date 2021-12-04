@@ -11,10 +11,10 @@
   <Description DefaultValue="If anything needs a hero, it's HMDA"/>
   <IconUrl DefaultValue="https://localhost:443/assets/HH32x32.png" />
   <HighResolutionIconUrl DefaultValue="https://localhost:443/assets/HH80x80.png" />
-  <SupportUrl DefaultValue="https://hmda-hero-app.netlify.app/" />
+  <SupportUrl DefaultValue="https://www.app.hmdahero.com" />
   <AppDomains>
     <AppDomain>https://localhost:443</AppDomain>
-    <AppDomain>https://hmda-hero-app.netlify.app/</AppDomain>
+    <AppDomain>https://app.hmdahero.com</AppDomain>
     <AppDomain>https://www.consumerfinance.gov</AppDomain>
     <AppDomain>https://www.ffiec.gov</AppDomain>
     <AppDomain>https://files.consumerfinance.gov</AppDomain>
@@ -25,7 +25,7 @@
     <Host Name="Workbook" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:443/about" />
+    <SourceLocation DefaultValue="https://localhost:443" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
