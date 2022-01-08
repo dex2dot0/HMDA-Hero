@@ -2,56 +2,55 @@
 
 If anything needs a hero, it's HMDA!
 
-## To-do Wishlist
+## Demo
 
-- The CFPB publishes a number of different APIs, see https://cfpb.github.io/hmda-platform/#hmda-api-documentation. Integrating these APIs has alway been a goal of this project and some work has been accomplished to that end but there is still much that needs to be done. Ideally, a user should get as close to real-time feedback on quality and validity errors as possible whether that be adding a loan record, editing a record, importing, or exporting a LAR file. At current, the work that has been done has been commented out and the base version of HMDA Hero does not include any such functionality. 
+Many features of the app rely on it running in Excel but you can still access it nonethless at the following links:
+[Add Loan](https://app.hmdahero.com/add-loan/)
+[Edit Loan](https://app.hmdahero.com/edit-loan/)
 
-- Batch updater. The ability to batch update key data points in the LAR.
+## To-do Wishlist (in no particular order)
 
-- Import should check for duplicates. Currently you can import the same file multiple times without any errors thrown. 
+**These should be migrated towards the GitHub Project rather than being in the README**
 
-- Bug... If a loan record does not have enough information, such as a ULI, it can not be selected for edit in the Edit Loan action. It will show up in search but fail to load when selected for edit. 
+- [ ] **AS OF 12/2021 THESE APIS WERE NOT WORKING** The CFPB publishes a number of different APIs, see https://cfpb.github.io/hmda-platform/#hmda-api-documentation. Integrating these APIs has alway been a goal of this project and some work has been accomplished to that end but there is still much that needs to be done. Ideally, a user should get as close to real-time feedback on quality and validity errors as possible whether that be adding a loan record, editing a record, importing, or exporting a LAR file. At current, the work that has been done has been commented out and the base version of HMDA Hero does not include any such functionality.
+
+- [ ] Batch updater. The ability to batch update key data points in the LAR.
+
+- [ ] Import should check for duplicates. Currently you can import the same file multiple times without any errors thrown.
+
+- [ ] Replace Bootstrap 4, potentially with Tailwind. There is a codemod that might be useful for this. https://github.com/awssat/tailwindo
 
 ## Getting started
 
 You must have node.js installed. We'd recommend the latest stable version.
 
-### Bootstrap 4
-
-Really? Why? Bootstrap 5 is out now and even then... This is all true. In all reality, I don't care for Bootstrap to begin with whether that is v4 or v5. I'm not hating on Bootstrap by any means, obviously it is a strong component library that has extensive use and that's all gravy to me. I have my own personal reservations though and prefer other options. However, Excel add-ins have some limitations. Namely, Excel Desktop only supports certain browser contexts. As a result, Bootstrap becomes a seemingly good candidate for this. Also, as you'll read further below, Svelte works **okay** with Bootstrap 4 out of the box. There are some conflicts such as `$` but in general, Svelte and Bootstrap 4 can peacfully co-exists with one another fairly well. That said, Bootstrap 4 can happily go by the wayside in the future as long as Svelte stays. Of course, if you are forking this and doing your own thing, feel free to take things in any direction you feel.
-
 ### Running the project
 
 First things first:
 
-`npm install` or `npm i`
+`npm install` or the comparable install commands for your particular package manager (yarn, pnpm, etc.)
 
-For local development, you'll need to generate CA certificates to get https on localhost. If you do not run an HTTPS server locally, Excel add-ins may not function properly.
+For local development, you'll need to generate CA certificates to get https on localhost. **If you do not run an HTTPS server locally, Excel add-ins may not function properly.** To do so, run the following:
 
 `npm run certs`
 
 Once the command completes, the console should log the file path to the Certificate and Key and you will need to:
 
 1. Copy the paths
-2. Create a .env in the root of the project
-3. Setup as follows:
+2. Create a .env in the root of the project (or re-name the .env.example file to .env). The .env file should include the following:
 
 `KEYPATH=/path/to/your/key`
 `CERTPATH=/path/to/your/cert`
 
 **note- your path will likely be outside the project directory**
 
-4. Save the file
+3. Save the file
 
 You should now be able to run the project in development mode with:
 
 `npm run dev`
 
 Open up [localhost:443](https://localhost:443) and start clicking around. This is the HMDA Hero application outside an Excel document.
-
-Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help with Svelte/Sapper. Svelte is similar to React, Vue, and Angular. Sapper is the server library for Svelte. There is also a Svelte/Sapper Overview section further below that discusses this more.
-
-Svelte is awesome, refreshing, and one of the main motivations for this project. At present, SvelteKit is gaining some traction but may not yet be suitable for this project which is why Sapper is being used. If at some point in the future there is a chance to refactor the project to use SvelteKit, its likely this project will be migrated.
 
 ### Side-Load Excel Add-in to Run on localhost
 
@@ -67,7 +66,19 @@ Refer to https://docs.microsoft.com/en-us/office/dev/add-ins/testing/sideload-of
 
 The folder you want to share locally is ./HMDA-HERO/Manifests/localhost
 
+### Netlify
+
+The app's production instance is deployed and running on [Netlify](https://www.netlify.com/):heart:. If you haven't heard of Netlify, it's an amazing service and worth checking out. Using their [CLI](https://docs.netlify.com/cli/get-started/#get-started-with-netlify-dev), you can setup your local build to run as if it is running on the website itself to help avoid environment variations.
+
+### Bootstrap 4
+
+Really? Why? Bootstrap 5 is out now and even then... This is all true. In all reality, I don't prefer Bootstrap to begin with whether that is v4 or v5. I'm not hating on Bootstrap by any means, obviously it is a strong component library that has extensive use and that's all gravy to me. I have my own personal reservations though and prefer other options. However, Excel add-ins have some limitations. Namely, Excel Desktop only supports certain browser contexts. As a result, Bootstrap becomes a seemingly good candidate for this. Also, as you'll read further below, Svelte works **okay** with Bootstrap 4 out of the box. There are some conflicts such as `$` but in general, Svelte and Bootstrap 4 can peacfully co-exists with one another fairly well. That said, Bootstrap 4 can happily go by the wayside in the future as long as Svelte stays. Of course, if you are forking this and doing your own thing, feel free to take things in any direction you feel.
+
 ### Svelte/Sapper overview
+
+Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help with Svelte/Sapper. Svelte is similar to React, Vue, and Angular. Sapper is the server library for Svelte. There is also a Svelte/Sapper Overview section further below that discusses this more.
+
+Svelte is awesome, refreshing, and one of the main motivations for this project. At present, SvelteKit is gaining some traction but may not yet be suitable for this project which is why Sapper is being used. If at some point in the future there is a chance to refactor the project to use SvelteKit, its likely this project will be migrated.
 
 The [src](src) directory contains the entry points for your app — `client.js`, `server.js` and (optionally) a `service-worker.js` — along with a `template.html` file and a `routes` directory.
 
@@ -96,10 +107,3 @@ import { files } from '@sapper/service-worker';
 #### Production mode and deployment
 
 To start a production version of your app, run `npm run build && npm start`. This will disable live reloading, and activate the appropriate bundler plugins.
-
-You can deploy your application to any environment that supports Node 8 or above. As an example, to deploy to [Now](https://zeit.co/now), run these commands:
-
-```bash
-npm install -g now
-now
-```
