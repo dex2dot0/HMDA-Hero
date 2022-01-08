@@ -113,12 +113,14 @@ function ULIFn() {
 		subscribe,
 		set,
 		change: (e) => {
-			console.log(e.target.value);
-			console.log(e);
-			console.log(`updating ULI to ${e.target.value}`);
-			val = e.target.value;
-			set(val);
-			updateValue(val, editColumn);
+			if (e?.target?.value || e !== '') {
+				val = e?.target?.value || e;
+				console.log(`updating ULI to ${val}`);
+				set(val);
+				updateValue(val, editColumn);
+			} else {
+				console.log('ULI is empty');
+			}
 		},
 	};
 }
