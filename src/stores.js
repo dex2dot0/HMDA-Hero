@@ -113,7 +113,10 @@ function ULIFn() {
 		subscribe,
 		set,
 		change: (e) => {
-			val = e;
+			console.log(e.target.value);
+			console.log(e);
+			console.log(`updating ULI to ${e.target.value}`);
+			val = e.target.value;
 			set(val);
 			updateValue(val, editColumn);
 		},
