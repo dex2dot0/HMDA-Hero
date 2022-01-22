@@ -117,7 +117,7 @@
 
 {#await isLoading}
 	<!-- promise is pending -->
-	<p>waiting for the promise to resolve...</p>
+	<p>Loading...</p>
 {:then value}
 	<div class="container">
 		<form class="shadow-sm mb-5 bg-white rounded">
