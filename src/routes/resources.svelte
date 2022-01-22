@@ -271,6 +271,24 @@
 							CFPB HMDA Resources Page
 						</a>
 					</div>
+					<div>
+						<label class="my-1 mr-2 mt-4" for="yearSelect">Change Year</label>
+						<select class="custom-select my-1 mr-sm-2" id="yearSelect" bind:value={filingYear}>
+							<option selected value={filingYear}>{filingYear}</option>
+							{#if filingYear !== 2018}
+								<option value=2018>2018</option>
+							{/if}
+							{#if filingYear !== 2019}
+								<option value=2019>2019</option>
+							{/if}
+							{#if filingYear !== 2020}
+								<option value=2020>2020</option>
+							{/if}
+							{#if filingYear !== 2021}
+								<option value=2021>2021</option>
+							{/if}
+						</select>
+					</div>
 				</div>
 			</div>
 		</form>
