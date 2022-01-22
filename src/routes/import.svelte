@@ -136,7 +136,8 @@
 		async function checkData(loanData) {
 			let canImport = true;
 			for (let i = 0; i < loanData.length; i++) {
-				loanData[i].length == 109 ? '' : (canImport = false);
+				//Check data is either full length or 0
+				loanData[i].length === 109 || loanData[i].length === 0 ? '' : (canImport = false);
 			}
 			return canImport;
 		}
