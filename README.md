@@ -1,12 +1,20 @@
-# HMDA-Hero
-
+<p align="center">
+    <img src="https://www.hmdahero.com/images/Hz_logo_full.svg" alt="drawing" width="400"/>
+</p>
+<p align="center">
 If anything needs a hero, it's HMDA!
+</p>
+
+![Commit Badge](https://img.shields.io/github/commit-activity/y/dex2dot0/HMDA-Hero)
+![Last Commit Badge](https://img.shields.io/github/last-commit/dex2dot0/HMDA-Hero)
+![App Status Badge](https://img.shields.io/website?down_color=red&down_message=offline&label=App%20Status&up_color=green&up_message=online&url=https%3A%2F%2Fapp.hmdahero.com)
 
 ## Demo
 
 Many features of the app rely on it running in Excel but you can still access it nonethless at the following links:
-[Add Loan](https://app.hmdahero.com/add-loan/)
-[Edit Loan](https://app.hmdahero.com/edit-loan/)
+
+- [Add Loan](https://app.hmdahero.com/add-loan/)
+- [Edit Loan](https://app.hmdahero.com/edit-loan/)
 
 ## To-do Wishlist (in no particular order)
 
@@ -20,9 +28,11 @@ Many features of the app rely on it running in Excel but you can still access it
 
 - [ ] Replace Bootstrap 4, potentially with Tailwind. There is a codemod that might be useful for this. https://github.com/awssat/tailwindo
 
+- [ ] See more at the GitHub Issues list for [enhancement requests](https://github.com/dex2dot0/HMDA-Hero/labels/enhancement)
+
 ## Getting started
 
-You must have node.js installed. We'd recommend the latest stable version.
+You must have [node.js](https://nodejs.org/en/) installed. We'd recommend the latest stable version.
 
 ### Running the project
 
